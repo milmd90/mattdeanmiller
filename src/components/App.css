@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+
+input {
+  min-width: 0;
+}
+
+.chord {
+  display: flex;
+  flex-direction: column;
+  width: 20px;
+}
+
+.display {
+  display: flex;
+  border: solid black 1px;
+  height: 120px;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  border: solid black 1px;
+  min-width: 0;
+}
