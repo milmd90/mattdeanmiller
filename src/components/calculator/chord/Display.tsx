@@ -84,6 +84,8 @@ function Display(props: {
     }
   }
 
+  const chord = chordArray[0];
+
   console.log({
     type,
     shape,
@@ -94,22 +96,22 @@ function Display(props: {
   return (
     <div className="display tab-column">
       <div>
-        e
+        {chord && chord['fret-6']}
       </div>
       <div>
-        B
+        {chord && chord['fret-5']}
       </div>
       <div>
-        G
+        {chord && chord['fret-4']}
       </div>
       <div>
-        D
+        {chord && chord['fret-3']}
       </div>
       <div>
-        A
+        {chord && chord['fret-2']}
       </div>
       <div>
-        E
+        {chord && chord['fret-1']}
       </div>
     </div>
   );
