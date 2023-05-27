@@ -37,8 +37,6 @@ interface IChordDict {
   "major"?: IShapeOptions,
   "minor"?: IShapeOptions
 }
-// type Type = keyof IChordDict;
-// const types: string[] = ["major", "minor"];
 
 function Display(props: {
   data: IChordParams;
@@ -94,9 +92,24 @@ function Display(props: {
   })
 
   return (
-    <div className="display">
+    <div className="display tab-column">
       <div>
-        {root}
+        e
+      </div>
+      <div>
+        B
+      </div>
+      <div>
+        G
+      </div>
+      <div>
+        D
+      </div>
+      <div>
+        A
+      </div>
+      <div>
+        E
       </div>
     </div>
   );

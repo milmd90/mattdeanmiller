@@ -63,7 +63,7 @@ function Input(props: {
   }
   
   return (
-    <div className="input">
+    <div className="input input-column">
       <input 
         value={root} 
         onChange={onChangeChord}

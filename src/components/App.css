@@ -6,6 +6,26 @@ input {
   min-width: 0;
 }
 
+.calculator {
+  display: flex;
+}
+
+.tab-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+  border: 1px solid black;
+}
+
+.input-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+  border: 1px solid black;
+}
+
 .chord {
   display: flex;
   flex-direction: column;
@@ -15,12 +35,10 @@ input {
 .display {
   display: flex;
   border: solid black 1px;
-  height: 120px;
 }
 
 .input {
   display: flex;
   flex-direction: column;
   border: solid black 1px;
-  min-width: 0;
 }
