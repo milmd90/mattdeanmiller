@@ -2,25 +2,34 @@ import React, {useState} from 'react';
 import Display from './Display';
 import Input from './Input';
 
+export interface IChordParams {
+  root: string,
+  type: string,
+  shape: string,
+  position: string,
+  option: string
+}
+
 function Chord() {
-  const [chord, setChord] = useState({
-    chord: '',
+  const [data, setData] = useState<IChordParams>({
+    root: '',
+    type: '',
     shape: '',
     position: '',
     option: ''
   });
 
-  const onChange = (data: any) => {
-    setChord(data)
+  const onChange = (data: IChordParams) => {
+    setData(data)
   }
 
   return (
     <div className="chord">
       <Display
-        chord={chord}
+        data={data}
       />
       <Input
-        chord={chord}
+        data={data}
         onChange={onChange}
       />
     </div>

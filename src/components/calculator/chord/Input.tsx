@@ -1,25 +1,43 @@
 import React, { useState } from "react";
+import {
+  IChordParams
+} from '../chord/Chord'
 
-function Input(props: any) {
-  const { chord: chordData, onChange } = props;
+function Input(props: {
+  data: IChordParams,
+  onChange: (O: IChordParams) => void
+}) {
+  const { data, onChange } = props;
   const {
-    chord,
+    root,
+    type,
     shape,
     position,
     option
-  } = chordData;
+  } = data;
 
   const onChangeChord = (e: any) => {
     onChange({
-      chord: e.target.value,
+      root: e.target.value,
+      type,
       shape,
       position,
       option
     });
   }
+  const onChangeType = (e: any) => {
+    onChange({
+      root,
+      type: e.target.value,
+      shape,
+      position,
+      option,
+    });
+  }
   const onChangeShape = (e: any) => {
     onChange({
-      chord,
+      root,
+      type,
       shape: e.target.value,
       position,
       option,
@@ -27,7 +45,8 @@ function Input(props: any) {
   }
   const onChangePosition = (e: any) => {
     onChange({
-      chord,
+      root,
+      type,
       shape,
       position: e.target.value,
       option,
@@ -35,18 +54,23 @@ function Input(props: any) {
   }
   const onChangeOption = (e: any) => {
     onChange({
-      chord,
+      root,
+      type,
       shape,
       position,
-      optione: e.target.value,
+      option: e.target.value,
     });
   }
   
   return (
     <div className="input">
       <input 
-        value={chord} 
+        value={root} 
         onChange={onChangeChord}
+      />
+      <input 
+        value={type} 
+        onChange={onChangeType}
       />
       <input 
         value={shape} 
