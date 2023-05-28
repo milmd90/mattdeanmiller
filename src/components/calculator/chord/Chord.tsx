@@ -1,14 +1,7 @@
 import React, {useState} from 'react';
 import Display from './Display';
 import Input from './Input';
-
-export interface IChordParams {
-  root: string,
-  type: string,
-  shape: string,
-  position: string,
-  option: string
-}
+import { IChordParams } from '../../../helpers/tabs';
 
 function Chord() {
   const [data, setData] = useState<IChordParams>({

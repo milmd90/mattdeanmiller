@@ -42,3 +42,35 @@ input {
   flex-direction: column;
   border: solid black 1px;
 }
+
+.tone-0 {
+  background-color: red;
+}
+
+.tone-2 {
+  background-color: orange;
+}
+
+.tone-3 {
+  background-color: yellow;
+}
+
+.tone-4 {
+  background-color: greenyellow;
+}
+
+.tone-4 {
+  background-color: green;
+}
+
+.tone-7 {
+  background-color: blue;
+}
+
+.tone-10 {
+  background-color: purple;
+}
+
+.tone-11 {
+  background-color: violet;
+}
