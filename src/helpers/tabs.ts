@@ -66,6 +66,8 @@ export interface IChordTab {
   "A": ITabStringValue
   "E": ITabStringValue
 }
+export type TabKey = keyof IChordTab;
+const tabKeys: TabKey[] = ['E', 'A', 'D', 'G', 'B', 'e'];
 
 function filterChordsByShape(shapeOptionsArray: IShapeOptions[], shape: string): IChordData[] {
   let chordArray: IChordData[] = [];
@@ -94,40 +96,87 @@ function filterChordsByShape(shapeOptionsArray: IShapeOptions[], shape: string):
   return chordArray;
 }
 
-function convertChordToTab(chord: IChordData, root: string): IChordTab {
+function convertChordsToTab(chords: IChordData[], root: string): IChordTab[] {
   function getTabValue(input: number | 'X', offset?: number | undefined): (number | '') {
     if (input === 'X') return '';
     if (offset) return input + offset;
     return input;
   }
 
-  const offset = pitchDifference(chord.shape, root);
-  return {
-    "e": {
-      'fret': getTabValue(chord['fret-6'], offset),
-      'tone': getTabValue(chord['tone-6'])
-    },
-    "B": {
-      'fret': getTabValue(chord['fret-5'], offset),
-      'tone': getTabValue(chord['tone-5'])
-    },
-    "G": {
-      'fret': getTabValue(chord['fret-4'], offset),
-      'tone': getTabValue(chord['tone-4'])
-    },
-    "D": {
-      'fret': getTabValue(chord['fret-3'], offset),
-      'tone': getTabValue(chord['tone-3'])
-    },
-    "A": {
-      'fret': getTabValue(chord['fret-2'], offset),
-      'tone': getTabValue(chord['tone-2'])
-    },
-    "E": {
-      'fret': getTabValue(chord['fret-1'], offset),
-      'tone': getTabValue(chord['tone-1'])
-    },
-  };
+  return chords.map((chord) => {
+    const offset = pitchDifference(chord.shape, root);
+    return {
+      "e": {
+        'fret': getTabValue(chord['fret-6'], offset),
+        'tone': getTabValue(chord['tone-6'])
+      },
+      "B": {
+        'fret': getTabValue(chord['fret-5'], offset),
+        'tone': getTabValue(chord['tone-5'])
+      },
+      "G": {
+        'fret': getTabValue(chord['fret-4'], offset),
+        'tone': getTabValue(chord['tone-4'])
+      },
+      "D": {
+        'fret': getTabValue(chord['fret-3'], offset),
+        'tone': getTabValue(chord['tone-3'])
+      },
+      "A": {
+        'fret': getTabValue(chord['fret-2'], offset),
+        'tone': getTabValue(chord['tone-2'])
+      },
+      "E": {
+        'fret': getTabValue(chord['fret-1'], offset),
+        'tone': getTabValue(chord['tone-1'])
+      },
+    };
+  })
+}
+
+function getMinFretValue(chord: IChordTab): number | undefined {
+  let min: number | undefined;
+  for (let key of tabKeys) {
+    const fretValue = chord[key].fret;
+    if (
+      typeof fretValue === 'number' &&
+      (!min || fretValue < min)
+    ) {
+      min = fretValue;
+    }
+  }
+  return min;
+}
+
+function updateChordsWithPosition(chordArray: IChordTab[], position: string): IChordTab[] {
+  const numPos: number = parseInt(position);
+  if (isNaN(numPos)) return chordArray;
+
+  return chordArray.map((chord) => {
+    let minFret = getMinFretValue(chord);
+    if (typeof minFret !== 'number') return chord;
+
+    while (minFret < numPos) {
+      for (let s of tabKeys) {
+        const f = chord[s].fret;
+        if (typeof f === 'number') {
+          chord[s].fret = f + 12;
+        }
+      }
+      minFret = getMinFretValue(chord);
+      if (typeof minFret !== 'number') return chord;
+    }
+    return chord;
+  })
+}
+
+function sortChordsByLowest(chordArray: IChordTab[]): IChordTab[] {
+  return chordArray.sort((a: IChordTab, b: IChordTab) => {
+    const minA = getMinFretValue(a);
+    const minB = getMinFretValue(b);
+    if (!minA || !minB) return 0;
+    return minA - minB;
+  });
 }
 
 export function generateTabs(data: IChordParams): IChordTab {
@@ -172,20 +221,21 @@ export function generateTabs(data: IChordParams): IChordTab {
     return emptyTab;
   }
   
-  let shapeOptionsArray: IShapeOptions[] = [];
+  const shapeOptionsArray: IShapeOptions[] = [];
   const shapeOptions = dict[type];
   if (shapeOptions) {
     shapeOptionsArray.push(shapeOptions);
   }
 
-  let chordArray: IChordData[] = filterChordsByShape(shapeOptionsArray, shape);
+  const chordArray: IChordData[] = filterChordsByShape(shapeOptionsArray, shape);
   if (!chordArray.length) {
     return emptyTab;
   }
 
-  // sort chords by position
+  let tabArray: IChordTab[] = convertChordsToTab(chordArray, root);
+  tabArray = updateChordsWithPosition(tabArray, position);
+  tabArray = sortChordsByLowest(tabArray);
 
-  const index: number = option % chordArray.length;
-  const chord = chordArray[index];
-  return convertChordToTab(chord, root);
+  const index: number = option % tabArray.length;
+  return tabArray[index];
 }
