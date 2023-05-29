@@ -8,7 +8,7 @@ import NumColumnButtons from './SetNumColumns';
 function getColumns(numColumns: number) {
   const arr = []
   for(let i = 0; i < numColumns; i++){
-    arr.push(<Chord/>)
+    arr.push(<Chord key={i}/>)
   }
   return arr;
 }

@@ -140,7 +140,7 @@ function getMinFretValue(chord: IChordTab): number | undefined {
     const fretValue = chord[key].fret;
     if (
       typeof fretValue === 'number' &&
-      (!min || fretValue < min)
+      (min === undefined || fretValue < min)
     ) {
       min = fretValue;
     }
@@ -149,8 +149,8 @@ function getMinFretValue(chord: IChordTab): number | undefined {
 }
 
 function updateChordsWithPosition(chordArray: IChordTab[], position: string): IChordTab[] {
-  const numPos: number = parseInt(position);
-  if (isNaN(numPos)) return chordArray;
+  let numPos: number = parseInt(position);
+  if (isNaN(numPos)) numPos = 0;
 
   return chordArray.map((chord) => {
     let minFret = getMinFretValue(chord);
@@ -174,7 +174,10 @@ function sortChordsByLowest(chordArray: IChordTab[]): IChordTab[] {
   return chordArray.sort((a: IChordTab, b: IChordTab) => {
     const minA = getMinFretValue(a);
     const minB = getMinFretValue(b);
-    if (!minA || !minB) return 0;
+    if (
+      minA === undefined || 
+      minB === undefined
+      ) return 0;
     return minA - minB;
   });
 }
@@ -235,6 +238,13 @@ export function generateTabs(data: IChordParams): IChordTab {
   let tabArray: IChordTab[] = convertChordsToTab(chordArray, root);
   tabArray = updateChordsWithPosition(tabArray, position);
   tabArray = sortChordsByLowest(tabArray);
+
+  // for (let tab of tabArray) {
+  //   console.log({
+  //     tab,
+  //     min: getMinFretValue(tab)
+  //   })
+  // }
 
   const index: number = option % tabArray.length;
   return tabArray[index];
