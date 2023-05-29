@@ -47,7 +47,7 @@ function Input(props: {
       type,
       shape,
       position: e.target.value,
-      option,
+      option: 0,
     });
   }
   const onChangeOption = (e: any) => {

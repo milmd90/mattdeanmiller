@@ -128,80 +128,6 @@
       }
     ]
   },
-  "9": {
-    "C": [
-      {
-        "type": 9,
-        "shape": "C",
-        "option": 1,
-        "fret-1": 0,
-        "tone-1": 4,
-        "fret-2": 3,
-        "tone-2": 0,
-        "fret-3": 2,
-        "tone-3": 4,
-        "fret-4": 3,
-        "tone-4": 10,
-        "fret-5": 3,
-        "tone-5": 2,
-        "fret-6": 0,
-        "tone-6": 4
-      },
-      {
-        "type": 9,
-        "shape": "C",
-        "option": 2,
-        "fret-1": "X",
-        "tone-1": "X",
-        "fret-2": 3,
-        "tone-2": 0,
-        "fret-3": 2,
-        "tone-3": 4,
-        "fret-4": 3,
-        "tone-4": 10,
-        "fret-5": 3,
-        "tone-5": 2,
-        "fret-6": "X",
-        "tone-6": "X"
-      }
-    ],
-    "A": [
-      {
-        "type": 9,
-        "shape": "A",
-        "option": 1,
-        "fret-1": 0,
-        "tone-1": 7,
-        "fret-2": 2,
-        "tone-2": 2,
-        "fret-3": 2,
-        "tone-3": 7,
-        "fret-4": 0,
-        "tone-4": 10,
-        "fret-5": 2,
-        "tone-5": 4,
-        "fret-6": 0,
-        "tone-6": 7
-      },
-      {
-        "type": 9,
-        "shape": "A",
-        "option": 2,
-        "fret-1": "X",
-        "tone-1": "X",
-        "fret-2": 2,
-        "tone-2": 2,
-        "fret-3": 2,
-        "tone-3": 7,
-        "fret-4": 0,
-        "tone-4": 10,
-        "fret-5": 2,
-        "tone-5": 4,
-        "fret-6": "X",
-        "tone-6": "X"
-      }
-    ]
-  },
   "69": {
     "C": [
       {
@@ -713,6 +639,80 @@
         "tone-5": 10,
         "fret-6": 2,
         "tone-6": 4
+      }
+    ]
+  },
+  "dominate 9th": {
+    "C": [
+      {
+        "type": 9,
+        "shape": "C",
+        "option": 1,
+        "fret-1": 0,
+        "tone-1": 4,
+        "fret-2": 3,
+        "tone-2": 0,
+        "fret-3": 2,
+        "tone-3": 4,
+        "fret-4": 3,
+        "tone-4": 10,
+        "fret-5": 3,
+        "tone-5": 2,
+        "fret-6": 0,
+        "tone-6": 4
+      },
+      {
+        "type": 9,
+        "shape": "C",
+        "option": 2,
+        "fret-1": "X",
+        "tone-1": "X",
+        "fret-2": 3,
+        "tone-2": 0,
+        "fret-3": 2,
+        "tone-3": 4,
+        "fret-4": 3,
+        "tone-4": 10,
+        "fret-5": 3,
+        "tone-5": 2,
+        "fret-6": "X",
+        "tone-6": "X"
+      }
+    ],
+    "A": [
+      {
+        "type": 9,
+        "shape": "A",
+        "option": 1,
+        "fret-1": 0,
+        "tone-1": 7,
+        "fret-2": 2,
+        "tone-2": 2,
+        "fret-3": 2,
+        "tone-3": 7,
+        "fret-4": 0,
+        "tone-4": 10,
+        "fret-5": 2,
+        "tone-5": 4,
+        "fret-6": 0,
+        "tone-6": 7
+      },
+      {
+        "type": 9,
+        "shape": "A",
+        "option": 2,
+        "fret-1": "X",
+        "tone-1": "X",
+        "fret-2": 2,
+        "tone-2": 2,
+        "fret-3": 2,
+        "tone-3": 7,
+        "fret-4": 0,
+        "tone-4": 10,
+        "fret-5": 2,
+        "tone-5": 4,
+        "fret-6": "X",
+        "tone-6": "X"
       }
     ]
   },

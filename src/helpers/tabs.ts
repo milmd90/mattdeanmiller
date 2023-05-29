@@ -4,7 +4,7 @@ import {
 import {
   convertPitchToTone, pitchDifference
 } from './pitchTones'
-import {IChordParams} from '../components/calculator/chord/Chord'
+import { IChordParams } from '../components/calculator/chord/Chord'
 import * as dictionary from '../models/dictionary.json'
 const dict = dictionary as IChordDict;
 
@@ -38,7 +38,6 @@ const shapes: Shape[] = ["C", "A", "G", "E", "D"];
 
 export interface IChordDict {
   "6"?: IShapeOptions,
-  "9"?: IShapeOptions,
   "69"?: IShapeOptions,
   "7#9"?: IShapeOptions,
   "7b9"?: IShapeOptions,
@@ -183,6 +182,8 @@ export function generateTabs(data: IChordParams): IChordTab {
   if (!chordArray.length) {
     return emptyTab;
   }
+
+  // sort chords by position
 
   const index: number = option % chordArray.length;
   const chord = chordArray[index];
