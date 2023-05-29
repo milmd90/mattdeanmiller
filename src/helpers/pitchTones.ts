@@ -29,3 +29,11 @@ export function convertPitchToTone(pitch: string): number | undefined {
     return pitchTones[pitch]
   }
 }
+
+export function pitchDifference(start: string, end: string): number | undefined {
+  const startTone = convertPitchToTone(start);
+  const endTone = convertPitchToTone(end);
+  if (!startTone || !endTone) return;
+
+  return (12 + endTone - startTone) % 12;
+}

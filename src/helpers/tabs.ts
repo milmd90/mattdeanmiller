@@ -2,7 +2,7 @@ import {
   getTypeFromAbbrev
 } from './abbreviations'
 import {
-  convertPitchToTone
+  convertPitchToTone, pitchDifference
 } from './pitchTones'
 import * as dictionary from '../models/dictionary.json'
 const dict = dictionary as IChordDict; 
@@ -56,18 +56,18 @@ export interface IChordDict {
 }
 export type Type = keyof IChordDict;
 
-export interface TabCell {
+export interface ITabStringValue {
   "fret": number | '',
   "tone": number | '',
 }
 
 export interface IChordTab {
-  "e": TabCell
-  "B": TabCell
-  "G": TabCell
-  "D": TabCell
-  "A": TabCell
-  "E": TabCell
+  "e": ITabStringValue
+  "B": ITabStringValue
+  "G": ITabStringValue
+  "D": ITabStringValue
+  "A": ITabStringValue
+  "E": ITabStringValue
 }
 
 function filterChordsByShape(shapeOptionsArray: IShapeOptions[], shape: string): IChordData[] {
@@ -97,35 +97,38 @@ function filterChordsByShape(shapeOptionsArray: IShapeOptions[], shape: string):
   return chordArray;
 }
 
-function convertChordToTab(chordData: IChordData): IChordTab {
-  function clearX(input: number | 'X'): (number | '') {
+function convertChordToTab(chord: IChordData, root: string): IChordTab {
+  function getTabValue(input: number | 'X', offset?: number | undefined): (number | '') {
     if (input === 'X') return '';
+    if (offset) return input + offset;
     return input;
   }
+
+  const offset = pitchDifference(chord.shape, root);
   return {
     "e": {
-      'fret': clearX(chordData['fret-6']),
-      'tone': clearX(chordData['tone-6'])
+      'fret': getTabValue(chord['fret-6'], offset),
+      'tone': getTabValue(chord['tone-6'])
     },
     "B": {
-      'fret': clearX(chordData['fret-5']),
-      'tone': clearX(chordData['tone-5'])
+      'fret': getTabValue(chord['fret-5'], offset),
+      'tone': getTabValue(chord['tone-5'])
     },
     "G": {
-      'fret': clearX(chordData['fret-4']),
-      'tone': clearX(chordData['tone-4'])
+      'fret': getTabValue(chord['fret-4'], offset),
+      'tone': getTabValue(chord['tone-4'])
     },
     "D": {
-      'fret': clearX(chordData['fret-3']),
-      'tone': clearX(chordData['tone-3'])
+      'fret': getTabValue(chord['fret-3'], offset),
+      'tone': getTabValue(chord['tone-3'])
     },
     "A": {
-      'fret': clearX(chordData['fret-2']),
-      'tone': clearX(chordData['tone-2'])
+      'fret': getTabValue(chord['fret-2'], offset),
+      'tone': getTabValue(chord['tone-2'])
     },
     "E": {
-      'fret': clearX(chordData['fret-1']),
-      'tone': clearX(chordData['tone-1'])
+      'fret': getTabValue(chord['fret-1'], offset),
+      'tone': getTabValue(chord['tone-1'])
     },
   };
 }
@@ -168,12 +171,6 @@ export function generateTabs(data: IChordParams): IChordTab {
 
   const tone = convertPitchToTone(root);
   const type = getTypeFromAbbrev(abbrev);
-
-  console.log({
-    root,
-    tone,
-    type
-  })
   if (!tone || !type) {
     return emptyTab;
   }
@@ -195,10 +192,5 @@ export function generateTabs(data: IChordParams): IChordTab {
   }
 
   const chord = chordArray[index];
-
-  console.log({
-    shapeOptions,
-    chordArray
-  })
-  return convertChordToTab(chord);
+  return convertChordToTab(chord, root);
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import {
   IChordParams,
-  TabCell,
+  ITabStringValue,
   generateTabs
 } from '../../../helpers/tabs'
 
 function Cell(props: {
-  data: TabCell
+  data: ITabStringValue
 }): any {
   return (
     <div className={`tone-${props.data.tone}`}>
