@@ -1,29 +1,57 @@
-.App {
-  text-align: center;
-}
-
 input {
   min-width: 0;
 }
 
+.app {
+  text-align: center;
+}
+
 .calculator {
   display: flex;
+  flex-direction: column;
 }
 
-.tab-column {
+.calculator .body {
+  display: flex;
+  margin: 0 20px;
+}
+
+.label {
+  padding-right: 10px;
+}
+
+.label .tab-row,
+.label .input-row {
+  align-items: flex-end;
+}
+
+.tab-row {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 150px;
-  border: 1px solid black;
 }
 
-.input-column {
+.input-row {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 150px;
-  border: 1px solid black;
+  margin: 10px 0;
+}
+
+.set-num-columns {
+  padding-left: 10px;
+}
+
+.set-num-columns .input-row {
+  display: flex;
+  justify-content: center;
+}
+
+.set-num-columns .input-row button{
+  height: 50px;
+  width: 50px;
 }
 
 .chord {
@@ -34,13 +62,11 @@ input {
 
 .display {
   display: flex;
-  border: solid black 1px;
 }
 
 .input {
   display: flex;
   flex-direction: column;
-  border: solid black 1px;
 }
 
 .tone-0 {

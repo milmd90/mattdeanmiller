@@ -4,7 +4,7 @@ import Calculator from './calculator/Calculator';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Calculator />
     </div>
   );

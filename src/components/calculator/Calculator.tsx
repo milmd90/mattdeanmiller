@@ -1,21 +1,32 @@
-import React from 'react';
-import Chord from './chord/Chord';
+import React, {useState} from 'react';
+import Header from '../Header';
 import Label from './Label';
+import Chord from './chord/Chord';
+import NumColumnButtons from './SetNumColumns';
 
-function getColumns(x: number) {
+
+function getColumns(numColumns: number) {
   const arr = []
-  for(let i = 0; i < x; i++){
+  for(let i = 0; i < numColumns; i++){
     arr.push(<Chord/>)
   }
   return arr;
 }
 
 function Calculator() {
+  const [numColumns, setNumColumns] = useState<number>(10);
+
   return (
     <div className="calculator">
-      <Label/>
-        { getColumns(10) }
-      <Chord/>
+      <Header title="Tab Calculator" />
+      <div className='body'>
+        <Label/>
+        { getColumns(numColumns) }
+        <NumColumnButtons
+          removeColumn={() => setNumColumns(numColumns-1)}
+          addColumn={() => setNumColumns(numColumns+1)}
+        />
+      </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import React from 'react';
 function Label() {
   return (
     <div className='label'>
-      <div className='tab-column'>
+      <div className='tab-row'>
         <div>
           e
         </div>
@@ -23,7 +23,7 @@ function Label() {
           E
         </div>
       </div>
-      <div className='input-column'>
+      <div className='input-row'>
         <div>
           root
         </div>

@@ -22,7 +22,7 @@ function Display(props: {
   const tab = generateTabs(props.data);
 
   return (
-    <div className="display tab-column">
+    <div className="display tab-row">
       <Cell data={tab['e']} />
       <Cell data={tab['B']} />
       <Cell data={tab['G']} />
