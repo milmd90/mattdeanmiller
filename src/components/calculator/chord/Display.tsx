@@ -1,18 +1,18 @@
 import React from 'react';
 import {
-  IChordParams,
   ITabStringValue,
   generateTabs
-} from '../../../helpers/tabs'
+} from '../../../helpers/tabs';
+import {IChordParams} from '../chord/Chord'
 
 function Cell(props: {
   data: ITabStringValue
 }): any {
-  const tone = props.data.tone
-  const className = tone === '' ? '' : `tone-${props.data.tone}`;
+  const {tone, fret} = props.data;
+  const className = tone === '' ? '' : `tone-${tone}`;
   return (
     <div className={`fret-number ${className}`}>
-      {props.data.fret}
+      {fret}
     </div>
   )
 }

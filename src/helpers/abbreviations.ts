@@ -46,6 +46,7 @@ interface IAbbreviations {
 
 export function getTypeFromAbbrev(abbrev: string): Type | undefined {
   if (abbrev === "") return "major";
+
   if (
     abbrev === "major" ||
     abbrev === "maj" ||

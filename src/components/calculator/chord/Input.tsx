@@ -1,7 +1,5 @@
 import React from "react";
-import {
-  IChordParams
-} from '../../../helpers/tabs'
+import {IChordParams} from '../chord/Chord'
 
 function Input(props: {
   data: IChordParams,

@@ -4,16 +4,9 @@ import {
 import {
   convertPitchToTone, pitchDifference
 } from './pitchTones'
+import {IChordParams} from '../components/calculator/chord/Chord'
 import * as dictionary from '../models/dictionary.json'
-const dict = dictionary as IChordDict; 
-
-export interface IChordParams {
-  root: string,
-  type: string,
-  shape: string,
-  position: string,
-  option: number
-}
+const dict = dictionary as IChordDict;
 
 interface IChordData {
   "shape": any,
@@ -41,18 +34,23 @@ interface IShapeOptions {
   "D"?: IChordData[]
 }
 type Shape = keyof IShapeOptions;
-const shapes: Shape[] = ["C", "A", "G", "E", "D"]
+const shapes: Shape[] = ["C", "A", "G", "E", "D"];
 
 export interface IChordDict {
-  "major"?: IShapeOptions,
-  "major 7th"?: IShapeOptions,
+  "6"?: IShapeOptions,
+  "9"?: IShapeOptions,
+  "69"?: IShapeOptions,
+  "7#9"?: IShapeOptions,
+  "7b9"?: IShapeOptions,
+  "diminished"?: IShapeOptions,
   "dominate 7th"?: IShapeOptions,
   "dominate 9th"?: IShapeOptions,
+  "half diminished"?: IShapeOptions,
+  "major"?: IShapeOptions,
+  "major 7th"?: IShapeOptions,
   "minor"?: IShapeOptions,
   "minor 7th"?: IShapeOptions,
   "minor 9th"?: IShapeOptions,
-  "half diminished"?: IShapeOptions,
-  "diminished"?: IShapeOptions,
 }
 export type Type = keyof IChordDict;
 
