@@ -12,7 +12,7 @@ export interface IChordParams {
   type: string,
   shape: string,
   position: string,
-  option: string
+  option: number
 }
 
 interface IChordData {
@@ -139,7 +139,7 @@ export function generateTabs(data: IChordParams): IChordTab {
     type: abbrev,
     shape,
     position,
-    option=0
+    option
   } = data;
 
   const emptyTab: IChordTab = {
@@ -186,11 +186,7 @@ export function generateTabs(data: IChordParams): IChordTab {
     return emptyTab;
   }
 
-  let index: number = 0;
-  if (typeof option == 'number') {
-    index = option;
-  }
-
+  const index: number = option % chordArray.length;
   const chord = chordArray[index];
   return convertChordToTab(chord, root);
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   IChordParams
 } from '../../../helpers/tabs'
@@ -16,7 +16,7 @@ function Input(props: {
     option
   } = data;
 
-  const onChangeChord = (e: any) => {
+  const onChangeRoot = (e: any) => {
     onChange({
       root: e.target.value,
       type,
@@ -31,7 +31,7 @@ function Input(props: {
       type: e.target.value,
       shape,
       position,
-      option,
+      option: 0,
     });
   }
   const onChangeShape = (e: any) => {
@@ -40,7 +40,7 @@ function Input(props: {
       type,
       shape: e.target.value,
       position,
-      option,
+      option: 0,
     });
   }
   const onChangePosition = (e: any) => {
@@ -58,7 +58,7 @@ function Input(props: {
       type,
       shape,
       position,
-      option: e.target.value,
+      option: option + 1,
     });
   }
   
@@ -66,7 +66,7 @@ function Input(props: {
     <div className="input input-row">
       <input 
         value={root} 
-        onChange={onChangeChord}
+        onChange={onChangeRoot}
       />
       <input 
         value={type} 
@@ -80,9 +80,9 @@ function Input(props: {
         value={position} 
         onChange={onChangePosition}
       />
-      <input 
-        value={option} 
-        onChange={onChangeOption}
+      <button
+        className="option-button"
+        onClick={onChangeOption}
       />
     </div>
   )

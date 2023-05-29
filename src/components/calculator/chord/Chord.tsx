@@ -9,12 +9,8 @@ function Chord() {
     type: '',
     shape: '',
     position: '',
-    option: ''
+    option: 0
   });
-
-  const onChange = (data: IChordParams) => {
-    setData(data)
-  }
 
   return (
     <div className="chord">
@@ -23,7 +19,7 @@ function Chord() {
       />
       <Input
         data={data}
-        onChange={onChange}
+        onChange={(data)=>setData(data)}
       />
     </div>
   );

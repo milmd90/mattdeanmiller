@@ -8,8 +8,10 @@ import {
 function Cell(props: {
   data: ITabStringValue
 }): any {
+  const tone = props.data.tone
+  const className = tone === '' ? '' : `tone-${props.data.tone}`;
   return (
-    <div className={`tone-${props.data.tone}`}>
+    <div className={`fret-number ${className}`}>
       {props.data.fret}
     </div>
   )

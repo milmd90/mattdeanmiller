@@ -25,35 +25,6 @@ input {
   align-items: flex-end;
 }
 
-.tab-row {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 150px;
-}
-
-.input-row {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 150px;
-  margin: 10px 0;
-}
-
-.set-num-columns {
-  padding-left: 10px;
-}
-
-.set-num-columns .input-row {
-  display: flex;
-  justify-content: center;
-}
-
-.set-num-columns .input-row button{
-  height: 50px;
-  width: 50px;
-}
-
 .chord {
   display: flex;
   flex-direction: column;
@@ -64,9 +35,19 @@ input {
   display: flex;
 }
 
-.input {
+.tab-row {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  height: 150px;
+}
+
+.fret-number {
+  display: flex;
+  flex: 1 1 auto;
+  height: 0;
+  align-items: center;
+  justify-content: center;
 }
 
 .tone-0 {
@@ -99,4 +80,38 @@ input {
 
 .tone-11 {
   background-color: violet;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 150px;
+  margin: 10px 0;
+}
+
+.input-row input,
+.input-row .option-button {
+  display: flex;
+  flex: 1 1 auto;
+  height: 0;
+}
+
+.set-num-columns {
+  padding-left: 10px;
+}
+
+.set-num-columns .input-row {
+  display: flex;
+  justify-content: center;
+}
+
+.set-num-columns .input-row button {
+  height: 50px;
+  width: 50px;
 }
