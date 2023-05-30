@@ -80,11 +80,12 @@ function TabDetail(props: {
   let min = getMinFretValue(tab);
   let max = getMaxFretValue(tab);
 
-  if (max <= 4) {
+  const detailFretRange = 4;
+  if (max <= detailFretRange) {
     min = 0;
-    max = 4;
-  } else if (max - min <= 4) {
-    max = min + 4
+    max = detailFretRange;
+  } else if (max - min <= detailFretRange) {
+    max = min + detailFretRange;
   }
 
   return (

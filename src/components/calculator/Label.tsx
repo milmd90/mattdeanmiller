@@ -1,27 +1,17 @@
 import React from 'react';
+import {
+  tabStrings
+} from '../../helpers/tabs';
 
 function Label() {
   return (
     <div className='label'>
       <div className='tab-row'>
-        <div>
-          e
-        </div>
-        <div>
-          B
-        </div>
-        <div>
-          G
-        </div>
-        <div>
-          D
-        </div>
-        <div>
-          A
-        </div>
-        <div>
-          E
-        </div>
+        {tabStrings.map((tabString) => 
+          <div>
+            {tabString} |
+          </div>
+        )}
       </div>
       <div className='input-row'>
         <div>

@@ -1,3 +1,8 @@
+import React from 'react';
+import {
+  tabStrings
+} from '../../helpers/tabs';
+
 function SetNumColumns(props: {
   removeColumn: () => void
   addColumn: () => void
@@ -9,7 +14,11 @@ function SetNumColumns(props: {
   return (
 
     <div className="set-num-columns">
-      <div className="tab-row"></div>
+      <div className="tab-row">
+        {tabStrings.map((tabString) => 
+          <div> | </div>
+        )}
+      </div>
       <div className="input-row">
         <button onClick={addColumn}>+</button>
         <button onClick={removeColumn}>-</button>

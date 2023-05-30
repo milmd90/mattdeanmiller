@@ -105,8 +105,14 @@ input {
   padding-left: 10px;
 }
 
+.set-num-columns .tab-row {
+  display: flex;
+  align-items: flex-start;
+}
+
 .set-num-columns .input-row {
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 

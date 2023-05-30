@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {
   ITabStringValue,
+  tabStrings,
   generateTabs,
   isValidTab
 } from '../../../helpers/tabs';
@@ -46,12 +47,9 @@ function Display(props: {
         }}
         onMouseOut={() => setShowDetail(false)}
       >
-        <Cell data={tab['e']} />
-        <Cell data={tab['B']} />
-        <Cell data={tab['G']} />
-        <Cell data={tab['D']} />
-        <Cell data={tab['A']} />
-        <Cell data={tab['E']} />
+        {tabStrings.map((tabString) => 
+          <Cell data={tab[tabString]} />
+        )}
       </div>
       {isValid && <TabDetail 
         tab={tab}
