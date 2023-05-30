@@ -3,7 +3,7 @@ import Header from '../Header';
 import Menu from './Menu';
 import Label from './Label';
 import Chord from './chord/Chord';
-import NumColumnButtons from './SetNumColumns';
+import NumChordButtons from './NumChordButtons';
 
 function Calculator() {
   const [numColumns, setNumColumns] = useState<number>(10);
@@ -38,7 +38,7 @@ function Calculator() {
       <div className='body'>
         <Label/>
         { renderChords(numColumns) }
-        <NumColumnButtons
+        <NumChordButtons
           removeColumn={() => setNumColumns(numColumns-1)}
           addColumn={() => setNumColumns(numColumns+1)}
         />
