@@ -39,8 +39,9 @@ function Display(props: {
   document.addEventListener('mousemove', setDetailPosition);
 
   return (
-    <div className="display tab-row">
+    <div className="display">
       <div
+       className="tab-row"
         onMouseOver={(e) => {
           setShowDetail(true);
           setDetailPosition(e);

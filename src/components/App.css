@@ -38,6 +38,7 @@ input {
 .tab-row {
   display: flex;
   flex-direction: column;
+  flex: 1;
   justify-content: space-around;
   height: 150px;
 }
@@ -47,6 +48,7 @@ input {
   flex: 1 1 auto;
   align-items: center;
   justify-content: center;
+  height: 0;
 }
 
 .tone-0 {
