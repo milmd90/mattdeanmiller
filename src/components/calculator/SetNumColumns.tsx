@@ -16,7 +16,7 @@ function SetNumColumns(props: {
     <div className="set-num-columns">
       <div className="tab-row">
         {tabStrings.map((tabString) => 
-          <div> | </div>
+          <div key={tabString}> | </div>
         )}
       </div>
       <div className="input-row">

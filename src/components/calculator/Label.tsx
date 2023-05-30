@@ -8,7 +8,7 @@ function Label() {
     <div className='label'>
       <div className='tab-row'>
         {tabStrings.map((tabString) => 
-          <div>
+          <div key={tabString}>
             {tabString} |
           </div>
         )}

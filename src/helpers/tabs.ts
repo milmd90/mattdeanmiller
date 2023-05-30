@@ -53,9 +53,11 @@ export interface IChordDict {
 }
 export type Quality = keyof IChordDict;
 
+type fretValue = number | 'X' | '';
+type toneValue = number | '';
 export interface ITabStringValue {
-  "fret": number | '',
-  "tone": number | '',
+  "fret": fretValue,
+  "tone": toneValue
 }
 
 export interface IChordTab {
@@ -97,9 +99,15 @@ function filterChordsByShape(shapeOptionsArray: IShapeOptions[], shape: string):
 }
 
 function convertChordsToTab(chords: IChordData[], root: string): IChordTab[] {
-  function getTabValue(input: number | 'X', offset?: number | undefined): (number | '') {
-    if (input === 'X') return '';
+  function getFretValue(input: number | 'X', offset: number | undefined): fretValue {
+    if (input === 'X') return input;
     if (offset) return input + offset;
+    return input;
+  }
+
+  // todo: remove
+  function getToneValue(input: number | 'X'): toneValue {
+    if (input === 'X') return '';
     return input;
   }
 
@@ -107,28 +115,28 @@ function convertChordsToTab(chords: IChordData[], root: string): IChordTab[] {
     const offset = pitchDifference(chord.shape, root);
     return {
       "e": {
-        'fret': getTabValue(chord['fret-6'], offset),
-        'tone': getTabValue(chord['tone-6'])
+        'fret': getFretValue(chord['fret-6'], offset),
+        'tone': getToneValue(chord['tone-6'])
       },
       "B": {
-        'fret': getTabValue(chord['fret-5'], offset),
-        'tone': getTabValue(chord['tone-5'])
+        'fret': getFretValue(chord['fret-5'], offset),
+        'tone': getToneValue(chord['tone-5'])
       },
       "G": {
-        'fret': getTabValue(chord['fret-4'], offset),
-        'tone': getTabValue(chord['tone-4'])
+        'fret': getFretValue(chord['fret-4'], offset),
+        'tone': getToneValue(chord['tone-4'])
       },
       "D": {
-        'fret': getTabValue(chord['fret-3'], offset),
-        'tone': getTabValue(chord['tone-3'])
+        'fret': getFretValue(chord['fret-3'], offset),
+        'tone': getToneValue(chord['tone-3'])
       },
       "A": {
-        'fret': getTabValue(chord['fret-2'], offset),
-        'tone': getTabValue(chord['tone-2'])
+        'fret': getFretValue(chord['fret-2'], offset),
+        'tone': getToneValue(chord['tone-2'])
       },
       "E": {
-        'fret': getTabValue(chord['fret-1'], offset),
-        'tone': getTabValue(chord['tone-1'])
+        'fret': getFretValue(chord['fret-1'], offset),
+        'tone': getToneValue(chord['tone-1'])
       },
     };
   })

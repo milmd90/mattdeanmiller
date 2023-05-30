@@ -23,8 +23,10 @@ function Cell(props: {
 
 function Display(props: {
   data: IChordParams;
+  onChange: (data: any) => void
 }) {
   const tab = generateTabs(props.data);
+  props.onChange(tab);
   const isValid = isValidTab(tab);
   const [showDetail, setShowDetail] = useState(false);
 
@@ -49,7 +51,7 @@ function Display(props: {
         onMouseOut={() => setShowDetail(false)}
       >
         {tabStrings.map((tabString) => 
-          <Cell data={tab[tabString]} />
+          <Cell key={tabString} data={tab[tabString]} />
         )}
       </div>
       {isValid && <TabDetail 

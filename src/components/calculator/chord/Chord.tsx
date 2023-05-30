@@ -10,7 +10,9 @@ export interface IChordParams {
   option: number
 }
 
-function Chord() {
+function Chord(props: {
+  onChange: (data: any) => void
+}) {
   const [data, setData] = useState<IChordParams>({
     root: '',
     type: '',
@@ -23,6 +25,7 @@ function Chord() {
     <div className="chord">
       <Display
         data={data}
+        onChange={props.onChange}
       />
       <Input
         data={data}
