@@ -14,10 +14,11 @@ input {
 .calculator .body {
   display: flex;
   margin: 0 20px;
+  border: 1px solid black;
 }
 
 .label {
-  padding-right: 10px;
+  padding: 0 10px;
 }
 
 .label .tab-row,
@@ -104,7 +105,7 @@ input {
 }
 
 .set-num-columns {
-  padding-left: 10px;
+  padding: 0 10px;
 }
 
 .set-num-columns .tab-row {
