@@ -86,7 +86,6 @@ function filterChordsByShape(shapeOptionsArray: IShapeOptions[], shape: string):
         chordArray.push(...chords);
       }
     } else if (shape  === '') {
-      // todo add logic to search in lowest shape first
       for (let shape of shapes) {
         const chords = shapeOptions[shape];
         if (chords) {
@@ -105,7 +104,6 @@ function convertChordsToTab(chords: IChordData[], root: string): IChordTab[] {
     return input;
   }
 
-  // todo: remove
   function getToneValue(input: number | 'X'): toneValue {
     if (input === 'X') return '';
     return input;
