@@ -1,50 +1,50 @@
 import {
-  Type
+  Quality
 } from '../helpers/tabs';
 import * as abbreviations from '../models/abbreviations.json';
 const abbrevs = abbreviations as IAbbreviations; 
 
 interface IAbbreviations {
-  "major": Type,
-  "maj": Type,
-  "ma": Type,
-  "major 7th": Type,
-  "^": Type,
-  "M7": Type,
-  "major 7": Type,
-  "maj 7": Type,
-  "ma 7": Type,
-  "dominate 7th": Type,
-  "7": Type,
-  "dominate 7": Type,
-  "dom 7": Type,
-  "9": Type,
-  "minor": Type,
-  "-": Type,
-  "m": Type,
-  "min": Type,
-  "mi": Type,
-  "minor 7th": Type,
-  "-7" : Type,
-  "m7": Type,
-  "minor 7": Type,
-  "min 7": Type,
-  "mi 7": Type,
-  "minor 9th": Type,
-  "-9": Type,
-  "m9": Type,
-  "minor 9": Type,
-  "min 9": Type,
-  "mi 9": Type,
-  "half diminished": Type,
-  "half dim": Type,
-  "diminished": Type,
-  "dim": Type
+  "major": Quality,
+  "maj": Quality,
+  "ma": Quality,
+  "major 7th": Quality,
+  "^": Quality,
+  "M7": Quality,
+  "major 7": Quality,
+  "maj 7": Quality,
+  "ma 7": Quality,
+  "dominate 7th": Quality,
+  "7": Quality,
+  "dominate 7": Quality,
+  "dom 7": Quality,
+  "9": Quality,
+  "minor": Quality,
+  "-": Quality,
+  "m": Quality,
+  "min": Quality,
+  "mi": Quality,
+  "minor 7th": Quality,
+  "-7" : Quality,
+  "m7": Quality,
+  "minor 7": Quality,
+  "min 7": Quality,
+  "mi 7": Quality,
+  "minor 9th": Quality,
+  "-9": Quality,
+  "m9": Quality,
+  "minor 9": Quality,
+  "min 9": Quality,
+  "mi 9": Quality,
+  "half diminished": Quality,
+  "half dim": Quality,
+  "diminished": Quality,
+  "dim": Quality
 }
 
 // export type Abbreviation = keyof IAbbreviations;
 
-export function getTypeFromAbbrev(abbrev: string): Type | undefined {
+export function getQualityFromAbbrev(abbrev: string): Quality | undefined {
   if (abbrev === "") return "major";
   if (
     abbrev === "6" ||

@@ -23,7 +23,7 @@ function Input(props: {
       option
     });
   }
-  const onChangeType = (e: any) => {
+  const onChangeQuality = (e: any) => {
     onChange({
       root,
       type: e.target.value,
@@ -68,7 +68,7 @@ function Input(props: {
       />
       <input 
         value={type} 
-        onChange={onChangeType}
+        onChange={onChangeQuality}
       />
       <input 
         value={shape} 

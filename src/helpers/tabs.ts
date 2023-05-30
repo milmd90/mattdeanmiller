@@ -1,5 +1,5 @@
 import {
-  getTypeFromAbbrev
+  getQualityFromAbbrev
 } from './abbreviations'
 import {
   convertPitchToTone, pitchDifference
@@ -51,7 +51,7 @@ export interface IChordDict {
   "minor 7th"?: IShapeOptions,
   "minor 9th"?: IShapeOptions,
 }
-export type Type = keyof IChordDict;
+export type Quality = keyof IChordDict;
 
 export interface ITabStringValue {
   "fret": number | '',
@@ -66,8 +66,8 @@ export interface IChordTab {
   "A": ITabStringValue
   "E": ITabStringValue
 }
-export type TabKey = keyof IChordTab;
-const tabKeys: TabKey[] = ['E', 'A', 'D', 'G', 'B', 'e'];
+export type TabString = keyof IChordTab;
+export const tabStrings: TabString[] = ['e', 'B', 'G', 'D', 'A', 'E'];
 
 function filterChordsByShape(shapeOptionsArray: IShapeOptions[], shape: string): IChordData[] {
   let chordArray: IChordData[] = [];
@@ -134,10 +134,10 @@ function convertChordsToTab(chords: IChordData[], root: string): IChordTab[] {
   })
 }
 
-function getMinFretValue(chord: IChordTab): number | undefined {
+export function getMinFretValue(tab: IChordTab): number {
   let min: number | undefined;
-  for (let key of tabKeys) {
-    const fretValue = chord[key].fret;
+  for (let tabString of tabStrings) {
+    const fretValue = tab[tabString].fret;
     if (
       typeof fretValue === 'number' &&
       (min === undefined || fretValue < min)
@@ -145,33 +145,49 @@ function getMinFretValue(chord: IChordTab): number | undefined {
       min = fretValue;
     }
   }
+  if (min === undefined) throw Error();
   return min;
 }
 
-function updateChordsWithPosition(chordArray: IChordTab[], position: string): IChordTab[] {
+export function getMaxFretValue(tab: IChordTab): number {
+  let max: number | undefined;
+  for (let tabString of tabStrings) {
+    const fretValue = tab[tabString].fret;
+    if (
+      typeof fretValue === 'number' &&
+      (max === undefined || fretValue > max)
+    ) {
+      max = fretValue;
+    }
+  }
+  if (max === undefined) throw Error();
+  return max;
+}
+
+function updateChordsWithPosition(tabArray: IChordTab[], position: string): IChordTab[] {
   let numPos: number = parseInt(position);
   if (isNaN(numPos)) numPos = 0;
 
-  return chordArray.map((chord) => {
-    let minFret = getMinFretValue(chord);
-    if (typeof minFret !== 'number') return chord;
+  return tabArray.map((tab) => {
+    let minFret = getMinFretValue(tab);
+    if (typeof minFret !== 'number') return tab;
 
     while (minFret < numPos) {
-      for (let s of tabKeys) {
-        const f = chord[s].fret;
+      for (let s of tabStrings) {
+        const f = tab[s].fret;
         if (typeof f === 'number') {
-          chord[s].fret = f + 12;
+          tab[s].fret = f + 12;
         }
       }
-      minFret = getMinFretValue(chord);
-      if (typeof minFret !== 'number') return chord;
+      minFret = getMinFretValue(tab);
+      if (typeof minFret !== 'number') return tab;
     }
-    return chord;
+    return tab;
   })
 }
 
-function sortChordsByLowest(chordArray: IChordTab[]): IChordTab[] {
-  return chordArray.sort((a: IChordTab, b: IChordTab) => {
+function sortChordsByLowest(tabArray: IChordTab[]): IChordTab[] {
+  return tabArray.sort((a: IChordTab, b: IChordTab) => {
     const minA = getMinFretValue(a);
     const minB = getMinFretValue(b);
     if (
@@ -180,6 +196,16 @@ function sortChordsByLowest(chordArray: IChordTab[]): IChordTab[] {
       ) return 0;
     return minA - minB;
   });
+}
+
+export function isValidTab(tab: IChordTab) {
+  for (let s of tabStrings) {
+    const f = tab[s].fret;
+    if (typeof f === 'number') {
+      return true
+    }
+  }
+  return false;
 }
 
 export function generateTabs(data: IChordParams): IChordTab {
@@ -219,7 +245,7 @@ export function generateTabs(data: IChordParams): IChordTab {
   }
 
   const tone = convertPitchToTone(root);
-  const type = getTypeFromAbbrev(abbrev);
+  const type = getQualityFromAbbrev(abbrev);
   if (!tone || !type) {
     return emptyTab;
   }
@@ -238,13 +264,6 @@ export function generateTabs(data: IChordParams): IChordTab {
   let tabArray: IChordTab[] = convertChordsToTab(chordArray, root);
   tabArray = updateChordsWithPosition(tabArray, position);
   tabArray = sortChordsByLowest(tabArray);
-
-  // for (let tab of tabArray) {
-  //   console.log({
-  //     tab,
-  //     min: getMinFretValue(tab)
-  //   })
-  // }
 
   const index: number = option % tabArray.length;
   return tabArray[index];

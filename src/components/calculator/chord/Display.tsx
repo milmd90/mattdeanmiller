@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   ITabStringValue,
-  generateTabs
+  generateTabs,
+  isValidTab
 } from '../../../helpers/tabs';
-import {IChordParams} from '../chord/Chord'
+import { IChordParams } from './Chord';
+import TabDetail from './TabDetail';
 
 function Cell(props: {
   data: ITabStringValue
 }): any {
   const {tone, fret} = props.data;
   const className = tone === '' ? '' : `tone-${tone}`;
+
   return (
     <div className={`fret-number ${className}`}>
       {fret}
@@ -20,17 +23,40 @@ function Cell(props: {
 function Display(props: {
   data: IChordParams;
 }) {
-
   const tab = generateTabs(props.data);
+  const isValid = isValidTab(tab);
+  const [showDetail, setShowDetail] = useState(false);
+
+  const setDetailPosition = (e: any) => {
+    const details = Array.from(document.getElementsByClassName('tab-detail') as HTMLCollectionOf<HTMLElement>)
+    details.forEach((detail) => {
+      detail.style.left = e.pageX + 20 + 'px';
+      detail.style.top = e.pageY + 20 + 'px';
+    });
+  }
+
+  document.addEventListener('mousemove', setDetailPosition);
 
   return (
     <div className="display tab-row">
-      <Cell data={tab['e']} />
-      <Cell data={tab['B']} />
-      <Cell data={tab['G']} />
-      <Cell data={tab['D']} />
-      <Cell data={tab['A']} />
-      <Cell data={tab['E']} />
+      <div
+        onMouseOver={(e) => {
+          setShowDetail(true);
+          setDetailPosition(e);
+        }}
+        onMouseOut={() => setShowDetail(false)}
+      >
+        <Cell data={tab['e']} />
+        <Cell data={tab['B']} />
+        <Cell data={tab['G']} />
+        <Cell data={tab['D']} />
+        <Cell data={tab['A']} />
+        <Cell data={tab['E']} />
+      </div>
+      {isValid && <TabDetail 
+        tab={tab}
+        hide={!showDetail}
+      />}
     </div>
   );
 }
