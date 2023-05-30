@@ -3,7 +3,8 @@ import {
   ITabStringValue,
   tabStrings,
   generateTabs,
-  isValidTab
+  isValidTab,
+  IChordTab
 } from '../../../helpers/tabs';
 import { IChordParams } from './Chord';
 import TabDetail from './TabDetail';
@@ -23,7 +24,7 @@ function Cell(props: {
 
 function Display(props: {
   data: IChordParams;
-  onChange: (data: any) => void
+  onChange: (data: IChordTab) => void
 }) {
   const tab = generateTabs(props.data);
   props.onChange(tab);
@@ -43,7 +44,7 @@ function Display(props: {
   return (
     <div className="display">
       <div
-       className="tab-row"
+        className="tab-row"
         onMouseOver={(e) => {
           setShowDetail(true);
           setDetailPosition(e);

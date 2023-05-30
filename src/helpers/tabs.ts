@@ -274,3 +274,7 @@ export function generateTabs(data: IChordParams): IChordTab {
   const index: number = option % tabArray.length;
   return tabArray[index];
 }
+
+export function getTabsFromChordTabArray(chordTabArray: IChordTab[]): void {
+
+}

@@ -11,6 +11,9 @@
 # production
 /build
 
+# tab output files
+/output
+
 # misc
 .DS_Store
 .env.local

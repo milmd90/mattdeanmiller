@@ -4,18 +4,20 @@ import Menu from './Menu';
 import Label from './Label';
 import Chord from './chord/Chord';
 import NumChordButtons from './NumChordButtons';
+import { IChordTab, getTabsFromChordTabArray } from '../../helpers/tabs';
 
 function Calculator() {
   const [numColumns, setNumColumns] = useState<number>(10);
 
-  const tab: any = [];
+  const chordTabs: IChordTab[] = [];
   function onChange(position: number) {
-    return function(data: any) {
-      tab[position] = data;
+    return function(data: IChordTab) {
+      chordTabs[position] = data;
     }
   }
   function downloadTab() {
-    console.log({tab})
+    console.log({chordTabs})
+    getTabsFromChordTabArray(chordTabs);
   }
 
   function renderChords(numColumns: number) {
