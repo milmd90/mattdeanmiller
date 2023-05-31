@@ -53,7 +53,7 @@ export interface IChordDict {
 }
 export type Quality = keyof IChordDict;
 
-type fretValue = number | 'X' | '';
+type fretValue = number | 'X' | '-';
 type toneValue = number | '';
 export interface ITabStringValue {
   "fret": fretValue,
@@ -225,27 +225,27 @@ export function generateTabs(data: IChordParams): IChordTab {
 
   const emptyTab: IChordTab = {
     "e": {
-      fret: '',
+      fret: '-',
       tone: ''
     },
     "B": {
-      fret: '',
+      fret: '-',
       tone: ''
     },
     "G": {
-      fret: '',
+      fret: '-',
       tone: ''
     },
     "D": {
-      fret: '',
+      fret: '-',
       tone: ''
     },
     "A": {
-      fret: '',
+      fret: '-',
       tone: ''
     },
     "E": {
-      fret: '',
+      fret: '-',
       tone: ''
     },
   }
@@ -273,8 +273,4 @@ export function generateTabs(data: IChordParams): IChordTab {
 
   const index: number = option % tabArray.length;
   return tabArray[index];
-}
-
-export function getTabsFromChordTabArray(chordTabArray: IChordTab[]): void {
-
 }

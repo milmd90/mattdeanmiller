@@ -4,7 +4,8 @@ import Menu from './Menu';
 import Label from './Label';
 import Chord from './chord/Chord';
 import NumChordButtons from './NumChordButtons';
-import { IChordTab, getTabsFromChordTabArray } from '../../helpers/tabs';
+import { IChordTab } from '../../helpers/tabs';
+import { getTabsFromChordTabArray } from '../../helpers/export';
 
 function Calculator() {
   const [numColumns, setNumColumns] = useState<number>(10);

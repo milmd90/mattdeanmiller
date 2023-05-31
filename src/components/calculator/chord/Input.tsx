@@ -15,8 +15,9 @@ function Input(props: {
   } = data;
 
   const onChangeRoot = (e: any) => {
+    const root: string = e.target.value as string;
     onChange({
-      root: e.target.value,
+      root: root.toUpperCase(),
       type,
       shape,
       position,
@@ -33,10 +34,11 @@ function Input(props: {
     });
   }
   const onChangeShape = (e: any) => {
+    const shape: string = e.target.value as string;
     onChange({
       root,
       type,
-      shape: e.target.value,
+      shape: shape.toUpperCase(),
       position,
       option: 0,
     });
