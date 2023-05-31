@@ -157,34 +157,31 @@ function convertChordsToTabs(chords: IChordData[], root: string): TabColumn[] {
   })
 }
 
-export function getMinFretValue(tab: TabColumn): number {
-  let min: number | undefined;
+function getMinOrMaxFretValue(tab: TabColumn, comparator: (a: number, b: number) => boolean): number {
+  let minOrMax: number | undefined;
   for (let tabString of tabStrings) {
     const fretValue = tab[tabString].fret;
     if (
       typeof fretValue === 'number' &&
-      (min === undefined || fretValue < min)
+      (minOrMax === undefined || comparator(fretValue, minOrMax))
     ) {
-      min = fretValue;
+      minOrMax = fretValue;
     }
   }
-  if (min === undefined) throw Error();
-  return min;
+  if (minOrMax === undefined) throw Error();
+  return minOrMax;
+}
+
+export function getMinFretValue(tab: TabColumn): number {
+  return getMinOrMaxFretValue(tab, (a: number, b: number) => {
+    return a < b
+  })
 }
 
 export function getMaxFretValue(tab: TabColumn): number {
-  let max: number | undefined;
-  for (let tabString of tabStrings) {
-    const fretValue = tab[tabString].fret;
-    if (
-      typeof fretValue === 'number' &&
-      (max === undefined || fretValue > max)
-    ) {
-      max = fretValue;
-    }
-  }
-  if (max === undefined) throw Error();
-  return max;
+  return getMinOrMaxFretValue(tab, (a: number, b: number) => {
+    return a > b
+  })
 }
 
 function updateChordsWithPosition(tabArray: TabColumn[], position: string): TabColumn[] {
