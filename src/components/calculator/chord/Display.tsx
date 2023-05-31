@@ -1,19 +1,19 @@
 import React, {useState} from 'react';
 import {
-  ITabStringValue,
+  TabColumn,
+  TabStringData,
   tabStrings,
   generateTabs,
-  isValidTab,
-  IChordTab
+  isValidTab
 } from '../../../helpers/tabs';
 import { IChordParams } from './Chord';
 import TabDetail from './TabDetail';
 
 function Cell(props: {
-  data: ITabStringValue
+  data: TabStringData
 }): any {
   const {tone, fret} = props.data;
-  const className = tone === '' ? '' : `tone-${tone}`;
+  const className = tone === 'X' ? '' : `tone-${tone}`;
 
   return (
     <div className={`fret-number ${className}`}>
@@ -24,7 +24,7 @@ function Cell(props: {
 
 function Display(props: {
   data: IChordParams;
-  onChange: (data: IChordTab) => void
+  onChange: (data: TabColumn) => void
 }) {
   const tab = generateTabs(props.data);
   props.onChange(tab);

@@ -8,22 +8,23 @@ import { IChordParams } from '../components/calculator/chord/Chord'
 import * as dictionary from '../models/dictionary.json'
 const dict = dictionary as IChordDict;
 
+type ChordTabValue = number | 'X';
 interface IChordData {
   "shape": any,
   "type": any,
   "option": any,
-  "fret-6": number | 'X',
-  "fret-5": number | 'X',
-  "fret-4": number | 'X',
-  "fret-3": number | 'X',
-  "fret-2": number | 'X',
-  "fret-1": number | 'X',
-  "tone-6": number | 'X',
-  "tone-5": number | 'X',
-  "tone-4": number | 'X',
-  "tone-3": number | 'X',
-  "tone-2": number | 'X',
-  "tone-1": number | 'X',
+  "fret-6": ChordTabValue,
+  "fret-5": ChordTabValue,
+  "fret-4": ChordTabValue,
+  "fret-3": ChordTabValue,
+  "fret-2": ChordTabValue,
+  "fret-1": ChordTabValue,
+  "tone-6": ChordTabValue,
+  "tone-5": ChordTabValue,
+  "tone-4": ChordTabValue,
+  "tone-3": ChordTabValue,
+  "tone-2": ChordTabValue,
+  "tone-1": ChordTabValue,
 };
 
 interface IShapeOptions {
@@ -36,7 +37,7 @@ interface IShapeOptions {
 type Shape = keyof IShapeOptions;
 const shapes: Shape[] = ["C", "A", "G", "E", "D"];
 
-export interface IChordDict {
+interface IChordDict {
   "6"?: IShapeOptions,
   "69"?: IShapeOptions,
   "7#9"?: IShapeOptions,
@@ -53,22 +54,38 @@ export interface IChordDict {
 }
 export type Quality = keyof IChordDict;
 
-type fretValue = number | 'X' | '-';
-type toneValue = number | '';
-export interface ITabStringValue {
-  "fret": fretValue,
-  "tone": toneValue
+interface IChordTabStringData {
+  "fret": ChordTabValue,
+  "tone": ChordTabValue
+}
+interface IChordTab {
+  "e": IChordTabStringData
+  "B": IChordTabStringData
+  "G": IChordTabStringData
+  "D": IChordTabStringData
+  "A": IChordTabStringData
+  "E": IChordTabStringData
 }
 
-export interface IChordTab {
-  "e": ITabStringValue
-  "B": ITabStringValue
-  "G": ITabStringValue
-  "D": ITabStringValue
-  "A": ITabStringValue
-  "E": ITabStringValue
+type EmptyTabValue = '-';
+interface IEmptyTabStringData {
+  "fret": EmptyTabValue,
+  "tone": EmptyTabValue
 }
-export type TabString = keyof IChordTab;
+interface IEmptyTab {
+  "e": IEmptyTabStringData
+  "B": IEmptyTabStringData
+  "G": IEmptyTabStringData
+  "D": IEmptyTabStringData
+  "A": IEmptyTabStringData
+  "E": IEmptyTabStringData
+}
+
+export type TabValue = ChordTabValue | EmptyTabValue;
+export type TabStringData = IChordTabStringData | IEmptyTabStringData;
+export type TabColumn = IChordTab | IEmptyTab;
+
+export type TabString = keyof TabColumn;
 export const tabStrings: TabString[] = ['e', 'B', 'G', 'D', 'A', 'E'];
 
 function filterChordsByShape(shapeOptionsArray: IShapeOptions[], shape: string): IChordData[] {
@@ -97,15 +114,15 @@ function filterChordsByShape(shapeOptionsArray: IShapeOptions[], shape: string):
   return chordArray;
 }
 
-function convertChordsToTab(chords: IChordData[], root: string): IChordTab[] {
-  function getFretValue(input: number | 'X', offset: number | undefined): fretValue {
+function convertChordsToTabs(chords: IChordData[], root: string): TabColumn[] {
+  function getFretValue(input: ChordTabValue, offset: number | undefined): ChordTabValue {
     if (input === 'X') return input;
     if (offset) return input + offset;
     return input;
   }
 
-  function getToneValue(input: number | 'X'): toneValue {
-    if (input === 'X') return '';
+  function getToneValue(input: ChordTabValue): ChordTabValue {
+    if (input === 'X') return input;
     return input;
   }
 
@@ -140,7 +157,7 @@ function convertChordsToTab(chords: IChordData[], root: string): IChordTab[] {
   })
 }
 
-export function getMinFretValue(tab: IChordTab): number {
+export function getMinFretValue(tab: TabColumn): number {
   let min: number | undefined;
   for (let tabString of tabStrings) {
     const fretValue = tab[tabString].fret;
@@ -155,7 +172,7 @@ export function getMinFretValue(tab: IChordTab): number {
   return min;
 }
 
-export function getMaxFretValue(tab: IChordTab): number {
+export function getMaxFretValue(tab: TabColumn): number {
   let max: number | undefined;
   for (let tabString of tabStrings) {
     const fretValue = tab[tabString].fret;
@@ -170,7 +187,7 @@ export function getMaxFretValue(tab: IChordTab): number {
   return max;
 }
 
-function updateChordsWithPosition(tabArray: IChordTab[], position: string): IChordTab[] {
+function updateChordsWithPosition(tabArray: TabColumn[], position: string): TabColumn[] {
   let numPos: number = parseInt(position);
   if (isNaN(numPos)) numPos = 0;
 
@@ -192,8 +209,8 @@ function updateChordsWithPosition(tabArray: IChordTab[], position: string): ICho
   })
 }
 
-function sortChordsByLowest(tabArray: IChordTab[]): IChordTab[] {
-  return tabArray.sort((a: IChordTab, b: IChordTab) => {
+function sortChordsByLowest(tabArray: TabColumn[]): TabColumn[] {
+  return tabArray.sort((a: TabColumn, b: TabColumn) => {
     const minA = getMinFretValue(a);
     const minB = getMinFretValue(b);
     if (
@@ -204,7 +221,7 @@ function sortChordsByLowest(tabArray: IChordTab[]): IChordTab[] {
   });
 }
 
-export function isValidTab(tab: IChordTab) {
+export function isValidTab(tab: TabColumn) {
   for (let s of tabStrings) {
     const f = tab[s].fret;
     if (typeof f === 'number') {
@@ -214,7 +231,7 @@ export function isValidTab(tab: IChordTab) {
   return false;
 }
 
-export function generateTabs(data: IChordParams): IChordTab {
+export function generateTabs(data: IChordParams): TabColumn {
   const {
     root,
     type: abbrev,
@@ -223,30 +240,30 @@ export function generateTabs(data: IChordParams): IChordTab {
     option
   } = data;
 
-  const emptyTab: IChordTab = {
+  const emptyTab: IEmptyTab = {
     "e": {
       fret: '-',
-      tone: ''
+      tone: '-'
     },
     "B": {
       fret: '-',
-      tone: ''
+      tone: '-'
     },
     "G": {
       fret: '-',
-      tone: ''
+      tone: '-'
     },
     "D": {
       fret: '-',
-      tone: ''
+      tone: '-'
     },
     "A": {
       fret: '-',
-      tone: ''
+      tone: '-'
     },
     "E": {
       fret: '-',
-      tone: ''
+      tone: '-'
     },
   }
 
@@ -267,7 +284,7 @@ export function generateTabs(data: IChordParams): IChordTab {
     return emptyTab;
   }
 
-  let tabArray: IChordTab[] = convertChordsToTab(chordArray, root);
+  let tabArray: TabColumn[] = convertChordsToTabs(chordArray, root);
   tabArray = updateChordsWithPosition(tabArray, position);
   tabArray = sortChordsByLowest(tabArray);
 

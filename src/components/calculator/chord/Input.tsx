@@ -15,9 +15,10 @@ function Input(props: {
   } = data;
 
   const onChangeRoot = (e: any) => {
-    const root: string = e.target.value as string;
+    let root: string = e.target.value as string;
+    root = root.charAt(0).toUpperCase() + root.slice(1)
     onChange({
-      root: root.toUpperCase(),
+      root: root,
       type,
       shape,
       position,
