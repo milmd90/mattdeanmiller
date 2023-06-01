@@ -3,9 +3,9 @@ import SetNumChords from './SetNumChords';
 
 function Menu(props: {
   showRhythm: boolean,
-  setShowRhythm: React.ChangeEventHandler<HTMLInputElement>,
+  toggleShowRhythm: React.ChangeEventHandler<HTMLInputElement>,
   showColors: boolean,
-  setShowColors: React.ChangeEventHandler<HTMLInputElement>,
+  toggleShowColors: React.ChangeEventHandler<HTMLInputElement>,
   addColumn: () => void,
   removeColumn: () => void,
   downloadTab: () => void,
@@ -17,7 +17,7 @@ function Menu(props: {
         <input 
           type="checkbox"
           checked={props.showRhythm}
-          onChange={props.setShowRhythm}
+          onChange={props.toggleShowRhythm}
         />
         Enable rhythm
       </label>
@@ -25,7 +25,7 @@ function Menu(props: {
         <input 
           type="checkbox"
           checked={props.showColors}
-          onChange={props.setShowColors}
+          onChange={props.toggleShowColors}
         />
         Enable colors
       </label>
