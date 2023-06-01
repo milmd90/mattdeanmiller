@@ -12,6 +12,7 @@ export interface IChordParams {
 }
 
 function Chord(props: {
+  showColors: boolean,
   onChange: (data: TabColumn) => void
 }) {
   const [data, setData] = useState<IChordParams>({
@@ -26,6 +27,7 @@ function Chord(props: {
     <div className="chord">
       <Display
         data={data}
+        showColors={props.showColors}
         onChange={props.onChange}
       />
       <Input

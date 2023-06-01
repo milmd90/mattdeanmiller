@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NumChordButtons(props: {
+function SetNumChords(props: {
   addColumn: () => void
   removeColumn: () => void
 }) {
@@ -8,8 +8,8 @@ function NumChordButtons(props: {
     addColumn,
     removeColumn
   } = props;
-  return (
 
+  return (
     <div className="set-num-columns">
       <button onClick={removeColumn}>-</button>
       <button onClick={addColumn}>+</button>
@@ -17,4 +17,4 @@ function NumChordButtons(props: {
   );
 }
 
-export default NumChordButtons;
+export default SetNumChords;

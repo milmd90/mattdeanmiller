@@ -20,6 +20,8 @@ input {
 .tab-view {
   display: flex;
   flex: 1 1 auto;
+  padding: 20px;
+  margin: 0 20px;
   border: 1px solid black;
 }
 
@@ -111,6 +113,8 @@ input {
   flex: 0 0 auto;
   border: 1px solid black;
   width: 400px;
+  padding: 0 20px;
+  margin: 0 20px;
 }
 
 .set-num-columns {

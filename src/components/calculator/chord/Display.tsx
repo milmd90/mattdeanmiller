@@ -11,9 +11,10 @@ import TabDetail from './TabDetail';
 
 function Cell(props: {
   data: TabStringData
+  showColors: boolean
 }): any {
   const {tone, fret} = props.data;
-  const className = tone === 'X' ? '' : `tone-${tone}`;
+  const className = tone === 'X' || !props.showColors ? '' : `tone-${tone}`;
 
   return (
     <div className={`fret-number ${className}`}>
@@ -23,7 +24,8 @@ function Cell(props: {
 }
 
 function Display(props: {
-  data: IChordParams;
+  data: IChordParams,
+  showColors: boolean,
   onChange: (data: TabColumn) => void
 }) {
   const tab = generateTabs(props.data);
@@ -52,7 +54,11 @@ function Display(props: {
         onMouseOut={() => setShowDetail(false)}
       >
         {tabStrings.map((tabString) => 
-          <Cell key={tabString} data={tab[tabString]} />
+          <Cell 
+            key={tabString} 
+            showColors={props.showColors}
+            data={tab[tabString]} 
+          />
         )}
       </div>
       {isValid && <TabDetail 
