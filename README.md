@@ -4,8 +4,8 @@
 # Todos
 move state to top
 add config window
-implement redux
+implement use context
 move data to nosql
-config options
 profiles
 save tabs
+add linting

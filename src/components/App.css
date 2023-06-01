@@ -3,26 +3,32 @@ input {
 }
 
 .app {
-  text-align: center;
+  margin: 0 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .calculator {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
-.calculator .body {
+.tab-view {
   display: flex;
-  margin: 0 20px;
+  flex: 1 1 auto;
   border: 1px solid black;
 }
 
-.label {
+.start-column {
   padding: 0 10px;
 }
 
-.label .tab-row,
-.label .input-row {
+.start-column .tab-row,
+.start-column .input-row {
   align-items: flex-end;
 }
 
@@ -84,11 +90,6 @@ input {
   background-color: rgb(255, 0, 165, .5);
 }
 
-.input {
-  display: flex;
-  flex-direction: column;
-}
-
 .input-row {
   display: flex;
   flex-direction: column;
@@ -98,10 +99,17 @@ input {
 }
 
 .input-row input,
-.input-row .option-button {
+.input-row button {
   display: flex;
   flex: 1 1 auto;
   height: 0;
+}
+
+.menu {
+  display: flex;
+  flex: 0 0 auto;
+  border: 1px solid black;
+  width: 400px;
 }
 
 .set-num-columns {

@@ -64,7 +64,7 @@ function Input(props: {
   }
   
   return (
-    <div className="input input-row">
+    <div className="input-row">
       <input 
         value={root} 
         onChange={onChangeRoot}
@@ -82,7 +82,6 @@ function Input(props: {
         onChange={onChangePosition}
       />
       <button
-        className="option-button"
         onClick={onChangeOption}
       />
     </div>

@@ -1,48 +1,33 @@
 import React, {useState} from 'react';
 import Menu from './Menu';
-import Label from './Label';
-import Chord from './chord/Chord';
-import NumChordButtons from './NumChordButtons';
+import TabView from './TabView';
 import { TabColumn } from '../../helpers/tabs';
 import { getTabsFromChordTabArray } from '../../helpers/export';
 
 function Calculator() {
-  const [numColumns, setNumColumns] = useState<number>(10);
+  const [numColumns, setNumColumns] = useState<number>(16);
 
   const tabColumns: TabColumn[] = [];
-  function onChange(position: number) {
+  function onChange(columnNum: number) {
     return function(data: TabColumn) {
-      tabColumns[position] = data;
+      tabColumns[columnNum] = data;
     }
   }
   function downloadTab() {
     getTabsFromChordTabArray(tabColumns);
   }
 
-  function renderChords(numColumns: number) {
-    const chords = []
-    for (let i = 0; i < numColumns; i++) {
-      chords.push(
-        <Chord 
-          key={i}
-          onChange={onChange(i)}
-        />
-      )
-    }
-    return chords;
-  }
-
   return (
     <div className="calculator">
-      <Menu downloadTab={downloadTab} />
-      <div className='body'>
-        <Label/>
-        { renderChords(numColumns) }
-        <NumChordButtons
-          removeColumn={() => setNumColumns(numColumns-1)}
-          addColumn={() => setNumColumns(numColumns+1)}
-        />
-      </div>
+      <TabView 
+        numColumns={numColumns}
+        onChange={onChange}
+      />
+      <Menu 
+        downloadTab={downloadTab} 
+        addColumn={() => setNumColumns(numColumns+1)}
+        removeColumn={() => setNumColumns(numColumns+1)}
+      />
     </div>
   );
 }
