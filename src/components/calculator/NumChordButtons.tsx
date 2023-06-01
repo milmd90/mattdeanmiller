@@ -11,8 +11,8 @@ function NumChordButtons(props: {
   return (
 
     <div className="set-num-columns">
-      <button onClick={addColumn}>+</button>
       <button onClick={removeColumn}>-</button>
+      <button onClick={addColumn}>+</button>
     </div>
   );
 }

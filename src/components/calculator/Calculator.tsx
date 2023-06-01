@@ -26,7 +26,7 @@ function Calculator() {
       <Menu 
         downloadTab={downloadTab} 
         addColumn={() => setNumColumns(numColumns+1)}
-        removeColumn={() => setNumColumns(numColumns+1)}
+        removeColumn={() => setNumColumns(numColumns-1)}
       />
     </div>
   );
