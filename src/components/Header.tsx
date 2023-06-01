@@ -1,4 +1,5 @@
 import React from 'react';
+import Login from './Login';
 
 function Header(props: {
   title: String
@@ -8,6 +9,7 @@ function Header(props: {
       <h1>
         {props.title}
       </h1>
+      <Login/>
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import Header from '../Header';
 import Menu from './Menu';
 import Label from './Label';
 import Chord from './chord/Chord';
@@ -35,7 +34,6 @@ function Calculator() {
 
   return (
     <div className="calculator">
-      <Header title="Tab Calculator" />
       <Menu downloadTab={downloadTab} />
       <div className='body'>
         <Label/>
