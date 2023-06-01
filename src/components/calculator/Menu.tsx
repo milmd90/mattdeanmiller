@@ -12,8 +12,8 @@ function Menu(props: {
       <h3>Config Options</h3>
       <label><input type="checkbox"/>Enable colors</label>
         <NumChordButtons
-          removeColumn={props.addColumn}
-          addColumn={props.removeColumn}
+          addColumn={props.addColumn}
+          removeColumn={props.removeColumn}
         />
       <button
         onClick={props.downloadTab}

@@ -1,12 +1,12 @@
 import React from 'react';
 
 function NumChordButtons(props: {
-  removeColumn: () => void
   addColumn: () => void
+  removeColumn: () => void
 }) {
   const {
-    removeColumn,
-    addColumn
+    addColumn,
+    removeColumn
   } = props;
   return (
 
