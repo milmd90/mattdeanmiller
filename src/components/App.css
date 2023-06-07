@@ -1,15 +1,24 @@
+body {
+  background-color: #181820;
+}
+
 input {
   min-width: 0;
 }
 
 .app {
-  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 40px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: white;
+  width: 100%;
 }
 
 .calculator {
@@ -19,10 +28,10 @@ input {
 
 .tab-view {
   display: flex;
-  flex: 1 1 auto;
   padding: 20px;
   margin: 0 20px;
   border: 1px solid black;
+  background-color: white;
 }
 
 .start-column {
@@ -107,14 +116,27 @@ input {
   height: 0;
 }
 
-.menu {
+.config {
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
   border: 1px solid black;
+  background-color: white;
   width: 400px;
-  padding: 0 20px;
+  padding: 0 20px 20px 20px;
   margin: 0 20px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: space-between;
+}
+
+.options > div {
+  display: flex;
+  flex-direction: column;
 }
 
 .set-num-columns {
@@ -135,6 +157,9 @@ input {
 .set-num-columns .input-row button {
   height: 50px;
   width: 50px;
+}
+
+.export {
 }
 
 .tab-detail {

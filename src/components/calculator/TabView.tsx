@@ -39,7 +39,7 @@ function EndColumn() {
   return (
     <div className="tab-row">
       {tabStrings.map((tabString) => 
-        <div key={tabString}> | </div>
+        <div className="end-bar" key={tabString}> | </div>
       )}
     </div>
   );

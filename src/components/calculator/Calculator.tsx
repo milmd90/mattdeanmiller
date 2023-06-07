@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Menu from './Menu';
+import Config from './Config';
 import TabView from './TabView';
 import { TabColumn } from '../../helpers/tabs';
 import { getTabsFromChordTabArray } from '../../helpers/export';
@@ -26,7 +26,7 @@ function Calculator() {
         numColumns={numColumns}
         onChange={onChange}
       />
-      <Menu 
+      <Config 
         showRhythm={showRhythm}
         toggleShowRhythm={() => toggleShowRhythm(!showRhythm)}
         showColors={showColors}
