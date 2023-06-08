@@ -34,11 +34,9 @@ function Calculator() {
         showColors={showColors}
         toggleShowColors={() => toggleShowColors(!showColors)}
         numColumns={numColumns}
-        addColumn={() => setNumColumns(numColumns+1)}
-        removeColumn={() => setNumColumns(numColumns-1)}
+        setNumColumns={setNumColumns}
         numRows={numRows}
-        addRow={() => setNumRows(numRows+1)}
-        removeRow={() => setNumRows(numRows-1)}
+        setNumRows={setNumRows}
         downloadTab={downloadTab} 
       />
     </div>

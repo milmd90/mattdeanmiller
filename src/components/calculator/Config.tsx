@@ -7,11 +7,9 @@ function Config(props: {
   showColors: boolean,
   toggleShowColors: React.ChangeEventHandler<HTMLInputElement>,
   numColumns: number,
-  addColumn: () => void,
-  removeColumn: () => void,
+  setNumColumns: (numColumns: number) => void,
   numRows: number,
-  addRow: () => void,
-  removeRow: () => void,
+  setNumRows: (numRows: number) => void,
   downloadTab: () => void,
 }) {
   return (
@@ -44,14 +42,14 @@ function Config(props: {
           <SetNumChords
             text='Number of columns'
             number={props.numColumns}
-            increment={props.addColumn}
-            decrement={props.removeColumn}
+            increment={() => props.setNumColumns(props.numColumns + 1)}
+            decrement={() => props.setNumColumns(props.numColumns - 1)}
           />
           <SetNumChords
             text='Number of rows'
             number={props.numRows}
-            increment={props.addRow}
-            decrement={props.removeRow}
+            increment={() => props.setNumRows(props.numRows + 1)}
+            decrement={() => props.setNumRows(props.numRows - 1)}
           />
         </div>
         <button
