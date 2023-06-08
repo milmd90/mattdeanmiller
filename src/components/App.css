@@ -164,6 +164,10 @@ input {
   margin: 0 3px;
 }
 
+#num-column-display {
+  width: 30px;
+}
+
 #export {
   font-size: 14pt;
   padding: 5px;

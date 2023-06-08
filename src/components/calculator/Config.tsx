@@ -9,6 +9,9 @@ function Config(props: {
   numColumns: number,
   addColumn: () => void,
   removeColumn: () => void,
+  numRows: number,
+  addRow: () => void,
+  removeRow: () => void,
   downloadTab: () => void,
 }) {
   return (
@@ -39,9 +42,16 @@ function Config(props: {
             </label>
           </div>
           <SetNumChords
-            numColumns={props.numColumns}
-            addColumn={props.addColumn}
-            removeColumn={props.removeColumn}
+            text='Number of columns'
+            number={props.numColumns}
+            increment={props.addColumn}
+            decrement={props.removeColumn}
+          />
+          <SetNumChords
+            text='Number of rows'
+            number={props.numRows}
+            increment={props.addRow}
+            decrement={props.removeRow}
           />
         </div>
         <button

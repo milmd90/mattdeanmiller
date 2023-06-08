@@ -1,24 +1,22 @@
 import React from 'react';
 
 function SetNumChords(props: {
-  numColumns: number,
-  addColumn: () => void
-  removeColumn: () => void
+  text: string,
+  number: number,
+  increment: () => void
+  decrement: () => void
 }) {
-  const {
-    addColumn,
-    removeColumn
-  } = props;
-
   return (
     <div id="num-columns" className='config-option'>
       <div id="num-columns-buttons">
-        <button onClick={removeColumn}>-</button>
-        {props.numColumns}
-        <button onClick={addColumn}>+</button>
+        <button onClick={props.decrement}>-</button>
+        <div id='num-column-display'>
+          {props.number}
+        </div>
+        <button onClick={props.increment}>+</button>
       </div>
       <label>
-        Number of columns
+        {props.text}
       </label>
     </div>
   );

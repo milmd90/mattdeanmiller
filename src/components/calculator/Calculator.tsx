@@ -6,6 +6,7 @@ import { getTabsFromChordTabArray } from '../../helpers/export';
 
 function Calculator() {
   const [numColumns, setNumColumns] = useState<number>(16);
+  const [numRows, setNumRows] = useState<number>(1);
   const [showRhythm, toggleShowRhythm] = useState<boolean>(false);
   const [showColors, toggleShowColors] = useState<boolean>(false);
 
@@ -24,6 +25,7 @@ function Calculator() {
       <TabView 
         showColors={showColors}
         numColumns={numColumns}
+        numRows={numRows}
         onChange={onChange}
       />
       <Config 
@@ -34,6 +36,9 @@ function Calculator() {
         numColumns={numColumns}
         addColumn={() => setNumColumns(numColumns+1)}
         removeColumn={() => setNumColumns(numColumns-1)}
+        numRows={numRows}
+        addRow={() => setNumRows(numRows+1)}
+        removeRow={() => setNumRows(numRows-1)}
         downloadTab={downloadTab} 
       />
     </div>
