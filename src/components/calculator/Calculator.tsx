@@ -31,6 +31,7 @@ function Calculator() {
         toggleShowRhythm={() => toggleShowRhythm(!showRhythm)}
         showColors={showColors}
         toggleShowColors={() => toggleShowColors(!showColors)}
+        numColumns={numColumns}
         addColumn={() => setNumColumns(numColumns+1)}
         removeColumn={() => setNumColumns(numColumns-1)}
         downloadTab={downloadTab} 

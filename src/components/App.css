@@ -17,13 +17,18 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: #ddd;
   width: 100%;
+}
+
+.login {
+  color: #ddd;
 }
 
 .calculator {
   display: flex;
   flex-direction: row;
+  margin-top: 40px;
 }
 
 .tab-view {
@@ -31,7 +36,8 @@ input {
   padding: 20px;
   margin: 0 20px;
   border: 1px solid black;
-  background-color: white;
+  border-radius: 12px;
+  background-color: #ddd;
 }
 
 .start-column {
@@ -116,50 +122,54 @@ input {
   height: 0;
 }
 
-.config {
+#config {
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
   border: 1px solid black;
-  background-color: white;
+  border-radius: 12px;
+  background-color: #ddd;
   width: 400px;
   padding: 0 20px 20px 20px;
   margin: 0 20px;
 }
 
-.options {
+#config > div {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
   justify-content: space-between;
 }
 
-.options > div {
+#confgig-options {
   display: flex;
   flex-direction: column;
 }
 
-.set-num-columns {
-  padding: 0 10px;
+.config-option {
+  display: flex;
+  justify-content: start;
+  margin: 8px;
 }
 
-.set-num-columns .tab-row {
+.config-option div,
+.config-option input {
   display: flex;
-  align-items: flex-start;
-}
-
-.set-num-columns .input-row {
-  display: flex;
-  align-items: center;
+  width: 150px;
   justify-content: center;
+  margin: 0;
 }
 
-.set-num-columns .input-row button {
-  height: 50px;
-  width: 50px;
+#num-columns-buttons button {
+  margin: 0 3px;
 }
 
-.export {
+#export {
+  font-size: 14pt;
+  padding: 5px;
+  border-radius: 12px;
+  background-color: white;
+  margin-bottom: 10px;
 }
 
 .tab-detail {
