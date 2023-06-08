@@ -3,9 +3,11 @@
 
 # Todos
 move state to top
-add config window
-implement use context
-move data to nosql
+handle rows: scroll window, minimize rows
+drag and drop chords
+enable rhythm
 profiles
 save tabs
+implement use context
+move data to nosql
 add linting
