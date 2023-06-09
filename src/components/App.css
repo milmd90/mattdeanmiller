@@ -50,7 +50,7 @@ input {
 .tab-view {
   display: flex;
   padding: 20px;
-  margin: 0 20px;
+  margin: 0 40px 0 20px;
 }
 
 .start-column {
@@ -78,6 +78,14 @@ input {
   flex: 1;
   justify-content: space-around;
   height: 150px;
+  position: sticky;
+}
+
+.edit {
+  position: absolute;
+  left: 20px;
+  bottom: -20px;
+  padding-right: 10px;
 }
 
 .fret-number {

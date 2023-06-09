@@ -2,6 +2,8 @@ import React from 'react';
 import { TabColumn } from '../../helpers/tabs';
 import Chord from './chord/Chord';
 import { tabStrings } from '../../helpers/tabs';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit } from '@fortawesome/free-solid-svg-icons'
 
 
 function StartColumn() {
@@ -41,6 +43,9 @@ function EndColumn() {
       {tabStrings.map((tabString) =>
         <div className="end-bar" key={tabString}> | </div>
       )}
+      <div className='edit'>
+        <FontAwesomeIcon icon={faEdit} />
+      </div>
     </div>
   );
 }
