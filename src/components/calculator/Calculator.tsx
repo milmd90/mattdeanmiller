@@ -10,26 +10,30 @@ function Calculator() {
   const [showRhythm, toggleShowRhythm] = useState<boolean>(false);
   const [showColors, toggleShowColors] = useState<boolean>(false);
 
-  const tabColumns: TabColumn[] = [];
-  function onChange(columnNum: number) {
-    return function (data: TabColumn) {
-      tabColumns[columnNum] = data;
+  const tabColumns: TabColumn[][] = [];
+  function onChange(rowNum: number) {
+    return function (columnNum: number) {
+      return function (data: TabColumn) {
+        if (!tabColumns[rowNum]) {
+          tabColumns[rowNum] = [];
+        }
+        tabColumns[rowNum][columnNum] = data;
+      }
     }
   }
   function downloadTab() {
     getTabsFromChordTabArray(tabColumns);
   }
 
-  function renderTabViews(runRows: number) {
+  function renderTabViews(numRows: number) {
     const views = [];
-    for (let i = 0; i < runRows; i++) {
+    for (let rowNum = 0; rowNum < numRows; rowNum++) {
       views.push(
         <TabView
-          key={i}
+          key={rowNum}
           showColors={showColors}
           numColumns={numColumns}
-          numRows={numRows}
-          onChange={onChange}
+          onChange={onChange(rowNum)}
         />
       )
     }

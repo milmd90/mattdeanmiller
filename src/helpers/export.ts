@@ -1,6 +1,6 @@
 import {TabColumn, tabStrings} from './tabs';
 
-export function getTabsFromChordTabArray(chordTabArray: TabColumn[]): void {
+function getTabsFromChordTabRow(chordTabArray: TabColumn[]): string {
   const tabObject: any = {};
   tabStrings.forEach((tabString) => {
     tabObject[tabString] = [];
@@ -14,6 +14,16 @@ export function getTabsFromChordTabArray(chordTabArray: TabColumn[]): void {
   let tabTxt: string = '';
   tabStrings.forEach((tabString) => {
     tabTxt = tabTxt + `${tabString} |` + tabObject[tabString].join('') + '|\n';
+  })
+
+  return tabTxt;
+}
+
+export function getTabsFromChordTabArray(chordTabArray: TabColumn[][]): void {
+
+  let tabTxt: string = '';
+  chordTabArray.forEach((chordRow) => {
+    tabTxt += getTabsFromChordTabRow(chordRow)+ '\n';;
   })
 
   const blob = new Blob([tabTxt], { type: "text/plain" });

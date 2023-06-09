@@ -48,7 +48,6 @@ function EndColumn() {
 export default function TabView(props: {
   showColors: boolean,
   numColumns: number,
-  numRows: number,
   onChange: (columnNum: number) => (data: TabColumn) => void
 }) {
   function renderChords(numColumns: number) {
