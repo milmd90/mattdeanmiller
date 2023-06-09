@@ -15,7 +15,6 @@ input {
   flex-direction: column;
   align-items: stretch;
   height: 100vh;
-  /* background-color: #040444; */
 }
 
 #header {
