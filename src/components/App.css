@@ -34,6 +34,7 @@ input {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-grow: 1;
   margin: 20px 0 40px 0;
   min-height: 0;
 }
@@ -59,6 +60,10 @@ input {
   padding: 0 10px;
   width: 60px;
   flex-shrink: 0;
+}
+
+.end-column {
+  padding: 0 10px;
 }
 
 .start-column .tab-row,

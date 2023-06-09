@@ -7,7 +7,7 @@ import { getTabsFromChordTabArray } from '../../helpers/export';
 function Calculator() {
   const [numColumns, setNumColumns] = useState<number>(16);
   const [numRows, setNumRows] = useState<number>(1);
-  const [editingRow, setEditingRow] = useState<number | undefined>(1);
+  const [editingRow, setEditingRow] = useState<number | undefined>(0);
   const [showRhythm, toggleShowRhythm] = useState<boolean>(false);
   const [showColors, toggleShowColors] = useState<boolean>(false);
 

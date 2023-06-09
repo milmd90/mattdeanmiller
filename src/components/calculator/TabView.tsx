@@ -47,12 +47,14 @@ function EndColumn(props: {
   handleEditClick: () => void,
 }) {
   return (
-    <div className="tab-row">
-      {tabStrings.map((tabString) =>
-        <div className="end-bar" key={tabString}> | </div>
-      )}
-      <div className='edit' onClick={props.handleEditClick}>
-        <FontAwesomeIcon icon={faEdit} />
+    <div className='end-column'>
+      <div className="tab-row">
+        {tabStrings.map((tabString) =>
+          <div className="end-bar" key={tabString}> | </div>
+        )}
+        <div className='edit' onClick={props.handleEditClick}>
+          <FontAwesomeIcon icon={faEdit} />
+        </div>
       </div>
     </div>
   );
