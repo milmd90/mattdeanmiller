@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Config from './Config';
 import TabView from './TabView';
 import { TabColumn } from '../../helpers/tabs';
@@ -12,7 +12,7 @@ function Calculator() {
 
   const tabColumns: TabColumn[] = [];
   function onChange(columnNum: number) {
-    return function(data: TabColumn) {
+    return function (data: TabColumn) {
       tabColumns[columnNum] = data;
     }
   }
@@ -20,15 +20,28 @@ function Calculator() {
     getTabsFromChordTabArray(tabColumns);
   }
 
+  function renderTabViews(runRows: number) {
+    const views = [];
+    for (let i = 0; i < runRows; i++) {
+      views.push(
+        <TabView
+          key={i}
+          showColors={showColors}
+          numColumns={numColumns}
+          numRows={numRows}
+          onChange={onChange}
+        />
+      )
+    }
+    return views;
+  }
+
   return (
-    <div className="calculator">
-      <TabView 
-        showColors={showColors}
-        numColumns={numColumns}
-        numRows={numRows}
-        onChange={onChange}
-      />
-      <Config 
+    <div id="calculator">
+      <div id='tab-views'>
+        {renderTabViews(numRows)}
+      </div>
+      <Config
         showRhythm={showRhythm}
         toggleShowRhythm={() => toggleShowRhythm(!showRhythm)}
         showColors={showColors}
@@ -37,7 +50,7 @@ function Calculator() {
         setNumColumns={setNumColumns}
         numRows={numRows}
         setNumRows={setNumRows}
-        downloadTab={downloadTab} 
+        downloadTab={downloadTab}
       />
     </div>
   );

@@ -5,11 +5,11 @@ function Header(props: {
   title: String
 }) {
   return (
-    <div className="header">
+    <div id="header">
       <h1>
         {props.title}
       </h1>
-      <Login/>
+      <Login />
     </div>
   );
 }

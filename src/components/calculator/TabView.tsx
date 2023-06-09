@@ -8,7 +8,7 @@ function StartColumn() {
   return (
     <div className='start-column'>
       <div className='tab-row'>
-        {tabStrings.map((tabString) => 
+        {tabStrings.map((tabString) =>
           <div key={tabString}>
             {tabString} |
           </div>
@@ -38,7 +38,7 @@ function StartColumn() {
 function EndColumn() {
   return (
     <div className="tab-row">
-      {tabStrings.map((tabString) => 
+      {tabStrings.map((tabString) =>
         <div className="end-bar" key={tabString}> | </div>
       )}
     </div>
@@ -55,7 +55,7 @@ export default function TabView(props: {
     const chords = [];
     for (let i = 0; i < numColumns; i++) {
       chords.push(
-        <Chord 
+        <Chord
           key={i}
           showColors={props.showColors}
           onChange={props.onChange(i)}
@@ -67,8 +67,8 @@ export default function TabView(props: {
 
   return (
     <div className='tab-view'>
-      <StartColumn/>
-      { renderChords(props.numColumns) }
+      <StartColumn />
+      {renderChords(props.numColumns)}
       <EndColumn />
     </div>
   )
