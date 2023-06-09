@@ -18,8 +18,8 @@ function Config(props: {
       <div>
         <div id="config-options">
           <div id='colors' className='config-option'>
-            <input 
-              id='color-checkbox' 
+            <input
+              id='color-checkbox'
               type="checkbox"
               checked={props.showColors}
               onChange={props.toggleShowColors}
@@ -30,7 +30,7 @@ function Config(props: {
           </div>
           <div id='rhythm' className='config-option'>
             <input
-              id='rhythm-checkbox' 
+              id='rhythm-checkbox'
               type="checkbox"
               checked={props.showRhythm}
               onChange={props.toggleShowRhythm}
@@ -40,16 +40,16 @@ function Config(props: {
             </label>
           </div>
           <SetNumChords
-            text='Number of columns'
-            number={props.numColumns}
-            increment={() => props.setNumColumns(props.numColumns + 1)}
-            decrement={() => props.setNumColumns(props.numColumns - 1)}
-          />
-          <SetNumChords
             text='Number of rows'
             number={props.numRows}
             increment={() => props.setNumRows(props.numRows + 1)}
             decrement={() => props.setNumRows(props.numRows - 1)}
+          />
+          <SetNumChords
+            text='Number of columns'
+            number={props.numColumns}
+            increment={() => props.setNumColumns(props.numColumns + 1)}
+            decrement={() => props.setNumColumns(props.numColumns - 1)}
           />
         </div>
         <button
