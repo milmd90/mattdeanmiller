@@ -45,6 +45,8 @@ input {
   border-radius: 12px;
   background-color: #ddd;
   overflow: scroll;
+  width: 60%;
+  padding-bottom: 40px;
 }
 
 .tab-view {
@@ -55,6 +57,8 @@ input {
 
 .start-column {
   padding: 0 10px;
+  width: 60px;
+  flex-shrink: 0;
 }
 
 .start-column .tab-row,
@@ -85,7 +89,6 @@ input {
   position: absolute;
   left: 20px;
   bottom: -20px;
-  padding-right: 10px;
 }
 
 .fret-number {
@@ -150,7 +153,7 @@ input {
   border: 1px solid black;
   border-radius: 12px;
   background-color: #ddd;
-  width: 400px;
+  width: 20%;
   height: 300px;
   padding: 0 20px 20px 20px;
   margin: 0 20px;

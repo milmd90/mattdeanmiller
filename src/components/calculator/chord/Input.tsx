@@ -1,8 +1,9 @@
 import React from "react";
-import {IChordParams} from '../chord/Chord'
+import { IChordParams } from '../chord/Chord'
 
 function Input(props: {
   data: IChordParams,
+  isEditing: boolean,
   onChange: (O: IChordParams) => void
 }) {
   const { data, onChange } = props;
@@ -62,23 +63,25 @@ function Input(props: {
       option: option + 1,
     });
   }
-  
+
+  if (!props.isEditing) return null;
+
   return (
     <div className="input-row">
-      <input 
-        value={root} 
+      <input
+        value={root}
         onChange={onChangeRoot}
       />
-      <input 
-        value={type} 
+      <input
+        value={type}
         onChange={onChangeQuality}
       />
-      <input 
-        value={shape} 
+      <input
+        value={shape}
         onChange={onChangeShape}
       />
-      <input 
-        value={position} 
+      <input
+        value={position}
         onChange={onChangePosition}
       />
       <button
