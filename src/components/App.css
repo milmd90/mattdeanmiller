@@ -47,6 +47,7 @@ input {
   background-color: #ddd;
   overflow: scroll;
   width: 60%;
+  padding-top: 20px;
   padding-bottom: 40px;
 }
 
