@@ -8,14 +8,14 @@ function SetNumChords(props: {
 }) {
   return (
     <div id="num-columns" className='config-option'>
-      <div id="num-columns-buttons">
+      <div id="num-columns-buttons" className='config-option-control'>
         <button onClick={props.decrement}>-</button>
         <div id='num-column-display'>
           {props.number}
         </div>
         <button onClick={props.increment}>+</button>
       </div>
-      <label>
+      <label className='config-option-label'>
         {props.text}
       </label>
     </div>

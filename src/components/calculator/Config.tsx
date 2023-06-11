@@ -18,24 +18,28 @@ function Config(props: {
       <div>
         <div id="config-options">
           <div id='colors' className='config-option'>
-            <input
-              id='color-checkbox'
-              type="checkbox"
-              checked={props.showColors}
-              onChange={props.toggleShowColors}
-            />
-            <label>
+            <div className='config-option-control'>
+              <input
+                id='color-checkbox'
+                type="checkbox"
+                checked={props.showColors}
+                onChange={props.toggleShowColors}
+              />
+            </div>
+            <label className='config-option-label'>
               Enable colors
             </label>
           </div>
           <div id='rhythm' className='config-option'>
-            <input
-              id='rhythm-checkbox'
-              type="checkbox"
-              checked={props.showRhythm}
-              onChange={props.toggleShowRhythm}
-            />
-            <label>
+            <div className='config-option-control'>
+              <input
+                id='rhythm-checkbox'
+                type="checkbox"
+                checked={props.showRhythm}
+                onChange={props.toggleShowRhythm}
+              />
+            </div>
+            <label className='config-option-label'>
               Enable rhythm
             </label>
           </div>
