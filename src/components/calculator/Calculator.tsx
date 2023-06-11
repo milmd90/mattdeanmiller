@@ -22,6 +22,32 @@ function Calculator() {
       }
     }
   }
+
+  function onDragEnd(result: any) {
+    const reorder = (list, startIndex, endIndex) => {
+      const result = Array.from(list);
+      const [removed] = result.splice(startIndex, 1);
+      result.splice(endIndex, 0, removed);
+
+      return result;
+    };
+
+    // dropped outside the list
+    if (!result.destination) {
+      return;
+    }
+
+    const items = reorder(
+      this.state.items,
+      result.source.index,
+      result.destination.index
+    );
+
+    this.setState({
+      items,
+    });
+  }
+
   function downloadTab() {
     getTabsFromChordTabArray(tabColumns);
   }
@@ -37,6 +63,7 @@ function Calculator() {
           isEditing={editingRow === rowNum}
           handleEditClick={() => setEditingRow(editingRow === rowNum ? undefined : rowNum)}
           onChange={onChange(rowNum)}
+          onDragEnd={onDragEnd}
         />
       )
     }
