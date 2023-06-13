@@ -3,7 +3,6 @@
 
 # Todos
 move state to top
-handle rows: scroll window, minimize rows
 drag and drop chords
 enable rhythm
 profiles
