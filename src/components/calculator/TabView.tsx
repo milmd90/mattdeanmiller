@@ -70,14 +70,14 @@ export default function TabView(props: {
 }) {
   function renderChords(numColumns: number) {
     const chords = [];
-    for (let i = 0; i < numColumns; i++) {
+    for (let colNum = 0; colNum < numColumns; colNum++) {
       chords.push(
         <Chord
-          key={i}
+          key={colNum}
           isEditing={props.isEditing}
           showColors={props.showColors}
-          onChange={props.onChange(i)}
-          onChangeRhythm={props.onChangeRhythm(i)}
+          onChange={props.onChange(colNum)}
+          onChangeRhythm={props.onChangeRhythm(colNum)}
         />
       )
     }

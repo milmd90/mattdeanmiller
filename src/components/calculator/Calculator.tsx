@@ -25,7 +25,11 @@ function Calculator() {
   function onChangeRhythm(rowNum: number) {
     return function (columnNum: number) {
       return function (duration: number) {
-
+        console.log({
+          rowNum,
+          columnNum,
+          duration
+        })
       }
     }
   }

@@ -27,16 +27,17 @@ function Rhythm(props: {
   }
 
   return (
-    <div className={`dropdown`}>
+    <div className='dropdown'>
       <button onClick={toggleDropdpwn} className="dropdown-button">
         {getSymbol(props.duration)}
       </button>
       <div className={`dropdown-content ${isDropdownOpen ? 'open' : 'closed'}`}>
-        <li id="1">Link 1</li>
-        <li id="2">Link 2</li>
-        <li id="3">Link 3</li>
+        <li onClick={() => props.onChangeRhythm(1)}>Whole note</li>
+        <li onClick={() => props.onChangeRhythm(.5)}>Half note</li>
+        <li onClick={() => props.onChangeRhythm(.25)}>Quarter note</li>
+        <li onClick={() => props.onChangeRhythm(.125)}>Eighth note</li>
       </div>
-    </div>
+    </div >
   )
 }
 
