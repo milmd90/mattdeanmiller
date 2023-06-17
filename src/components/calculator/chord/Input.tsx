@@ -17,14 +17,17 @@ const getSymbol = (note: number) => {
 }
 
 function Rhythm(props: {
-  duration: number
-  onChangeRhythm: (duration: number) => void
+  duration: number,
+  showRhythm: boolean,
+  onChangeRhythm: (duration: number) => void,
 }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
   const toggleDropdpwn = () => {
     setIsDropdownOpen(!isDropdownOpen);
   }
+
+  if (!props.showRhythm) return null;
 
   return (
     <div className='dropdown'>
@@ -44,8 +47,9 @@ function Rhythm(props: {
 function Input(props: {
   data: IChordParams,
   isEditing: boolean,
-  onChange: (data: IChordParams) => void
-  onChangeRhythm: (rhythm: number) => void
+  onChange: (data: IChordParams) => void,
+  showRhythm: boolean,
+  onChangeRhythm: (rhythm: number) => void,
 }) {
   const { data, onChange, onChangeRhythm } = props;
   const {
@@ -136,6 +140,7 @@ function Input(props: {
       />
       <Rhythm
         duration={duration}
+        showRhythm={props.showRhythm}
         onChangeRhythm={onChangeRhythm}
       ></Rhythm>
     </div>

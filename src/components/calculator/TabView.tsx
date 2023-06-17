@@ -65,8 +65,9 @@ export default function TabView(props: {
   numColumns: number,
   isEditing: boolean,
   handleEditClick: () => void,
-  onChange: (columnNum: number) => (data: TabColumn) => void
-  onChangeRhythm: (columnNum: number) => (duration: number) => void
+  onChange: (columnNum: number) => (data: TabColumn) => void,
+  showRhythm: boolean,
+  onChangeRhythm: (columnNum: number) => (duration: number) => void,
 }) {
   function renderChords(numColumns: number) {
     const chords = [];
@@ -77,6 +78,7 @@ export default function TabView(props: {
           isEditing={props.isEditing}
           showColors={props.showColors}
           onChange={props.onChange(colNum)}
+          showRhythm={props.showRhythm}
           onChangeRhythm={props.onChangeRhythm(colNum)}
         />
       )

@@ -15,8 +15,9 @@ export interface IChordParams {
 function Chord(props: {
   showColors: boolean,
   isEditing: boolean,
-  onChange: (data: TabColumn) => void
-  onChangeRhythm: (duration: number) => void
+  onChange: (data: TabColumn) => void,
+  showRhythm: boolean,
+  onChangeRhythm: (duration: number) => void,
 }) {
   const [data, setData] = useState<IChordParams>({
     root: '',
@@ -38,6 +39,7 @@ function Chord(props: {
         data={data}
         isEditing={props.isEditing}
         onChange={(data) => setData(data)}
+        showRhythm={props.showRhythm}
         onChangeRhythm={props.onChangeRhythm}
       />
     </div>

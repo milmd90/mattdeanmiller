@@ -48,6 +48,7 @@ function Calculator() {
           isEditing={editingRow === rowNum}
           handleEditClick={() => setEditingRow(editingRow === rowNum ? undefined : rowNum)}
           onChange={onChange(rowNum)}
+          showRhythm={showRhythm}
           onChangeRhythm={onChangeRhythm(rowNum)}
         />
       )
