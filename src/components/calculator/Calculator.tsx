@@ -22,6 +22,13 @@ function Calculator() {
       }
     }
   }
+  function onChangeRhythm(rowNum: number) {
+    return function (columnNum: number) {
+      return function (duration: number) {
+
+      }
+    }
+  }
   function downloadTab() {
     getTabsFromChordTabArray(tabColumns);
   }
@@ -37,6 +44,7 @@ function Calculator() {
           isEditing={editingRow === rowNum}
           handleEditClick={() => setEditingRow(editingRow === rowNum ? undefined : rowNum)}
           onChange={onChange(rowNum)}
+          onChangeRhythm={onChangeRhythm(rowNum)}
         />
       )
     }

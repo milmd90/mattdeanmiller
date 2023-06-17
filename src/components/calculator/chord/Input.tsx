@@ -1,18 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import { IChordParams } from '../chord/Chord'
+
+const getSymbol = (note: number) => {
+  switch (note) {
+    case 1:
+      return '♩';
+    case .5:
+      return '♩';
+    case .25:
+      return '♩';
+    case .125:
+      return '♩';
+    default:
+      return null;
+  }
+}
+
+function Rhythm(props: {
+  duration: number
+  onChangeRhythm: (duration: number) => void
+}) {
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
+
+  const toggleDropdpwn = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  }
+
+  return (
+    <div className={`dropdown`}>
+      <button onClick={toggleDropdpwn} className="dropdown-button">
+        {getSymbol(props.duration)}
+      </button>
+      <div className={`dropdown-content ${isDropdownOpen ? 'open' : 'closed'}`}>
+        <li id="1">Link 1</li>
+        <li id="2">Link 2</li>
+        <li id="3">Link 3</li>
+      </div>
+    </div>
+  )
+}
 
 function Input(props: {
   data: IChordParams,
   isEditing: boolean,
-  onChange: (O: IChordParams) => void
+  onChange: (data: IChordParams) => void
+  onChangeRhythm: (rhythm: number) => void
 }) {
-  const { data, onChange } = props;
+  const { data, onChange, onChangeRhythm } = props;
   const {
     root,
     type,
     shape,
     position,
-    option
+    option,
+    duration
   } = data;
 
   const onChangeRoot = (e: any) => {
@@ -23,7 +64,8 @@ function Input(props: {
       type,
       shape,
       position,
-      option
+      option,
+      duration
     });
   }
   const onChangeQuality = (e: any) => {
@@ -33,6 +75,7 @@ function Input(props: {
       shape,
       position,
       option: 0,
+      duration,
     });
   }
   const onChangeShape = (e: any) => {
@@ -43,6 +86,7 @@ function Input(props: {
       shape: shape.toUpperCase(),
       position,
       option: 0,
+      duration
     });
   }
   const onChangePosition = (e: any) => {
@@ -52,6 +96,7 @@ function Input(props: {
       shape,
       position: e.target.value,
       option: 0,
+      duration
     });
   }
   const onChangeOption = (e: any) => {
@@ -61,6 +106,7 @@ function Input(props: {
       shape,
       position,
       option: option + 1,
+      duration
     });
   }
 
@@ -87,6 +133,10 @@ function Input(props: {
       <button
         onClick={onChangeOption}
       />
+      <Rhythm
+        duration={duration}
+        onChangeRhythm={onChangeRhythm}
+      ></Rhythm>
     </div>
   )
 }
