@@ -181,7 +181,7 @@ input {
 }
 
 .dropdown-content li:hover {
-  background-color: #ddd;
+  background-color: #f0f0f0;
 }
 
 #config {

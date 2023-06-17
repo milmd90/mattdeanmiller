@@ -8,6 +8,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons'
 
 function StartColumn(props: {
   isEditing: boolean,
+  showRhythm: boolean,
 }) {
   return (
     <div className='start-column'>
@@ -36,6 +37,12 @@ function StartColumn(props: {
           <div>
             option
           </div>
+          {
+            props.showRhythm &&
+            <div>
+              rhythm
+            </div>
+          }
         </div>
       }
     </div>
@@ -89,6 +96,7 @@ export default function TabView(props: {
   return (
     <div className='tab-view'>
       <StartColumn
+        showRhythm={props.showRhythm}
         isEditing={props.isEditing}
       />
       {renderChords(props.numColumns)}

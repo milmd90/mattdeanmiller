@@ -25,7 +25,7 @@ function Chord(props: {
     shape: '',
     position: '',
     option: 0,
-    duration: .25,
+    duration: .125,
   });
 
   return (
