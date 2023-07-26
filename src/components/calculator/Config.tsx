@@ -2,8 +2,6 @@ import React from 'react';
 import SetNumChords from './SetNumChords';
 
 function Config(props: {
-  showRhythm: boolean,
-  toggleShowRhythm: React.ChangeEventHandler<HTMLInputElement>,
   showColors: boolean,
   toggleShowColors: React.ChangeEventHandler<HTMLInputElement>,
   numColumns: number,
@@ -30,19 +28,6 @@ function Config(props: {
               Enable colors
             </label>
           </div>
-          <div id='rhythm' className='config-option'>
-            <div className='config-option-control'>
-              <input
-                id='rhythm-checkbox'
-                type="checkbox"
-                checked={props.showRhythm}
-                onChange={props.toggleShowRhythm}
-              />
-            </div>
-            <label className='config-option-label'>
-              Enable rhythm
-            </label>
-          </div>
           <SetNumChords
             text='Number of rows'
             number={props.numRows}
@@ -56,13 +41,13 @@ function Config(props: {
             decrement={() => props.setNumColumns(props.numColumns - 1)}
           />
         </div>
-        <button
-          id='export'
-          onClick={props.downloadTab}
-        >
-          Export
-        </button>
       </div>
+      <button
+        id='export'
+        onClick={props.downloadTab}
+      >
+        Export
+      </button>
     </div>
   );
 }

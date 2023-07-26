@@ -8,7 +8,6 @@ function Calculator() {
   const [numColumns, setNumColumns] = useState<number>(16);
   const [numRows, setNumRows] = useState<number>(1);
   const [editingRow, setEditingRow] = useState<number | undefined>(0);
-  const [showRhythm, toggleShowRhythm] = useState<boolean>(false);
   const [showColors, toggleShowColors] = useState<boolean>(false);
 
   const tabColumns: TabColumn[][] = [];
@@ -49,8 +48,6 @@ function Calculator() {
         {renderTabViews(numRows)}
       </div>
       <Config
-        showRhythm={showRhythm}
-        toggleShowRhythm={() => toggleShowRhythm(!showRhythm)}
         showColors={showColors}
         toggleShowColors={() => toggleShowColors(!showColors)}
         numColumns={numColumns}
