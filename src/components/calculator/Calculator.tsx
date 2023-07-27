@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Config from './Config';
+import ColorKey from './ColorKey';
 import TabView from './TabView';
 import { TabColumn } from '../../helpers/tabs';
 import { getTabsFromChordTabArray } from '../../helpers/export';
@@ -8,7 +9,7 @@ function Calculator() {
   const [numColumns, setNumColumns] = useState<number>(16);
   const [numRows, setNumRows] = useState<number>(1);
   const [editingRow, setEditingRow] = useState<number | undefined>(0);
-  const [showColors, toggleShowColors] = useState<boolean>(false);
+  const [showColors, toggleShowColors] = useState<boolean>(true);
 
   const tabColumns: TabColumn[][] = [];
   function onChange(rowNum: number) {
@@ -47,15 +48,21 @@ function Calculator() {
       <div id='tab-views'>
         {renderTabViews(numRows)}
       </div>
-      <Config
-        showColors={showColors}
-        toggleShowColors={() => toggleShowColors(!showColors)}
-        numColumns={numColumns}
-        setNumColumns={setNumColumns}
-        numRows={numRows}
-        setNumRows={setNumRows}
-        downloadTab={downloadTab}
-      />
+      <div id='sidebar'>
+        <Config
+          showColors={showColors}
+          toggleShowColors={() => toggleShowColors(!showColors)}
+          numColumns={numColumns}
+          setNumColumns={setNumColumns}
+          numRows={numRows}
+          setNumRows={setNumRows}
+          downloadTab={downloadTab}
+        />
+        <ColorKey
+          showColors={showColors}
+        />
+      </div>
+
     </div>
   );
 }

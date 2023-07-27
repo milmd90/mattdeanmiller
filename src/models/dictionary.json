@@ -918,7 +918,8 @@
         "tone-5": 4,
         "fret-6": 3,
         "tone-6": 0
-      }, {
+      },
+      {
         "type": "major",
         "shape": "G",
         "option": 2,
@@ -1509,7 +1510,7 @@
         "fret-2": 2,
         "tone-2": 7,
         "fret-3": 0,
-        "tone-3": 0,
+        "tone-3": 10,
         "fret-4": 0,
         "tone-4": 3,
         "fret-5": 0,
