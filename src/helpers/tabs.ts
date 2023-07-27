@@ -5,7 +5,7 @@ import {
   convertPitchToTone, pitchDifference
 } from './pitchTones'
 import { IChordParams } from '../components/calculator/chord/Chord'
-import * as dictionary from '../models/dictionary.json'
+import * as dictionary from '../dictionary/dictionary.json'
 const dict = dictionary as IChordDict;
 
 type ChordTabValue = number | 'X';

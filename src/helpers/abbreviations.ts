@@ -1,7 +1,7 @@
 import {
   Quality
 } from '../helpers/tabs';
-import * as abbreviations from '../models/abbreviations.json';
+import * as abbreviations from '../dictionary/abbreviations.json';
 const abbrevs = abbreviations as IAbbreviations; 
 
 interface IAbbreviations {
