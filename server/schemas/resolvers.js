@@ -2,12 +2,11 @@ const { Chord } = require('../models');
 
 const resolvers = {
   Query: {
-    chords: async () => {
-      return Chord.find();
-    },
-
-    chord: async (parent, { id }) => {
-      return Chord.findOne({ _id: id });
+    chords: async (parent, { shape, type }) => {
+      let params = {};
+      if (shape) params.shape = shape;
+      if (type) params.type = type;
+      return Chord.find(params);
     },
   },
 };

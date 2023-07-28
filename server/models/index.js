@@ -1,3 +1,3 @@
-const Profile = require('./Chord');
+const Chord = require('./Chord');
 
-module.exports = { Profile };
+module.exports = { Chord };
