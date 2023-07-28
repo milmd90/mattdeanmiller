@@ -1,5 +1,5 @@
 import React from 'react';
-import { IChordTab, tabStrings } from '../../helpers/common';
+import { IChordTab, TabString, tabStrings } from '../../helpers/common';
 import Chord from './chord/Chord';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
@@ -8,12 +8,22 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons'
 function StartColumn(props: {
   isEditing: boolean,
 }) {
+  const stringToNote = (tabString: TabString): String => {
+    if (tabString === "sixth") return "e";
+    if (tabString === "fifth") return "B";
+    if (tabString === "fourth") return "G";
+    if (tabString === "third") return "D";
+    if (tabString === "second") return "A";
+    if (tabString === "first") return "E";
+    return "";
+  }
+
   return (
     <div className='start-column'>
       <div className='tab-row'>
         {tabStrings.map((tabString) =>
-          <div key={tabString}>
-            {tabString} |
+          <div key={`${stringToNote(tabString)}`}>
+            {stringToNote(tabString)} |
           </div>
         )}
       </div>

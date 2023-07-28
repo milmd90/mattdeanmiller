@@ -1,3 +1,5 @@
+import {pitchDifference} from './pitchTones';
+
 type ChordTabValue = number | null;
 
 export interface IStringData {
@@ -54,6 +56,44 @@ export function getMinFretValue(tab: IChordTab): number {
 export function getMaxFretValue(tab: IChordTab): number {
   return getMinOrMaxFretValue(tab, (a: number, b: number) => {
     return a > b
+  })
+}
+
+
+export function convertChordsToTabs(chords: IChordData[], root: string): IChordTab[] {
+  function getValue(input: ChordTabValue, offset: number | null): ChordTabValue {
+    if (input === null || offset === null) return input;
+    return input + offset;
+  }
+
+  return chords.map((chord) => {
+    const offset = pitchDifference(chord.shape, root);
+    return {
+      first: {
+        fret: getValue(chord.first.fret, offset),
+        tone: getValue(chord.first.tone, null)
+      },
+      second: {
+        fret: getValue(chord.second.fret, offset),
+        tone: getValue(chord.second.tone, null)
+      },
+      third: {
+        fret: getValue(chord.third.fret, offset),
+        tone: getValue(chord.third.tone, null)
+      },
+      fourth: {
+        fret: getValue(chord.fourth.fret, offset),
+        tone: getValue(chord.fourth.tone, null)
+      },
+      fifth: {
+        fret: getValue(chord.fifth.fret, offset),
+        tone: getValue(chord.fifth.tone, null)
+      },
+      sixth: {
+        fret: getValue(chord.sixth.fret, offset),
+        tone: getValue(chord.sixth.tone, null)
+      },
+    };
   })
 }
 

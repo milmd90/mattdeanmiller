@@ -6,6 +6,7 @@ import {
   IChordTab,
   emptyTab,
   tabStrings,
+  convertChordsToTabs,
   updateChordsWithPosition,
   sortChordsByLowest,
   isValidTab
@@ -14,8 +15,7 @@ import {
   getQualityFromAbbrev
 } from '../../../helpers/abbreviations';
 import {
-  convertPitchToTone,
-  pitchDifference
+  convertPitchToTone
 } from '../../../helpers/pitchTones';
 import { IChordParams } from './Chord';
 import TabDetail from './TabDetail';
@@ -26,7 +26,7 @@ function Cell(props: {
   showColors: boolean
 }): any {
   const { tone, fret } = props.data;
-  const className = !tone || !props.showColors ? '' : `tone-${tone}`;
+  const className = tone === null || !props.showColors ? '' : `tone-${tone}`;
 
   return (
     <div className={`fret-number ${className}`}>
@@ -121,50 +121,52 @@ function Display(props: {
       );
     }
 
-    let tabArray: IChordTab[] = updateChordsWithPosition(data.chords, position);
+    let tabArray: IChordTab[] = convertChordsToTabs(data.chords, root)
+    tabArray = updateChordsWithPosition(tabArray, position);
     tabArray = sortChordsByLowest(tabArray);
 
     const index: number = option % tabArray.length;
     const renderTab = tabArray[index];
     console.log({ renderTab })
-    // setTab(tab);
+    // setTab(renderTab);
     // props.onChange(tab);
     // setIsValid(isValidTab(tab));
-  }
 
-  const setDetailPosition = (e: any) => {
-    const details = Array.from(document.getElementsByClassName('tab-detail') as HTMLCollectionOf<HTMLElement>)
-    details.forEach((detail) => {
-      detail.style.left = e.pageX + 20 + 'px';
-      detail.style.top = e.pageY + 20 + 'px';
-    });
-  }
-  document.addEventListener('mousemove', setDetailPosition);
 
-  return (
-    <div className="display">
-      <div
-        className="tab-row"
-        onMouseOver={(e) => {
-          setShowDetail(true);
-          setDetailPosition(e);
-        }}
-        onMouseOut={() => setShowDetail(false)}
-      >
-        {tabStrings.map((tabString) =>
-          <Cell
-            key={tabString}
-            showColors={props.showColors}
-            data={tab[tabString]}
-          />
-        )}
+    const setDetailPosition = (e: any) => {
+      const details = Array.from(document.getElementsByClassName('tab-detail') as HTMLCollectionOf<HTMLElement>)
+      details.forEach((detail) => {
+        detail.style.left = e.pageX + 20 + 'px';
+        detail.style.top = e.pageY + 20 + 'px';
+      });
+    }
+    document.addEventListener('mousemove', setDetailPosition);
+
+    return (
+      <div className="display">
+        <div
+          className="tab-row"
+          onMouseOver={(e) => {
+            setShowDetail(true);
+            setDetailPosition(e);
+          }}
+          onMouseOut={() => setShowDetail(false)}
+        >
+          {tabStrings.map((tabString) =>
+            <Cell
+              key={tabString}
+              showColors={props.showColors}
+              data={renderTab[tabString]}
+            />
+          )}
+        </div>
+        {/* {isValid && <TabDetail
+          tab={tab}
+          hide={!showDetail}
+        />} */}
       </div>
-      {/* {isValid && <TabDetail
-        tab={tab}
-        hide={!showDetail}
-      />} */}
-    </div>
-  );
+    );
+  }
 }
 
 export default Display;

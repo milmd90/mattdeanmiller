@@ -30,10 +30,10 @@ export function convertPitchToTone(pitch: string): number | undefined {
   }
 }
 
-export function pitchDifference(start: string, end: string): number | undefined {
+export function pitchDifference(start: string, end: string): number | null {
   const startTone = convertPitchToTone(start);
   const endTone = convertPitchToTone(end);
-  if (!startTone || !endTone) return;
+  if (!startTone || !endTone) return null;
 
   return (12 + endTone - startTone) % 12;
 }
