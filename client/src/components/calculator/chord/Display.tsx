@@ -270,7 +270,10 @@ function Display(props: {
       type: props.data.type,
     },
   });
-  console.log('QUERY_CHORDS', data)
+  if (props.data.type) {
+
+    console.log('QUERY_CHORDS', data)
+  }
 
 
   const setDetailPosition = (e: any) => {

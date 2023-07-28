@@ -47,13 +47,13 @@ function ColorKey(props: {
     <div id="color-key">
       <h3>Color Key</h3>
       {definedTones.map(notes =>
-        <div>
+        <div key={`${notes.offset}`}>
           <span className={`color-key-sample tone-${notes.offset}`}>&nbsp;</span>
           <span>&nbsp;-&nbsp;</span>
           <span>{notes.degree}</span>
         </div>
       )}
-    </div>
+    </div >
   );
 }
 
