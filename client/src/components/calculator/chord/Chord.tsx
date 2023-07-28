@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Display from './Display';
 import Input from './Input';
-import { TabColumn } from '../../../helpers/tabs';
+import { TabColumn } from '../../../utils/tabs';
 
 export interface IChordParams {
   root: string,

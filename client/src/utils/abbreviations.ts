@@ -1,6 +1,6 @@
 import {
   Quality
-} from '../helpers/tabs';
+} from './tabs';
 import * as abbreviations from '../dictionary/abbreviations.json';
 const abbrevs = abbreviations as IAbbreviations; 
 

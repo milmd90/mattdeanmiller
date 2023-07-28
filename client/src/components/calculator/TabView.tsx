@@ -1,7 +1,7 @@
 import React from 'react';
-import { TabColumn } from '../../helpers/tabs';
+import { TabColumn } from '../../utils/tabs';
 import Chord from './chord/Chord';
-import { tabStrings } from '../../helpers/tabs';
+import { tabStrings } from '../../utils/tabs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
 

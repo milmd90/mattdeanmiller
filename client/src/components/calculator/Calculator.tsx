@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Config from './Config';
 import ColorKey from './ColorKey';
 import TabView from './TabView';
-import { TabColumn } from '../../helpers/tabs';
-import { getTabsFromChordTabArray } from '../../helpers/export';
+import { TabColumn } from '../../utils/tabs';
+import { getTabsFromChordTabArray } from '../../utils/export';
 
 function Calculator() {
   const [numColumns, setNumColumns] = useState<number>(16);
