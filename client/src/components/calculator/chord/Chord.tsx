@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Display from './Display';
 import Input from './Input';
-import { TabColumn } from '../../../utils/tabs';
+import { IChordTab } from '../../../helpers/common';
 
 export interface IChordParams {
   root: string,
@@ -14,7 +14,7 @@ export interface IChordParams {
 function Chord(props: {
   showColors: boolean,
   isEditing: boolean,
-  onChange: (data: TabColumn) => void
+  onChange: (data: IChordTab) => void
 }) {
   const [data, setData] = useState<IChordParams>({
     root: '',
