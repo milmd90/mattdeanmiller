@@ -1,5 +1,14 @@
 const { Schema, model } = require('mongoose');
 
+const guitarString = new Schema({
+  "fret": {
+    type: Number,
+  },
+  "tone": {
+    type: Number,
+  },
+});
+
 const chordSchema = new Schema({
   "type": {
     type: String,
@@ -15,58 +24,32 @@ const chordSchema = new Schema({
     maxlength: 280,
     trim: true,
   },
+  "first": {
+    type: guitarString,
+    required: 'missing first',
+  },
+  "second": {
+    type: guitarString,
+    required: 'missing second',
+  },
+  "third": {
+    type: guitarString,
+    required: 'missing third',
+  },
+  "fourth": {
+    type: guitarString,
+    required: 'missing fourth',
+  },
+  "fifth": {
+    type: guitarString,
+    required: 'missing fifth',
+  },
+  "sixth": {
+    type: guitarString,
+    required: 'missing sixth',
+  },
 });
 
 const Chord = model('Chord', chordSchema);
 
 module.exports = Chord;
-
-
-// "fret-1": {
-//   type: Schema.Types.Mixed,
-//   required: 'missing fret 1',
-// },
-// "fret-2": {
-//   type: Schema.Types.Mixed,
-//   required: 'missing fret 2',
-// },
-// "fret-3": {
-//   type: Schema.Types.Mixed,
-//   required: 'missing fret 3',
-// },
-// "fret-4": {
-//   type: Schema.Types.Mixed,
-//   required: 'missing fret 4',
-// },
-// "fret-5": {
-//   type: Schema.Types.Mixed,
-//   required: 'missing fret 5',
-// },
-// "fret-6": {
-//   type: Schema.Types.Mixed,
-//   required: 'missing fret 6',
-// },
-// "tone-1": {
-//   type: Schema.Types.Mixed,
-//   required: 'missing tone 1',
-// },
-// "tone-2": {
-//   type: Schema.Types.Mixed,
-//   required: 'missing tone 2',
-// },
-// "tone-3": {
-//   type: Schema.Types.Mixed,
-//   required: 'missing tone 3',
-// },
-// "tone-4": {
-//   type: Schema.Types.Mixed,
-//   required: 'missing tone 4',
-// },
-// "tone-5": {
-//   type: Schema.Types.Mixed,
-//   required: 'missing tone 5',
-// },
-// "tone-6": {
-//   type: Schema.Types.Mixed,
-//   required: 'missing tone 6',
-// },

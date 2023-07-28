@@ -1,10 +1,21 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+  type GuitarString {
+    fret: Int
+    tone: Int
+  }
+
   type Chord {
     _id: ID
     type: String
     shape: String
+    first: GuitarString
+    second: GuitarString
+    third: GuitarString
+    fourth: GuitarString
+    fifth: GuitarString
+    sixth: GuitarString
   }
 
   type Query {
@@ -13,19 +24,3 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
-
-
-
-
-// fret-1: Number
-// fret-2: Number
-// fret-3: Number
-// fret-4: Number
-// fret-5: Number
-// fret-6: Number
-// tone-1: Number
-// tone-2: Number
-// tone-3: Number
-// tone-4: Number
-// tone-5: Number
-// tone-6: Number
