@@ -9,7 +9,6 @@ import {
   convertChordsToTabs,
   updateChordsWithPosition,
   sortChordsByLowest,
-  isValidTab
 } from '../../../helpers/common';
 import {
   getQualityFromAbbrev
@@ -48,9 +47,7 @@ function Display(props: {
     option
   } = props.data;
 
-  const [tab, setTab] = useState<IChordTab>(emptyTab);
   const [showDetail, setShowDetail] = useState(false);
-  const [isValid, setIsValid] = useState(false);
 
   const tone = convertPitchToTone(root);
   const type = getQualityFromAbbrev(abbrev);
@@ -127,11 +124,8 @@ function Display(props: {
 
     const index: number = option % tabArray.length;
     const renderTab = tabArray[index];
-    console.log({ renderTab })
-    // setTab(renderTab);
-    // props.onChange(tab);
-    // setIsValid(isValidTab(tab));
-
+    props.onChange(renderTab);
+    console.log({ renderTab });
 
     const setDetailPosition = (e: any) => {
       const details = Array.from(document.getElementsByClassName('tab-detail') as HTMLCollectionOf<HTMLElement>)
@@ -160,10 +154,10 @@ function Display(props: {
             />
           )}
         </div>
-        {/* {isValid && <TabDetail
-          tab={tab}
+        <TabDetail
+          tab={renderTab}
           hide={!showDetail}
-        />} */}
+        />
       </div>
     );
   }

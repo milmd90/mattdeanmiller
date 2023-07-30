@@ -59,7 +59,6 @@ export function getMaxFretValue(tab: IChordTab): number {
   })
 }
 
-
 export function convertChordsToTabs(chords: IChordData[], root: string): IChordTab[] {
   function getValue(input: ChordTabValue, offset: number | null): ChordTabValue {
     if (input === null || offset === null) return input;
@@ -133,14 +132,14 @@ export function sortChordsByLowest(tabArray: IChordTab[]): IChordTab[] {
   });
 }
 
-export function isValidTab(tab: IChordTab) {
-  for (let s of tabStrings) {
-    const f = tab[s].fret;
-    if (typeof f === 'number') {
-      return true
-    }
-  }
-  return false;
+export const stringToNote = (tabString: TabString): String => {
+  if (tabString === "sixth") return "e";
+  if (tabString === "fifth") return "B";
+  if (tabString === "fourth") return "G";
+  if (tabString === "third") return "D";
+  if (tabString === "second") return "A";
+  if (tabString === "first") return "E";
+  return "";
 }
 
 export const emptyTab: IChordTab = {
