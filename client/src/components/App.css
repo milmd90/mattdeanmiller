@@ -259,6 +259,7 @@ input {
   position: absolute;
   width: 180px;
   background-color: white;
+  z-index: 1;
 }
 
 .tab-detail.hide {

@@ -7,7 +7,6 @@ db.once('open', async () => {
     await Chord.deleteMany({});
     await Chord.create(chordSeeds);
 
-    console.log('all done!');
     process.exit(0);
   } catch (err) {
     throw err;

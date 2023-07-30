@@ -26,10 +26,11 @@ function Cell(props: {
 }): any {
   const { tone, fret } = props.data;
   const className = tone === null || !props.showColors ? '' : `tone-${tone}`;
+  const cellValue = fret === null ? '-' : fret;
 
   return (
     <div className={`fret-number ${className}`}>
-      {fret}
+      {cellValue}
     </div>
   )
 }
@@ -58,7 +59,8 @@ function Display(props: {
       type,
     },
   });
-  if (loading) {
+  if (loading || !tone || !type) {
+    props.onChange(emptyTab);
     return (
       <div className="display">
         <div
@@ -74,93 +76,49 @@ function Display(props: {
         </div>
       </div>
     )
-  } else {
-    console.log('QUERY_CHORDS', {
-      data,
-      shape,
-      type
-    })
-
-
-    if (!tone) {
-      return (
-        <div className="display">
-          <div
-            className="tab-row"
-          >
-            {tabStrings.map((tabString) =>
-              <Cell
-                key={tabString}
-                showColors={props.showColors}
-                data={emptyTab[tabString]}
-              />
-            )}
-          </div>
-        </div>
-      );
-    }
-
-    if (!type) {
-      return (
-        <div className="display">
-          <div
-            className="tab-row"
-          >
-            {tabStrings.map((tabString) =>
-              <Cell
-                key={tabString}
-                showColors={props.showColors}
-                data={emptyTab[tabString]}
-              />
-            )}
-          </div>
-        </div>
-      );
-    }
-
-    let tabArray: IChordTab[] = convertChordsToTabs(data.chords, root)
-    tabArray = updateChordsWithPosition(tabArray, position);
-    tabArray = sortChordsByLowest(tabArray);
-
-    const index: number = option % tabArray.length;
-    const renderTab = tabArray[index];
-    props.onChange(renderTab);
-    console.log({ renderTab });
-
-    const setDetailPosition = (e: any) => {
-      const details = Array.from(document.getElementsByClassName('tab-detail') as HTMLCollectionOf<HTMLElement>)
-      details.forEach((detail) => {
-        detail.style.left = e.pageX + 20 + 'px';
-        detail.style.top = e.pageY + 20 + 'px';
-      });
-    }
-    document.addEventListener('mousemove', setDetailPosition);
-
-    return (
-      <div className="display">
-        <div
-          className="tab-row"
-          onMouseOver={(e) => {
-            setShowDetail(true);
-            setDetailPosition(e);
-          }}
-          onMouseOut={() => setShowDetail(false)}
-        >
-          {tabStrings.map((tabString) =>
-            <Cell
-              key={tabString}
-              showColors={props.showColors}
-              data={renderTab[tabString]}
-            />
-          )}
-        </div>
-        <TabDetail
-          tab={renderTab}
-          hide={!showDetail}
-        />
-      </div>
-    );
   }
+
+  let tabArray: IChordTab[] = convertChordsToTabs(data.chords, root)
+  tabArray = updateChordsWithPosition(tabArray, position);
+  tabArray = sortChordsByLowest(tabArray);
+
+  const index: number = option % tabArray.length;
+  const renderTab = tabArray[index];
+  props.onChange(renderTab);
+
+  const setDetailPosition = (e: any) => {
+    const details = Array.from(document.getElementsByClassName('tab-detail') as HTMLCollectionOf<HTMLElement>)
+    details.forEach((detail) => {
+      detail.style.left = e.pageX + 20 + 'px';
+      detail.style.top = e.pageY + 20 + 'px';
+    });
+  }
+  document.addEventListener('mousemove', setDetailPosition);
+
+  return (
+    <div className="display">
+      <div
+        className="tab-row"
+        onMouseOver={(e) => {
+          setShowDetail(true);
+          setDetailPosition(e);
+        }}
+        onMouseOut={() => setShowDetail(false)}
+      >
+        {tabStrings.map((tabString) =>
+          <Cell
+            key={tabString}
+            showColors={props.showColors}
+            data={renderTab[tabString]}
+          />
+        )}
+      </div>
+      <TabDetail
+        tab={renderTab}
+        hide={!showDetail}
+      />
+    </div>
+  );
 }
 
 export default Display;

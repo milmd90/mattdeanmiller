@@ -6,7 +6,6 @@ const resolvers = {
       let params = {};
       if (shape) params.shape = shape;
       if (type) params.type = type;
-      console.log(params)
       return Chord.find(params);
     },
   },
