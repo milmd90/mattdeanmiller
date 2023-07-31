@@ -1,6 +1,4 @@
-import * as pitchTones from '../models/pitchTones.json';
-
-// export type Pitch = "Ab" | "A" | "A#" | "Bb" | "B" | "B#" | "Cb" | "C" | "C#" | "Db" | "D" | "D#" | "Eb" | "E" | "E#" | "Fb" | "F" | "F#" | "Gb" | "G" | "G#"
+import * as pitchTones from '../dictionary/pitchTones.json';
 
 export function convertPitchToTone(pitch: string): number | undefined {
   if (
@@ -30,10 +28,10 @@ export function convertPitchToTone(pitch: string): number | undefined {
   }
 }
 
-export function pitchDifference(start: string, end: string): number | undefined {
+export function pitchDifference(start: string, end: string): number | null {
   const startTone = convertPitchToTone(start);
   const endTone = convertPitchToTone(end);
-  if (!startTone || !endTone) return;
+  if (!startTone || !endTone) return null;
 
   return (12 + endTone - startTone) % 12;
 }

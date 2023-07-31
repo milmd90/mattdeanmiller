@@ -1,36 +1,38 @@
 import {
-  TabColumn,
+  IChordTab,
   tabStrings,
   TabString,
   getMinFretValue,
-  getMaxFretValue
-} from '../../../helpers/tabs';
+  getMaxFretValue,
+  stringToNote
+} from '../../../helpers/common';
 
 function TabDetailRow(props: {
   tabString: TabString
-  tab: TabColumn
+  tab: IChordTab
   min: number
   max: number
 }) {
-  const {tabString, tab, min, max} = props;
+  const { tabString, tab, min, max } = props;
   const fretValue = tab[tabString].fret;
+  const stringTone = stringToNote(tabString);
 
   const cells = [];
   cells.push(
-    <span 
+    <span
       key='first'
       className='tab-detail-cell'
-    > 
-      {tabString}
+    >
+      {stringTone}
     </span>
   );
   for (let i = min; i <= max; i++) {
     cells.push(
-      <span 
+      <span
         key={i}
         className='tab-detail-cell'
-      > 
-        {fretValue === i ? 'X' : ''} 
+      >
+        {fretValue === i ? 'X' : ''}
       </span>
     );
   }
@@ -45,21 +47,21 @@ function FretRow(props: {
   min: number
   max: number
 }) {
-  const {min, max} = props;
+  const { min, max } = props;
   const cells = [];
   cells.push(
-    <span 
+    <span
       key={'first'}
       className='tab-detail-cell'>
     </span>
   );
   for (let i = min; i <= max; i++) {
     cells.push(
-      <span 
+      <span
         key={i}
         className='tab-detail-cell'
-      > 
-        {i} 
+      >
+        {i}
       </span>
     );
   }
@@ -71,7 +73,7 @@ function FretRow(props: {
 }
 
 function TabDetail(props: {
-  tab: TabColumn;
+  tab: IChordTab;
   hide?: boolean
 }) {
   const { tab, hide } = props;
@@ -89,8 +91,8 @@ function TabDetail(props: {
 
   return (
     <div className={`tab-detail ${hide ? 'hide' : ''}`}>
-      {tabStrings.map((tabString: TabString) => 
-        <TabDetailRow 
+      {tabStrings.map((tabString: TabString) =>
+        <TabDetailRow
           key={tabString}
           tabString={tabString}
           tab={tab}
@@ -98,11 +100,11 @@ function TabDetail(props: {
           max={max}
         />
       )}
-      <FretRow 
+      <FretRow
         min={min}
         max={max}
       />
-    </div> 
+    </div>
   )
 }
 

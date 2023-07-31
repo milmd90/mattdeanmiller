@@ -1,25 +1,29 @@
-import {TabColumn, tabStrings} from './tabs';
+import {IChordTab, stringToNote, tabStrings} from '../helpers/common';
 
-function getTabsFromChordTabRow(chordTabArray: TabColumn[]): string {
+function getTabsFromChordTabRow(chordTabArray: IChordTab[], includeSpaces=true ): string {
   const tabObject: any = {};
   tabStrings.forEach((tabString) => {
     tabObject[tabString] = [];
   })
   chordTabArray.forEach((chordTab) => {
     tabStrings.forEach((tabString) => {
-      tabObject[tabString].push(chordTab[tabString].fret);
+      const fretValue = chordTab[tabString].fret;
+      let cellValue = fretValue === null ? '-' : `${fretValue}`;
+      cellValue = includeSpaces && cellValue.length === 1 ? cellValue + ' ' : cellValue;
+      tabObject[tabString].push(cellValue);
     })
   })
 
   let tabTxt: string = '';
   tabStrings.forEach((tabString) => {
-    tabTxt = tabTxt + `${tabString} |` + tabObject[tabString].join('') + '|\n';
+    const stringNote = stringToNote(tabString);
+    tabTxt = tabTxt + `${stringNote} | ` + tabObject[tabString].join('') + '|\n';
   })
 
   return tabTxt;
 }
 
-export function getTabsFromChordTabArray(chordTabArray: TabColumn[][]): void {
+export function getTabsFromChordTabArray(chordTabArray: IChordTab[][]): void {
 
   let tabTxt: string = '';
   chordTabArray.forEach((chordRow) => {

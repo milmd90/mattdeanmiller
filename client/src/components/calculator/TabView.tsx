@@ -1,7 +1,6 @@
 import React from 'react';
-import { TabColumn } from '../../helpers/tabs';
+import { IChordTab, TabString, stringToNote, tabStrings } from '../../helpers/common';
 import Chord from './chord/Chord';
-import { tabStrings } from '../../helpers/tabs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
 
@@ -9,12 +8,13 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons'
 function StartColumn(props: {
   isEditing: boolean,
 }) {
+
   return (
     <div className='start-column'>
       <div className='tab-row'>
         {tabStrings.map((tabString) =>
-          <div key={tabString}>
-            {tabString} |
+          <div key={`${stringToNote(tabString)}`}>
+            {stringToNote(tabString)} |
           </div>
         )}
       </div>
@@ -65,7 +65,7 @@ export default function TabView(props: {
   numColumns: number,
   isEditing: boolean,
   handleEditClick: () => void,
-  onChange: (columnNum: number) => (data: TabColumn) => void
+  onChange: (columnNum: number) => (data: IChordTab) => void
 }) {
   function renderChords(numColumns: number) {
     const chords = [];
