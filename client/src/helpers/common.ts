@@ -1,10 +1,10 @@
 import {pitchDifference} from './pitchTones';
 
-type ChordTabValue = number | null;
+type TabValue = number | null;
 
 export interface IStringData {
-  "fret": ChordTabValue,
-  "tone": ChordTabValue
+  "fret": TabValue,
+  "tone": TabValue
 };
 
 export interface IChordData {
@@ -60,7 +60,7 @@ export function getMaxFretValue(tab: IChordTab): number {
 }
 
 export function convertChordsToTabs(chords: IChordData[], root: string): IChordTab[] {
-  function getValue(input: ChordTabValue, offset: number | null): ChordTabValue {
+  function getValue(input: TabValue, offset: number | null): TabValue {
     if (input === null || offset === null) return input;
     return input + offset;
   }

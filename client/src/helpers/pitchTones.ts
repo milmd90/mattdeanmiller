@@ -1,7 +1,5 @@
 import * as pitchTones from '../dictionary/pitchTones.json';
 
-// export type Pitch = "Ab" | "A" | "A#" | "Bb" | "B" | "B#" | "Cb" | "C" | "C#" | "Db" | "D" | "D#" | "Eb" | "E" | "E#" | "Fb" | "F" | "F#" | "Gb" | "G" | "G#"
-
 export function convertPitchToTone(pitch: string): number | undefined {
   if (
     pitch === "Ab" ||
