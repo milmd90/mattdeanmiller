@@ -49,7 +49,7 @@ function Signup(props) {
             placeholder="password"
             name="password"
             type="password"
-            id="pwd"
+            id="password"
             onChange={handleChange}
           />
         </div>

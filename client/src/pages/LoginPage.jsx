@@ -49,7 +49,7 @@ function Login(props) {
             placeholder="password"
             name="password"
             type="password"
-            id="pwpasswordd"
+            id="password"
             onChange={handleChange}
           />
         </div>
