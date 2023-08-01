@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import Config from './Config';
-import ColorKey from './ColorKey';
-import TabView from './TabView';
-import { IChordTab } from '../../helpers/common';
-import { getTabsFromChordTabArray } from '../../helpers/export';
+import Config from '../components/calculator/Config';
+import ColorKey from '../components/calculator/ColorKey';
+import TabView from '../components/calculator/TabView';
+import { IChordTab } from '../helpers/common';
+import { getTabsFromChordTabArray } from '../helpers/export';
 
-function Calculator() {
+function Tabulator() {
   const [numColumns, setNumColumns] = useState<number>(16);
   const [numRows, setNumRows] = useState<number>(1);
   const [editingRow, setEditingRow] = useState<number | undefined>(0);
@@ -45,7 +45,7 @@ function Calculator() {
 
   return (
     <div id="calculator">
-      <div id='tab-views'>
+      <div id='tab-views' className='container'>
         {renderTabViews(numRows)}
       </div>
       <div id='sidebar'>
@@ -62,9 +62,8 @@ function Calculator() {
           showColors={showColors}
         />
       </div>
-
     </div>
   );
 }
 
-export default Calculator;
+export default Tabulator;

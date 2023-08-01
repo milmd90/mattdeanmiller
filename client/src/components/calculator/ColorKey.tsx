@@ -44,7 +44,7 @@ function ColorKey(props: {
   if (!props.showColors) return null;
 
   return (
-    <div id="color-key">
+    <div id="color-key" className='container'>
       <h3>Color Key</h3>
       {definedTones.map(notes =>
         <div key={`${notes.offset}`}>

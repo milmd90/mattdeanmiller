@@ -18,8 +18,26 @@ const typeDefs = gql`
     sixth: GuitarString
   }
 
+  type User {
+    _id: ID
+    username: String
+    password: String
+  }
+
+  type Auth {
+    token: ID
+    user: User
+  }
+
   type Query {
     chords(shape: String, type: String): [Chord]
+    user(username: String!): User
+  }
+
+  type Mutation {
+    createUser(username: String!, password: String!): Auth
+    updateUser(username: String, password: String): User
+    login(username: String!, password: String!): Auth
   }
 `;
 

@@ -10,6 +10,24 @@ input {
   min-width: 0;
 }
 
+label {
+  padding-right: 16px;
+}
+
+.logout {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
 #app {
   display: flex;
   flex-direction: column;
@@ -26,8 +44,15 @@ input {
   background-color: #080815;
 }
 
-#login {
+#header a {
   color: #ddd;
+}
+
+.signup,
+.login,
+.profile,
+.logout {
+  margin-left: 15px;
 }
 
 #calculator {
@@ -39,12 +64,60 @@ input {
   min-height: 0;
 }
 
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 100px 40px 100px;
+}
+
+.container {
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: #ddd;
+  padding: 0 20px 20px 20px;
+  margin-bottom: 20px;
+}
+
+.container a {
+  color: black;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.item {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.center {
+  justify-content: center;
+}
+
+.spaced {
+  justify-content: space-between;
+}
+
+.error-message {
+  color: red;
+}
+
+.button {
+  font-size: 14pt;
+  padding: 5px;
+  border-radius: 12px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
 #tab-views {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
-  border-radius: 12px;
-  background-color: #ddd;
   overflow: scroll;
   width: 60%;
   padding-top: 20px;
@@ -53,8 +126,8 @@ input {
 
 .tab-view {
   display: flex;
-  padding: 20px;
-  margin: 0 40px 0 20px;
+  padding-top: 20px;
+  padding-right: 20px;
 }
 
 .start-column {
@@ -95,6 +168,7 @@ input {
   position: absolute;
   left: 20px;
   bottom: -20px;
+  padding-right: 15px;
 }
 
 .fret-number {
@@ -180,12 +254,7 @@ input {
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
-  border: 1px solid black;
-  border-radius: 12px;
-  background-color: #ddd;
   height: 300px;
-  padding: 0 20px 20px 20px;
-  margin-bottom: 20px;
 }
 
 #config>div {
@@ -241,11 +310,7 @@ input {
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
-  border: 1px solid black;
-  border-radius: 12px;
-  background-color: #ddd;
   height: 300px;
-  padding: 0 20px 20px 20px;
 }
 
 .color-key-sample {
@@ -284,4 +349,9 @@ input {
 .tab-detail-cell:first-child {
   justify-content: flex-end;
   padding-right: 5px;
+}
+
+#login-page,
+#signup-page {
+  width: 30%;
 }
