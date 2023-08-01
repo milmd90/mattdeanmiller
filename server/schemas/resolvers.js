@@ -1,3 +1,4 @@
+const { ApolloError, AuthenticationError } = require('apollo-server-express');
 const { Chord, User } = require('../models');
 const { signToken } = require('../utils/auth')
 
@@ -21,9 +22,9 @@ const resolvers = {
 
   Mutation: {
     createUser: async (parent, args, context) => {
-      const user = await User.findById(context.user._id, args);
-      if (user) {
-        throw new Error('Username taken')
+      const user = await User.find({ username: args.username });
+      if (user.length > 0) {
+        throw new ApolloError('Username taken')
       }
 
       const newUser = await User.create(args);
@@ -36,7 +37,7 @@ const resolvers = {
         return await User.findByIdAndUpdate(context.user._id, args, { new: true });
       }
 
-      throw new AuthenticationError('Not logged in');
+      throw new ApolloError('Not logged in');
     },
     login: async (parent, { username, password }) => {
       const user = await User.findOne({ username });

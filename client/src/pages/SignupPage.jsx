@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
-import { LOGIN } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
+import { CREATE_USER } from '../utils/mutations';
 
-function Login(props) {
+function Signup(props) {
   const [formState, setFormState] = useState({ username: '', password: '' });
-  const [login, { error }] = useMutation(LOGIN);
+  const [createUser, { error }] = useMutation(CREATE_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      const mutationResponse = await login({
+      const mutationResponse = await createUser({
         variables: { ...formState },
       });
-      const token = mutationResponse.data.login.token;
+      const token = mutationResponse.data.createUser.token;
       Auth.login(token);
-    } catch (e) {
-      console.log(e);
+    } catch (error) {
+      // console.log(error);
     }
   };
 
@@ -30,12 +30,10 @@ function Login(props) {
   };
 
   return (
-    <div className="">
-      <Link to="/signup">← Go to Signup</Link>
-
-      <h2>Login</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="">
+    <div id='signup-page' className="container">
+      <h2>Signup</h2>
+      <form className='section' onSubmit={handleFormSubmit}>
+        <div className="item center">
           <label htmlFor="username">Username:</label>
           <input
             placeholder="username"
@@ -45,29 +43,45 @@ function Login(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="">
+        <div className="item center">
           <label htmlFor="pwd">Password:</label>
           <input
             placeholder="password"
             name="password"
             type="password"
-            id="pwpasswordd"
+            id="pwd"
             onChange={handleChange}
           />
         </div>
         {error ? (
-          <div>
-            <p className="">
-              The provided credentials are incorrect
+          <div className='item center'>
+            <p className="error-message">
+              {error.message}
             </p>
           </div>
         ) : null}
-        <div className="">
+        <div className='item center'>
           <button type="submit">Submit</button>
+        </div>
+        <div className='item center'>
+          <Link to="/login" >
+            Go to Login
+          </Link>
         </div>
       </form>
     </div>
   );
 }
 
-export default Login;
+function SignupPage(props) {
+  return (
+    <div className="page">
+      <Signup
+        {...props}
+      />
+    </div>
+  );
+}
+
+
+export default SignupPage;

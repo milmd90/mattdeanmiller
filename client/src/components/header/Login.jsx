@@ -8,22 +8,22 @@ const Login = () => {
     Auth.logout();
   };
   return (
-    <div className="login">
+    <div id="login-signup">
       {Auth.loggedIn() ? (
         <>
-          <Link className="" to="/me">
-            {Auth.getProfile().data.username}'s profile
+          <Link className="profile" to="/profile">
+            Profile
           </Link>
-          <button className="" onClick={logout}>
+          <button className="logout" onClick={logout}>
             Logout
           </button>
         </>
       ) : (
         <>
-          <Link className="" to="/login">
+          <Link className="login" to="/login">
             Login
           </Link>
-          <Link className="" to="/signup">
+          <Link className="signup" to="/signup">
             Signup
           </Link>
         </>

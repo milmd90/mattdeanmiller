@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Login from './Login';
 
 function Header(props: {
@@ -7,7 +8,9 @@ function Header(props: {
   return (
     <div id="header">
       <h1>
-        {props.title}
+        <Link to='/'>
+          {props.title}
+        </Link>
       </h1>
       <Login />
     </div>

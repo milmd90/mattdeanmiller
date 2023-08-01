@@ -45,7 +45,7 @@ function Tabulator() {
 
   return (
     <div id="calculator">
-      <div id='tab-views'>
+      <div id='tab-views' className='container'>
         {renderTabViews(numRows)}
       </div>
       <div id='sidebar'>

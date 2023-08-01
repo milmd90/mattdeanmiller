@@ -11,7 +11,7 @@ function Config(props: {
   downloadTab: () => void,
 }) {
   return (
-    <div id="config">
+    <div id="config" className='container'>
       <h3>Config Options</h3>
       <div>
         <div id="config-options">
