@@ -10,7 +10,7 @@ import { setContext } from '@apollo/client/link/context';
 import './App.css';
 import Header from './header/Header';
 import Tabulator from '../pages/Tabulator';
-import Login from '../pages/LoginPage';
+import Login from '../pages/Login';
 import Signup from '../pages/SignupPage';
 import NoMatch from '../pages/NoMatch';
 import Profile from '../pages/Profile';
@@ -45,28 +45,30 @@ function App() {
       <Router>
         <div id="app">
           <Header title="Tabulator" />
-          <Routes>
-            <Route
-              path="/"
-              element={<Tabulator />}
-            />
-            <Route
-              path="/signup"
-              element={<Signup />}
-            />
-            <Route
-              path="/login"
-              element={<Login />}
-            />
-            <Route
-              path="/profile"
-              element={<Profile />}
-            />
-            <Route
-              path="*"
-              element={<NoMatch />}
-            />
-          </Routes>
+          <div className='page'>
+            <Routes>
+              <Route
+                path="/"
+                element={<Tabulator />}
+              />
+              <Route
+                path="/signup"
+                element={<Signup />}
+              />
+              <Route
+                path="/login"
+                element={<Login />}
+              />
+              <Route
+                path="/profile"
+                element={<Profile />}
+              />
+              <Route
+                path="*"
+                element={<NoMatch />}
+              />
+            </Routes>
+          </div>
         </div>
       </Router>
     </ApolloProvider>

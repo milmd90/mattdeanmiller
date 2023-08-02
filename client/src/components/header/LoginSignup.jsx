@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 
-const Login = () => {
+const LoginSignup = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
@@ -32,4 +32,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginSignup;

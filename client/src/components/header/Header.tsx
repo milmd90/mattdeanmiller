@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Login from './Login';
+import LoginSignup from './LoginSignup';
 
 function Header(props: {
   title: String
@@ -12,7 +12,7 @@ function Header(props: {
           {props.title}
         </Link>
       </h1>
-      <Login />
+      <LoginSignup />
     </div>
   );
 }

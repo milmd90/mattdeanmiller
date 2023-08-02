@@ -1,6 +1,6 @@
 function Profile(props) {
   return (
-    <div id='profile' className="container page">
+    <div id='profile' className="container">
       <h2>Profile</h2>
       <div className='section'>
         <div className='item'>

@@ -30,7 +30,7 @@ function Signup(props) {
   };
 
   return (
-    <div id='signup-page' className="container">
+    <div id='signup' className="container">
       <h2>Signup</h2>
       <form className='section' onSubmit={handleFormSubmit}>
         <div className="item center">
@@ -73,15 +73,4 @@ function Signup(props) {
   );
 }
 
-function SignupPage(props) {
-  return (
-    <div className="page">
-      <Signup
-        {...props}
-      />
-    </div>
-  );
-}
-
-
-export default SignupPage;
+export default Signup;

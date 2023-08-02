@@ -44,11 +44,11 @@ function Tabulator() {
   }
 
   return (
-    <div id="calculator">
-      <div id='tab-views' className='container'>
+    <div id="tabulator" className='window'>
+      <div id='tab-views' className='container column'>
         {renderTabViews(numRows)}
       </div>
-      <div id='sidebar'>
+      <div id='sidebar' className='column'>
         <Config
           showColors={showColors}
           toggleShowColors={() => toggleShowColors(!showColors)}

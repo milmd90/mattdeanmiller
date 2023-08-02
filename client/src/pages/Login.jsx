@@ -30,7 +30,7 @@ function Login(props) {
   };
 
   return (
-    <div id='login-page' className="container">
+    <div id='login' className="container">
       <h2>Login</h2>
       <form className='section' onSubmit={handleFormSubmit}>
         <div className="item center">
@@ -71,15 +71,4 @@ function Login(props) {
   );
 }
 
-function LoginPage(props) {
-  return (
-    <div className="page">
-      <Login
-        {...props}
-      />
-    </div>
-  );
-}
-
-
-export default LoginPage;
+export default Login;
