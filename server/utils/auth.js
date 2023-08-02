@@ -20,7 +20,7 @@ module.exports = {
     }
 
     try {
-      const { data } = jwt.verify(token, secret, { maxAge: expiration });
+      const { data } = jwt.verify(token, SECRET_KEY, { maxAge: expiration });
       req.user = data;
     }
     catch {
@@ -34,7 +34,7 @@ module.exports = {
 
     return jwt.sign(
       { data: payload },
-      secret,
+      SECRET_KEY,
       { expiresIn: expiration }
     );
   }
