@@ -1,5 +1,7 @@
 import React from "react";
-import { IChordParams } from '../chord/Chord'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowsSpin } from '@fortawesome/free-solid-svg-icons';
+import { IChordParams } from '../chord/Chord';
 
 function Input(props: {
   data: IChordParams,
@@ -86,7 +88,9 @@ function Input(props: {
       />
       <button
         onClick={onChangeOption}
-      />
+      >
+        <FontAwesomeIcon icon={faArrowsSpin} size='lg' />
+      </button>
     </div>
   )
 }

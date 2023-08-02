@@ -237,9 +237,7 @@ a {
 
 .input-row input,
 .input-row button {
-  display: flex;
   flex: 1 1 auto;
-  height: 0;
 }
 
 #sidebar {
