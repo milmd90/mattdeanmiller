@@ -1,3 +1,4 @@
 {
-  "explorer.sortOrder": "foldersNestsFiles"
+  "explorer.sortOrder": "foldersNestsFiles",
+  "eslint.workingDirectories": [{ "mode": "auto" }]
 }
