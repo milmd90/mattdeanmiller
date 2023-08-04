@@ -46,7 +46,7 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [title, setTitle] = useState('Matt Miller');
+  const [title, setTitle] = useState('Matt Dean Miller');
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (

@@ -5,7 +5,7 @@
 *,
 *:before,
 *:after {
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 body {
@@ -66,23 +66,40 @@ a {
   margin: 0 20px;
 }
 
+#header #menu-button {
+  margin: 0 20px;
+}
+
 #menu {
   display: flex;
   flex-direction: column;
   position: absolute;
-  width: 250px;
+  z-index: 2;
+  left: 0;
+  transition: 0.4s;
   padding: 8px 0;
+  height: 66vh;
+  width: 250px;
   border: 1px solid black;
   border-radius: 0 8px 8px 0;
   background-color: #888;
-  z-index: 2;
   color: white;
+  overflow: scroll;
+}
+
+#menu.hide {
+  left: -300px;
 }
 
 .menu-group {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+.menu-category {
+  display: flex;
+  justify-content: space-between;
 }
 
 .menu-item {
