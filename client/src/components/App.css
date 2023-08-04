@@ -107,6 +107,10 @@ a {
   padding: 8px 25px;
 }
 
+.category-item {
+  padding-left: 40px;
+}
+
 .menu-item:hover {
   background-color: #666;
 }
