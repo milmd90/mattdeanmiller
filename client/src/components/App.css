@@ -45,13 +45,53 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  padding: 20px 40px 20px 20px;
   color: #ddd;
   background-color: #080815;
 }
 
-#header a {
+#header a,
+#menu a {
   color: #ddd;
+}
+
+#header #header-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#header h1 {
+  padding: 0px;
+  margin: 0 20px;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 250px;
+  padding: 8px 0;
+  border: 1px solid black;
+  border-radius: 0 8px 8px 0;
+  background-color: #888;
+  z-index: 2;
+  color: white;
+}
+
+.menu-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.menu-item {
+  font-size: 15pt;
+  padding: 8px 25px;
+}
+
+.menu-item:hover {
+  background-color: #666;
 }
 
 .signup,
@@ -67,6 +107,10 @@ a {
   justify-content: center;
   align-items: center;
   margin: 20px 100px 40px 100px;
+}
+
+.page > div {
+  width: 100%;
 }
 
 .window {
@@ -362,12 +406,6 @@ a {
 .tab-detail-cell:first-child {
   justify-content: flex-end;
   padding-right: 5px;
-}
-
-#tabulator,
-#profile,
-#no-match {
-  width: 100%;
 }
 
 #login,
