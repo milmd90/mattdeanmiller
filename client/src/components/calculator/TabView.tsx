@@ -53,7 +53,7 @@ function EndColumn(props: {
           <div className="end-bar" key={tabString}> | </div>
         )}
         <div className='edit' onClick={props.handleEditClick}>
-          <FontAwesomeIcon icon={faEdit} />
+          <FontAwesomeIcon className='icon' icon={faEdit} />
         </div>
       </div>
     </div>

@@ -39,7 +39,7 @@ function MenuDropdown(props: {
         <Link to='/music-theory' onClick={props.onClick}>
           Music Theory
         </Link>
-        <FontAwesomeIcon id='menu-dropdown' icon={faCaretDown} onClick={props.onExpand} />
+        <FontAwesomeIcon id='menu-dropdown' className='icon' icon={faCaretDown} onClick={props.onExpand} />
       </div>
       {getSubItems()}
     </div>

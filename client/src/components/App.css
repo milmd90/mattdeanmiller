@@ -20,18 +20,12 @@ label {
   padding-right: 16px;
 }
 
-.logout {
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-}
-
 a {
   text-decoration: none;
+}
+
+.icon {
+  cursor: pointer;
 }
 
 #app {
@@ -120,6 +114,16 @@ a {
 .profile,
 .logout {
   margin-left: 15px;
+}
+
+.logout {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
 .page {

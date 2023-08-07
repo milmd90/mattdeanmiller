@@ -89,7 +89,7 @@ function Input(props: {
       <button
         onClick={onChangeOption}
       >
-        <FontAwesomeIcon icon={faArrowsSpin} size='lg' />
+        <FontAwesomeIcon className='icon' icon={faArrowsSpin} size='lg' />
       </button>
     </div>
   )

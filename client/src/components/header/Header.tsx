@@ -11,7 +11,7 @@ function Header(props: {
   return (
     <div id="header">
       <span id='header-left'>
-        <FontAwesomeIcon id='menu-button' icon={faBars} size="2xl" 
+        <FontAwesomeIcon id='menu-button' className='icon' icon={faBars} size="2xl" 
           onClick={props.onMenuClick}
         />
         <h1>
