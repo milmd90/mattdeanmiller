@@ -2219,6 +2219,34 @@
       "tone": null
     },
     "second": {
+      "fret": 0,
+      "tone": 7
+    },
+    "third": {
+      "fret": 0,
+      "tone": 0
+    },
+    "fourth": {
+      "fret": 2,
+      "tone": 7
+    },
+    "fifth": {
+      "fret": 3,
+      "tone": 0
+    },
+    "sixth": {
+      "fret": 2,
+      "tone": 4
+    }
+  },
+  {
+    "shape": "D",
+    "type": "major",
+    "first": {
+      "fret": null,
+      "tone": null
+    },
+    "second": {
       "fret": null,
       "tone": null
     },
@@ -2275,6 +2303,34 @@
       "tone": null
     },
     "second": {
+      "fret": 0,
+      "tone": 7
+    },
+    "third": {
+      "fret": 0,
+      "tone": 0
+    },
+    "fourth": {
+      "fret": 2,
+      "tone": 7
+    },
+    "fifth": {
+      "fret": 2,
+      "tone": 11
+    },
+    "sixth": {
+      "fret": 2,
+      "tone": 4
+    }
+  },
+  {
+    "shape": "D",
+    "type": "major 7th",
+    "first": {
+      "fret": null,
+      "tone": null
+    },
+    "second": {
       "fret": null,
       "tone": null
     },
@@ -2331,6 +2387,34 @@
       "tone": null
     },
     "second": {
+      "fret": 0,
+      "tone": 7
+    },
+    "third": {
+      "fret": 0,
+      "tone": 0
+    },
+    "fourth": {
+      "fret": 2,
+      "tone": 7
+    },
+    "fifth": {
+      "fret": 1,
+      "tone": 10
+    },
+    "sixth": {
+      "fret": 2,
+      "tone": 4
+    }
+  },
+  {
+    "shape": "D",
+    "type": "dominate 7th",
+    "first": {
+      "fret": null,
+      "tone": null
+    },
+    "second": {
       "fret": null,
       "tone": null
     },
@@ -2345,6 +2429,34 @@
     "fifth": {
       "fret": 1,
       "tone": 10
+    },
+    "sixth": {
+      "fret": 2,
+      "tone": 4
+    }
+  },
+  {
+    "shape": "D",
+    "type": "6",
+    "first": {
+      "fret": null,
+      "tone": null
+    },
+    "second": {
+      "fret": 0,
+      "tone": 7
+    },
+    "third": {
+      "fret": 0,
+      "tone": 0
+    },
+    "fourth": {
+      "fret": 2,
+      "tone": 7
+    },
+    "fifth": {
+      "fret": 0,
+      "tone": 9
     },
     "sixth": {
       "fret": 2,
@@ -2415,6 +2527,34 @@
       "tone": null
     },
     "second": {
+      "fret": 0,
+      "tone": 7
+    },
+    "third": {
+      "fret": 0,
+      "tone": 0
+    },
+    "fourth": {
+      "fret": 2,
+      "tone": 7
+    },
+    "fifth": {
+      "fret": 3,
+      "tone": 0
+    },
+    "sixth": {
+      "fret": 1,
+      "tone": 3
+    }
+  },
+  {
+    "shape": "D",
+    "type": "minor",
+    "first": {
+      "fret": null,
+      "tone": null
+    },
+    "second": {
       "fret": null,
       "tone": null
     },
@@ -2441,6 +2581,34 @@
     "first": {
       "fret": -2,
       "tone": 0
+    },
+    "second": {
+      "fret": 0,
+      "tone": 7
+    },
+    "third": {
+      "fret": 0,
+      "tone": 0
+    },
+    "fourth": {
+      "fret": 2,
+      "tone": 7
+    },
+    "fifth": {
+      "fret": 1,
+      "tone": 10
+    },
+    "sixth": {
+      "fret": 1,
+      "tone": 3
+    }
+  },
+  {
+    "shape": "D",
+    "type": "minor 7th",
+    "first": {
+      "fret": null,
+      "tone": null
     },
     "second": {
       "fret": 0,
