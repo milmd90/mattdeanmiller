@@ -5,11 +5,15 @@
 *,
 *:before,
 *:after {
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 body {
   background-color: #13133c;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0px;
 }
 
 input {
@@ -20,18 +24,12 @@ label {
   padding-right: 16px;
 }
 
-.logout {
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-}
-
 a {
   text-decoration: none;
+}
+
+.icon {
+  cursor: pointer;
 }
 
 #app {
@@ -45,13 +43,29 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  padding: 20px 40px 20px 20px;
   color: #ddd;
   background-color: #080815;
 }
 
-#header a {
+#header a,
+#menu a {
   color: #ddd;
+}
+
+#header #header-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#header h1 {
+  padding: 0px;
+  margin: 0 20px;
+}
+
+#header #menu-button {
+  margin: 0 20px;
 }
 
 .signup,
@@ -61,12 +75,82 @@ a {
   margin-left: 15px;
 }
 
+.logout {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  transition: 0.4s;
+  padding: 8px 0;
+  height: 66vh;
+  width: 250px;
+  border: 1px solid black;
+  border-radius: 0 8px 8px 0;
+  background-color: #999;
+  color: white;
+  overflow: scroll;
+}
+
+#menu.hide {
+  left: -300px;
+}
+
+.menu-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.menu-category {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-item {
+  font-size: 15pt;
+  padding: 8px 25px;
+}
+
+.category-item {
+  padding-left: 40px;
+}
+
+.menu-item:hover {
+  background-color: #888;
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+#footer .icon {
+  height: 30px;
+  width: 30px;
+}
+
 .page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 20px 100px 40px 100px;
+}
+
+.page > div {
+  width: 100%;
 }
 
 .window {
@@ -81,7 +165,7 @@ a {
   border: 1px solid black;
   border-radius: 8px;
   background-color: #ddd;
-  padding: 0 20px 20px 20px;
+  padding: 20px;
   margin-bottom: 20px;
 }
 
@@ -89,10 +173,9 @@ a {
   color: black;
 }
 
-.section {
+.column {
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
 }
 
 .item {
@@ -101,7 +184,9 @@ a {
 }
 
 .center {
+  display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .spaced {
@@ -118,6 +203,10 @@ a {
   border-radius: 12px;
   background-color: white;
   margin-bottom: 10px;
+}
+
+#logo {
+  width: 150px;
 }
 
 #tabulator {
@@ -145,8 +234,8 @@ a {
 }
 
 .start-column {
-  padding: 0 10px;
-  width: 60px;
+  padding-right: 10px;
+  width: 90px;
   flex-shrink: 0;
 }
 
@@ -157,6 +246,20 @@ a {
 .start-column .tab-row,
 .start-column .input-row {
   align-items: flex-end;
+}
+.start-column .input-row-label {
+  display: flex;
+  align-items: center;
+}
+.start-column .input-row-label svg {
+  margin-left: 6px;
+}
+.start-column .input-row-label svg {
+  margin-left: 6px;
+}
+.react-tooltip {
+  z-index: 3;
+  max-width: 300px;
 }
 
 .chord {
@@ -323,7 +426,6 @@ a {
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
-  height: 300px;
 }
 
 .color-key-sample {
@@ -362,12 +464,6 @@ a {
 .tab-detail-cell:first-child {
   justify-content: flex-end;
   padding-right: 5px;
-}
-
-#tabulator,
-#profile,
-#no-match {
-  width: 100%;
 }
 
 #login,

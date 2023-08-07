@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
@@ -9,11 +9,18 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import './App.css';
 import Header from './header/Header';
-import Tabulator from '../pages/Tabulator';
-import Login from '../pages/Login';
-import Signup from '../pages/SignupPage';
-import NoMatch from '../pages/NoMatch';
-import Profile from '../pages/Profile';
+import OutsideClick from './OutsideClick';
+import Menu from './Menu';
+import {
+  Home,
+  Blog,
+  Tabulator,
+  MusicTheory,
+  Login,
+  Signup,
+  Profile,
+  NoMatch
+} from '../pages';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -40,34 +47,63 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [title, setTitle] = useState('Matthew Miller');
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <ApolloProvider client={client}>
       <Router>
         <div id="app">
-          <Header title="Tabulator" />
-          <div className='page'>
-            <Routes>
-              <Route
-                path="/"
-                element={<Tabulator />}
+          <Header 
+            title={title}
+            onMenuClick={() => {setMenuOpen(!menuOpen)}}
+          />
+          <div id='main'>
+            <OutsideClick
+              onClick={() => {setMenuOpen(false)}}
+              omitElements={['#menu-button']}
+            >
+              <Menu
+                open={menuOpen}
+                onClick={() => setMenuOpen(false)}
               />
-              <Route
-                path="/signup"
-                element={<Signup />}
-              />
-              <Route
-                path="/login"
-                element={<Login />}
-              />
-              <Route
-                path="/profile"
-                element={<Profile />}
-              />
-              <Route
-                path="*"
-                element={<NoMatch />}
-              />
-            </Routes>
+            </OutsideClick>
+            <div className='page'>
+              <Routes>
+                <Route
+                  path="/"
+                  element={<Home />}
+                />
+                <Route
+                  path="/blog"
+                  element={<Blog />}
+                />
+                <Route
+                  path="/tabulator"
+                  element={<Tabulator />}
+                />
+                <Route
+                  path="/music-theory"
+                  element={<MusicTheory />}
+                />
+                <Route
+                  path="/signup"
+                  element={<Signup />}
+                />
+                <Route
+                  path="/login"
+                  element={<Login />}
+                />
+                <Route
+                  path="/profile"
+                  element={<Profile />}
+                />
+                <Route
+                  path="*"
+                  element={<NoMatch />}
+                />
+              </Routes>
+            </div>
           </div>
         </div>
       </Router>
