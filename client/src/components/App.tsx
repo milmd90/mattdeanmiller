@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
@@ -47,15 +47,14 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [title, setTitle] = useState('Matthew Miller');
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <ApolloProvider client={client}>
-      <Router>
+      <BrowserRouter>
         <div id="app">
           <Header 
-            title={title}
+            title='Matthew Miller'
             onMenuClick={() => {setMenuOpen(!menuOpen)}}
           />
           <div id='main'>
@@ -106,7 +105,7 @@ function App() {
             </div>
           </div>
         </div>
-      </Router>
+      </BrowserRouter>
     </ApolloProvider>
   );
 }
