@@ -1,8 +1,9 @@
 import React from 'react';
-import { IChordTab, TabString, stringToNote, tabStrings } from '../../helpers/common';
+import { IChordTab, stringToNote, tabStrings } from '../../helpers/common';
 import Chord from './chord/Chord';
+import { Tooltip } from 'react-tooltip';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit } from '@fortawesome/free-solid-svg-icons'
+import { faEdit, faCircleQuestion } from '@fortawesome/free-regular-svg-icons'
 
 
 function StartColumn(props: {
@@ -21,20 +22,71 @@ function StartColumn(props: {
       {
         props.isEditing &&
         <div className='input-row'>
-          <div>
+          <div className='input-row-label'>
             root
+            <FontAwesomeIcon 
+              data-tooltip-id="root-tooltip"
+              icon={faCircleQuestion} 
+              size='xs'
+            />
+            <Tooltip
+              id="root-tooltip"
+              place="top-start"
+              content="Type the root note of your chord."
+            />
           </div>
-          <div>
+          <div className='input-row-label'>
             type
+            <FontAwesomeIcon 
+              data-tooltip-id="type-tooltip"
+              icon={faCircleQuestion} 
+              size='xs'
+            />
+            <Tooltip
+              id="type-tooltip"
+              place="top-start"
+              content="Type the quality of your chord (ex: minor, maj 7, half dim, etc).
+              Default value is major."
+            />
           </div>
-          <div>
+          <div className='input-row-label'>
             shape
+            <FontAwesomeIcon 
+              data-tooltip-id="shape-tooltip"
+              icon={faCircleQuestion} 
+              size='xs'
+            />
+            <Tooltip
+              id="shape-tooltip"
+              place="top-start"
+              content="Optional. Type the base shape of the chord (eg: C, A, G, E, D)."
+            />
           </div>
-          <div>
+          <div className='input-row-label'>
             position
+            <FontAwesomeIcon 
+              data-tooltip-id="position-tooltip"
+              icon={faCircleQuestion} 
+              size='xs'
+            />
+            <Tooltip
+              id="position-tooltip"
+              place="top-start"
+              content="Optional. Type the minimum allowable fret position."
+            />
           </div>
-          <div>
+          <div className='input-row-label'>
             option
+            <FontAwesomeIcon 
+              data-tooltip-id="option-tooltip"
+              icon={faCircleQuestion} 
+              size='xs'
+            />
+            <Tooltip
+              id="option-tooltip"
+              place="top-start"
+              content="Clicking this button cycles through all matching chords."
+            />
           </div>
         </div>
       }

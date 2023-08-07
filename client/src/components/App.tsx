@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
@@ -15,6 +15,7 @@ import {
   Home,
   Blog,
   Tabulator,
+  MusicTheory,
   Login,
   Signup,
   Profile,
@@ -46,7 +47,7 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [title, setTitle] = useState('Matt Dean Miller');
+  const [title, setTitle] = useState('Matthew Miller');
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -80,6 +81,10 @@ function App() {
                 <Route
                   path="/tabulator"
                   element={<Tabulator />}
+                />
+                <Route
+                  path="/music-theory"
+                  element={<MusicTheory />}
                 />
                 <Route
                   path="/signup"

@@ -32,7 +32,7 @@ function Signup(props) {
   return (
     <div id='signup' className="container">
       <h2>Signup</h2>
-      <form className='section' onSubmit={handleFormSubmit}>
+      <form className='column' onSubmit={handleFormSubmit}>
         <div className="item center">
           <label htmlFor="username">Username:</label>
           <input

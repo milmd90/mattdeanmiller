@@ -21,7 +21,7 @@ function Header(props: {
         </h1>
       </span>
       <span id='header-right'>
-        <LoginSignup />
+        {/* <LoginSignup /> */}
       </span>
     </div>
   );

@@ -2,9 +2,9 @@ function Blog(props) {
   return (
     <div id='blog' className="container">
       <h2>Blog</h2>
-      <div className='section'>
+      <div className='column'>
         <div className='item'>
-          Features coming soon
+          Blog coming soon
         </div>
       </div>
     </div>

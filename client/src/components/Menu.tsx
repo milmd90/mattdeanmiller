@@ -57,17 +57,17 @@ function Menu(props: {
       <Link to='/' id='menu-home'  className='menu-item' onClick={props.onClick}>
         Home
       </Link>
-      <Link to='/blog' id='menu-blog' className='menu-item' onClick={props.onClick}>
+      {/* <Link to='/blog' id='menu-blog' className='menu-item' onClick={props.onClick}>
         Blog
-      </Link>
+      </Link> */}
       <Link to='/tabulator' id='menu-tabulator' className='menu-item' onClick={props.onClick}>
         Tabulator
       </Link>
-      <MenuDropdown
+      {/* <MenuDropdown
         open={dropdownOpen}
         onClick={props.onClick}
         onExpand={() => {setDropdownOpen(!dropdownOpen)}}
-      />
+      /> */}
     </div>
   );
 }
