@@ -73,7 +73,7 @@ function MusicTheory(props) {
             However, the distance between both E and F and B and C are only half-steps. 
             Laid out evenly:
           </p> 
-          <img id='chromatic-diagram' src='/images/music-theory/chromatic.png' alt='chromatic'/>
+          <img className='full' src='/images/music-theory/chromatic.png' alt='chromatic'/>
           <p>
             The piano is a good way to visualize this pattern. 
             All of the natural tones are played with white keys. 
@@ -81,7 +81,7 @@ function MusicTheory(props) {
             Every key on the piano plays a pitch one half-step from the two beside it. 
             Since E and F and B and C are only a half-step apart, there is no black key in between those keys on the piano.
           </p>
-          <img id='keyboard-diagram' src='/images/music-theory/keyboard.png' alt='keyboard'/>
+          <img className='full' src='/images/music-theory/keyboard.png' alt='keyboard'/>
           <p>
             This pattern probably seems odd, but will make sense when we discuss the major scale. 
           </p>
@@ -137,7 +137,7 @@ function MusicTheory(props) {
             Starting on a C, the intervals of the natural tones are the same as the major scale. 
             Therefore, if you start on a C and play all the white keys up to the next C, you have played a C major scale. 
           </p>
-          <img id='keyboard-interval-diagram' src='/images/music-theory/keyboard-with-intervals.png' alt='keyboard-with-intervals'/>
+          <img className='full' src='/images/music-theory/keyboard-with-intervals.png' alt='keyboard-with-intervals'/>
         </div>
         <div className='item'>
           <h3 id='key'>
@@ -168,24 +168,30 @@ function MusicTheory(props) {
             Where the notes are placed depends on the "clef" or symbol at the far left of the staff. 
             You can write any pitch with any clef, but different clefs are used for different instruments so that most notes lay on the staff.
           </p> 
+          <img className='full' src='/images/music-theory/sheet-music.png' alt='sheet-music'/>
         </div>
         <div className='item'>
           <h3 id='circle-of-fifths'>
             Circle of Fifths
           </h3>
-          <p>
-            C is the key used most often when discussing music theory. 
-            This is because C major has no sharps or flats. 
-            However, C is just one of the 12 different pitches in the chromatic scale. 
-            Since there are 12 options for the first pitch, there are 12 different major scales. 
-            Likewise, there are 12 different major keys. 
-            Each one of these keys is a unique combination of 7 of the 12 chromatic pitches. 
-          </p>
-          <p>
-            Unlike the key of C, every other key has at least one sharp or flat. 
-            Another way to say that, is at starting on a pitch other than C and playing the major scale will include pitches with accidentals. 
-            When reading sheet music, musicians look at the staff for accidentals to determine what key the music is in.  
-          </p>
+          <div className="row">
+            <div className="column">
+              <p>
+                C is the key used most often when discussing music theory. 
+                This is because C major has no sharps or flats. 
+                However, C is just one of the 12 different pitches in the chromatic scale. 
+                Since there are 12 options for the first pitch, there are 12 different major scales. 
+                Likewise, there are 12 different major keys. 
+                Each one of these keys is a unique combination of 7 of the 12 chromatic pitches. 
+              </p>
+              <p>
+                Unlike the key of C, every other key has at least one sharp or flat. 
+                Another way to say that, is at starting on a pitch other than C and playing the major scale will include pitches with accidentals. 
+                When reading sheet music, musicians look at the staff for accidentals to determine what key the music is in.  
+              </p>
+            </div>
+            <img id='circle-of-fifths-diagram' src='/images/music-theory/circle-of-fifths.png' alt='circle-of-fifths'/>
+          </div>
           <p>
             If we wanted to play in the key of D major, we could find these pitches by starting on a D and playing a major scale. 
             This would give us D E F# G A B C#. 
@@ -216,7 +222,7 @@ function MusicTheory(props) {
             If you start on the sixth pitch of the major scale and play seven ascending pitches, you will play the intervals for the minor scale. 
             Since C is the sixth pitch in Eb major, C minor will have the same pitches as Eb major.
           </p>
-          <img id='minor-major-diagram' src='/images/music-theory/minor-major.png' alt='minor-major'/>
+          <img className='full' src='/images/music-theory/minor-major.png' alt='minor-major'/>
         </div>
         <div className='item'>
           <h3 id='chords'>
@@ -247,8 +253,8 @@ function MusicTheory(props) {
             Quality refers to the intervals between the pitches in the chord. 
             Since some of the pitches in the key are closer than others, so are the pitches in each chord.
           </p>
-          <img id='keyboard-diagram-2' src='/images/music-theory/keyboard.png' alt='keyboard'/>
-          <img id='chords-diagram' src='/images/music-theory/chords.png' alt='chords'/>
+          <img className='full' src='/images/music-theory/keyboard.png' alt='keyboard'/>
+          <img className='full' src='/images/music-theory/chords.png' alt='chords'/>
           <p>
             You can see that with major chords the distance between the first pitch and third pitch is 4 half steps (2 whole steps). 
             In minor chords that distance is only 3 half steps. 
