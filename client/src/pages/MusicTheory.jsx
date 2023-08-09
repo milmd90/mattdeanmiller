@@ -51,7 +51,7 @@ function MusicTheory(props) {
             The reason is that in our perception, two pitches will sound very similar when one is exactly twice the frequency of the other. 
             While they are different pitches, we often consider them interchangeable. 
             For this reason each pitch name (ex F) represents multiple frequencies. 
-            The technical way to say this is that each name represents a “pitch class”. 
+            The technical way to say this is that each name represents a "pitch class". 
             To specify a single frequency, we also need to include the octave number by adding a number after the letter (ex F3). 
             This is usually unnecessary information and is omitted.
           </p>
@@ -81,6 +81,7 @@ function MusicTheory(props) {
             Every key on the piano plays a pitch one half-step from the two beside it. 
             Since E and F and B and C are only a half-step apart, there is no black key in between those keys on the piano.
           </p>
+          <img id='keyboard-diagram' src='/images/music-theory/keyboard.png' alt='keyboard'/>
           <p>
             This pattern probably seems odd, but will make sense when we discuss the major scale. 
           </p>
@@ -98,7 +99,7 @@ function MusicTheory(props) {
             You might notice that pitches with accidentals each have two names. 
             For instance, one pitch above is labeled both C# and Db. 
             Depending on the key, it makes more sense to refer to this pitch by one name or the other. 
-            Two notes with different names but the same pitch are said to be “harmonically equivalent”. 
+            Two notes with different names but the same pitch are said to be "harmonically equivalent". 
             The reason why the same pitch might need different names will become more clear once we start discussing keys and scales.
           </p>
         </div>
@@ -136,6 +137,7 @@ function MusicTheory(props) {
             Starting on a C, the intervals of the natural tones are the same as the major scale. 
             Therefore, if you start on a C and play all the white keys up to the next C, you have played a C major scale. 
           </p>
+          <img id='keyboard-interval-diagram' src='/images/music-theory/keyboard-with-intervals.png' alt='keyboard-with-intervals'/>
         </div>
         <div className='item'>
           <h3 id='key'>
@@ -156,14 +158,14 @@ function MusicTheory(props) {
           </h3>
           <p>
             Before we get too far into things, it's helpful to discuss how music is written. 
-            Traditionally, music is written down as “sheet music”. 
+            Traditionally, music is written down as "sheet music". 
           </p>
           <p>
             Notes are written on a staff. 
             The staff has five lines with spaces in between. 
             Each line and space is used to represent a different pitch. 
             Ledger lines can also be added to show notes above or below the staff. 
-            Where the notes are placed depends on the “clef” or symbol at the far left of the staff. 
+            Where the notes are placed depends on the "clef" or symbol at the far left of the staff. 
             You can write any pitch with any clef, but different clefs are used for different instruments so that most notes lay on the staff.
           </p> 
         </div>
@@ -192,7 +194,7 @@ function MusicTheory(props) {
           </p>
           <p>
             One way people visualize this is called the circle of fifths. 
-            The circle of fifths shows all 12 possible keys arranged by the interval of a “perfect fifth”, the distance between the first and fifth notes of the major scale. 
+            The circle of fifths shows all 12 possible keys arranged by the interval of a "perfect fifth", the distance between the first and fifth notes of the major scale. 
             At first, this might seem like an odd choice. 
             However, if you look at the accidentals in each key, you can see that adjacent keys share most of the same pitches. 
             Since G major has only one sharp, C and G share 6 of 7 pitches. 
@@ -245,6 +247,7 @@ function MusicTheory(props) {
             Quality refers to the intervals between the pitches in the chord. 
             Since some of the pitches in the key are closer than others, so are the pitches in each chord.
           </p>
+          <img id='keyboard-diagram-2' src='/images/music-theory/keyboard.png' alt='keyboard'/>
           <img id='chords-diagram' src='/images/music-theory/chords.png' alt='chords'/>
           <p>
             You can see that with major chords the distance between the first pitch and third pitch is 4 half steps (2 whole steps). 
