@@ -12,23 +12,17 @@ function MenuDropdown(props: {
   const getSubItems = () => {
     if (!props.open) return null;
     return <>
-      <Link to='/music-theory#a' className='menu-item category-item' onClick={props.onClick}>
-        A
+      <Link to='/music-theory#sound' className='menu-item category-item' onClick={props.onClick}>
+        Sound
       </Link>
-      <Link to='/music-theory#b' className='menu-item category-item' onClick={props.onClick}>
-        B
+      <Link to='/music-theory#pitch' className='menu-item category-item' onClick={props.onClick}>
+        Pitch
       </Link>
-      <Link to='/music-theory#c' className='menu-item category-item' onClick={props.onClick}>
-        C
+      <Link to='/music-theory#notes' className='menu-item category-item' onClick={props.onClick}>
+        Notes
       </Link>
-      <Link to='/music-theory#d' className='menu-item category-item' onClick={props.onClick}>
-        D
-      </Link>
-      <Link to='/music-theory#e' className='menu-item category-item' onClick={props.onClick}>
-        E
-      </Link>
-      <Link to='/music-theory#f' className='menu-item category-item' onClick={props.onClick}>
-        F
+      <Link to='/music-theory#octaves' className='menu-item category-item' onClick={props.onClick}>
+        Octaves
       </Link>
     </>
   }
@@ -39,9 +33,9 @@ function MenuDropdown(props: {
         <Link to='/music-theory' onClick={props.onClick}>
           Music Theory
         </Link>
-        <FontAwesomeIcon id='menu-dropdown' className='icon' icon={faCaretDown} onClick={props.onExpand} />
+        {/* <FontAwesomeIcon id='menu-dropdown' className='icon' icon={faCaretDown} onClick={props.onExpand} /> */}
       </div>
-      {getSubItems()}
+      {/* {getSubItems()} */}
     </div>
   );
 }
@@ -63,11 +57,11 @@ function Menu(props: {
       <Link to='/tabulator' id='menu-tabulator' className='menu-item' onClick={props.onClick}>
         Tabulator
       </Link>
-      {/* <MenuDropdown
+      <MenuDropdown
         open={dropdownOpen}
         onClick={props.onClick}
         onExpand={() => {setDropdownOpen(!dropdownOpen)}}
-      /> */}
+      />
     </div>
   );
 }
