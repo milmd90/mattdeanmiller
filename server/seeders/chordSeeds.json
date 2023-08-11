@@ -2,2717 +2,1011 @@
   {
     "shape": "C",
     "type": "major",
-    "first": {
-      "fret": 0,
-      "tone": 4
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 4
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 4
-    }
+    "sixth": "0",
+    "fifth": "3",
+    "fourth": "2",
+    "third": "0",
+    "second": "1",
+    "first": "0"
   },
   {
     "shape": "C",
     "type": "major",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 4
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "3",
+    "fourth": "2",
+    "third": "0",
+    "second": "1",
+    "first": null
   },
   {
     "shape": "C",
     "type": "major 7th",
-    "first": {
-      "fret": 0,
-      "tone": 4
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 4
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 11
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 4
-    }
+    "sixth": "0",
+    "fifth": "3",
+    "fourth": "2",
+    "third": "0",
+    "second": "0",
+    "first": "0"
   },
   {
     "shape": "C",
     "type": "major 7th",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 4
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 11
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "3",
+    "fourth": "2",
+    "third": "0",
+    "second": "0",
+    "first": null
   },
   {
     "shape": "C",
     "type": "dominate 7th",
-    "first": {
-      "fret": 0,
-      "tone": 4
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 4
-    },
-    "fourth": {
-      "fret": 3,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 4
-    }
+    "sixth": "0",
+    "fifth": "3",
+    "fourth": "2",
+    "third": "3",
+    "second": "1",
+    "first": "0"
   },
   {
     "shape": "C",
     "type": "dominate 7th",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 4
-    },
-    "fourth": {
-      "fret": 3,
-      "tone": 9
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "3",
+    "fourth": "2",
+    "third": "3",
+    "second": "1",
+    "first": null
   },
   {
     "shape": "C",
     "type": "9",
-    "first": {
-      "fret": 0,
-      "tone": 4
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 4
-    },
-    "fourth": {
-      "fret": 3,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 3,
-      "tone": 2
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 4
-    }
+    "sixth": "0",
+    "fifth": "3",
+    "fourth": "2",
+    "third": "3",
+    "second": "3",
+    "first": "0"
   },
   {
     "shape": "C",
     "type": "9",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 4
-    },
-    "fourth": {
-      "fret": 3,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 3,
-      "tone": 2
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "3",
+    "fourth": "2",
+    "third": "3",
+    "second": "3",
+    "first": null
   },
   {
     "shape": "C",
     "type": "6",
-    "first": {
-      "fret": 0,
-      "tone": 4
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 4
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 9
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 4
-    }
+    "sixth": "0",
+    "fifth": "3",
+    "fourth": "2",
+    "third": "2",
+    "second": "1",
+    "first": "0"
   },
   {
     "shape": "C",
     "type": "6",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 4
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 9
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "3",
+    "fourth": "2",
+    "third": "2",
+    "second": "1",
+    "first": null
   },
   {
     "shape": "C",
     "type": "6",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 0,
-      "tone": 9
-    },
-    "third": {
-      "fret": 2,
-      "tone": 4
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "0",
+    "fourth": "2",
+    "third": "0",
+    "second": "1",
+    "first": null
   },
   {
     "shape": "C",
     "type": "69",
-    "first": {
-      "fret": 0,
-      "tone": 4
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 4
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 9
-    },
-    "fifth": {
-      "fret": 3,
-      "tone": 2
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 4
-    }
+    "sixth": "0",
+    "fifth": "3",
+    "fourth": "2",
+    "third": "2",
+    "second": "3",
+    "first": "0"
   },
   {
     "shape": "C",
     "type": "69",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 4
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 9
-    },
-    "fifth": {
-      "fret": 3,
-      "tone": 2
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "3",
+    "fourth": "2",
+    "third": "2",
+    "second": "3",
+    "first": null
   },
   {
     "shape": "C",
     "type": "minor",
-    "first": {
-      "fret": -1,
-      "tone": 3
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 1,
-      "tone": 3
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": -1,
-      "tone": 3
-    }
+    "sixth": "-1",
+    "fifth": "3",
+    "fourth": "1",
+    "third": "0",
+    "second": "1",
+    "first": "-1"
   },
   {
     "shape": "C",
     "type": "minor",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 1,
-      "tone": 3
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "3",
+    "fourth": "1",
+    "third": "0",
+    "second": "1",
+    "first": null
   },
   {
     "shape": "C",
     "type": "minor",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 1,
-      "tone": 3
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": -1,
-      "tone": 3
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "1",
+    "third": "0",
+    "second": "1",
+    "first": "-1"
+  },
+  {
+    "shape": "C",
+    "type": "minor",
+    "sixth": "-1",
+    "fifth": null,
+    "fourth": "1",
+    "third": "0",
+    "second": "1",
+    "first": null
   },
   {
     "shape": "C",
     "type": "minor 7th",
-    "first": {
-      "fret": -1,
-      "tone": 3
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 1,
-      "tone": 3
-    },
-    "fourth": {
-      "fret": 3,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": -1,
-      "tone": 3
-    }
+    "sixth": "-1",
+    "fifth": "3",
+    "fourth": "1",
+    "third": "3",
+    "second": "1",
+    "first": "-1"
   },
   {
     "shape": "C",
     "type": "minor 7th",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 1,
-      "tone": 3
-    },
-    "fourth": {
-      "fret": 3,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "3",
+    "fourth": "1",
+    "third": "3",
+    "second": "1",
+    "first": null
   },
   {
     "shape": "C",
     "type": "minor 9th",
-    "first": {
-      "fret": -1,
-      "tone": 3
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 1,
-      "tone": 3
-    },
-    "fourth": {
-      "fret": 3,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 3,
-      "tone": 2
-    },
-    "sixth": {
-      "fret": -1,
-      "tone": 3
-    }
+    "sixth": "-1",
+    "fifth": "3",
+    "fourth": "1",
+    "third": "3",
+    "second": "3",
+    "first": "-1"
   },
   {
     "shape": "C",
     "type": "minor 9th",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 1,
-      "tone": 3
-    },
-    "fourth": {
-      "fret": 3,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 3,
-      "tone": 2
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "3",
+    "fourth": "1",
+    "third": "3",
+    "second": "3",
+    "first": null
   },
   {
     "shape": "C",
     "type": "half diminished",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 1,
-      "tone": 3
-    },
-    "fourth": {
-      "fret": 3,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 6
-    }
+    "sixth": null,
+    "fifth": "3",
+    "fourth": "1",
+    "third": "3",
+    "second": "1",
+    "first": "2"
   },
   {
     "shape": "C",
     "type": "half diminished",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 1,
-      "tone": 3
-    },
-    "fourth": {
-      "fret": 3,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 6
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "1",
+    "third": "3",
+    "second": "1",
+    "first": "2"
   },
   {
     "shape": "C",
     "type": "diminished",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 3,
-      "tone": 0
-    },
-    "third": {
-      "fret": 1,
-      "tone": 3
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 9
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 6
-    }
+    "sixth": null,
+    "fifth": "3",
+    "fourth": "1",
+    "third": "2",
+    "second": "1",
+    "first": "2"
   },
   {
     "shape": "C",
     "type": "diminished",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 1,
-      "tone": 3
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 9
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 6
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "1",
+    "third": "2",
+    "second": "1",
+    "first": "2"
   },
   {
     "shape": "C",
     "type": "diminished",
-    "first": {
-      "fret": 2,
-      "tone": 6
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 1,
-      "tone": 3
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 9
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": "2",
+    "fifth": null,
+    "fourth": "1",
+    "third": "2",
+    "second": "1",
+    "first": null
   },
   {
     "shape": "A",
     "type": "major",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 0,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 0
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "0",
+    "fourth": "2",
+    "third": "2",
+    "second": "2",
+    "first": null
   },
   {
     "shape": "A",
     "type": "major",
-    "first": {
-      "fret": 0,
-      "tone": 7
-    },
-    "second": {
-      "fret": 0,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 0
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 7
-    }
+    "sixth": "0",
+    "fifth": "0",
+    "fourth": "2",
+    "third": "2",
+    "second": "2",
+    "first": "0"
   },
   {
     "shape": "A",
     "type": "major 7th",
-    "first": {
-      "fret": 0,
-      "tone": 7
-    },
-    "second": {
-      "fret": 0,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 1,
-      "tone": 11
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 7
-    }
+    "sixth": "0",
+    "fifth": "0",
+    "fourth": "2",
+    "third": "1",
+    "second": "2",
+    "first": "0"
   },
   {
     "shape": "A",
     "type": "major 7th",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 0,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 1,
-      "tone": 11
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "0",
+    "fourth": "2",
+    "third": "1",
+    "second": "2",
+    "first": null
   },
   {
     "shape": "A",
     "type": "dominate 7th",
-    "first": {
-      "fret": 0,
-      "tone": 7
-    },
-    "second": {
-      "fret": 0,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 7
-    }
+    "sixth": "0",
+    "fifth": "0",
+    "fourth": "2",
+    "third": "0",
+    "second": "2",
+    "first": "0"
   },
   {
     "shape": "A",
     "type": "dominate 7th",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 0,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "0",
+    "fourth": "2",
+    "third": "0",
+    "second": "2",
+    "first": null
   },
   {
     "shape": "A",
     "type": "9",
-    "first": {
-      "fret": 0,
-      "tone": 7
-    },
-    "second": {
-      "fret": 2,
-      "tone": 2
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 7
-    }
+    "sixth": "0",
+    "fifth": "2",
+    "fourth": "2",
+    "third": "0",
+    "second": "2",
+    "first": "0"
   },
   {
     "shape": "A",
     "type": "9",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 2,
-      "tone": 2
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "2",
+    "fourth": "2",
+    "third": "0",
+    "second": "2",
+    "first": null
   },
   {
     "shape": "A",
     "type": "6",
-    "first": {
-      "fret": 0,
-      "tone": 7
-    },
-    "second": {
-      "fret": 0,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 0
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 9
-    }
+    "sixth": "0",
+    "fifth": "0",
+    "fourth": "2",
+    "third": "2",
+    "second": "2",
+    "first": "2"
   },
   {
     "shape": "A",
     "type": "6",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 0,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 0
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 9
-    }
+    "sixth": null,
+    "fifth": "0",
+    "fourth": "2",
+    "third": "2",
+    "second": "2",
+    "first": "2"
   },
   {
     "shape": "A",
     "type": "69",
-    "first": {
-      "fret": 0,
-      "tone": 7
-    },
-    "second": {
-      "fret": 0,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 4,
-      "tone": 2
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 9
-    }
+    "sixth": "0",
+    "fifth": "0",
+    "fourth": "2",
+    "third": "4",
+    "second": "2",
+    "first": "2"
   },
   {
     "shape": "A",
     "type": "69",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 0,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 4,
-      "tone": 2
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 9
-    }
+    "sixth": null,
+    "fifth": "0",
+    "fourth": "2",
+    "third": "4",
+    "second": "2",
+    "first": "2"
   },
   {
     "shape": "A",
     "type": "69",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 2,
-      "tone": 2
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 2
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "2",
+    "fourth": "2",
+    "third": "2",
+    "second": "2",
+    "first": "2"
   },
   {
     "shape": "A",
     "type": "7b9",
-    "first": {
-      "fret": 0,
-      "tone": 7
-    },
-    "second": {
-      "fret": 1,
-      "tone": 1
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 7
-    }
+    "sixth": "0",
+    "fifth": "1",
+    "fourth": "2",
+    "third": "0",
+    "second": "2",
+    "first": "0"
   },
   {
     "shape": "A",
     "type": "7b9",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 1,
-      "tone": 1
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "1",
+    "fourth": "2",
+    "third": "0",
+    "second": "2",
+    "first": null
   },
   {
     "shape": "A",
     "type": "7#9",
-    "first": {
-      "fret": 0,
-      "tone": 7
-    },
-    "second": {
-      "fret": 0,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 3
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 7
-    }
+    "sixth": "0",
+    "fifth": "0",
+    "fourth": "2",
+    "third": "0",
+    "second": "1",
+    "first": "0"
   },
   {
     "shape": "A",
     "type": "7#9",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 0,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 3
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "0",
+    "fourth": "2",
+    "third": "0",
+    "second": "1",
+    "first": null
   },
   {
     "shape": "A",
     "type": "minor",
-    "first": {
-      "fret": 0,
-      "tone": 7
-    },
-    "second": {
-      "fret": 0,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 0
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 3
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 7
-    }
+    "sixth": "0",
+    "fifth": "0",
+    "fourth": "2",
+    "third": "2",
+    "second": "1",
+    "first": "0"
   },
   {
     "shape": "A",
     "type": "minor",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 0,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 0
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 3
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "0",
+    "fourth": "2",
+    "third": "2",
+    "second": "1",
+    "first": null
   },
   {
     "shape": "A",
     "type": "minor 7th",
-    "first": {
-      "fret": 0,
-      "tone": 7
-    },
-    "second": {
-      "fret": 0,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 3
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 7
-    }
+    "sixth": "0",
+    "fifth": "0",
+    "fourth": "2",
+    "third": "0",
+    "second": "1",
+    "first": "0"
   },
   {
     "shape": "A",
     "type": "minor 7th",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 0,
-      "tone": 0
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 3
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "0",
+    "fourth": "2",
+    "third": "0",
+    "second": "1",
+    "first": null
   },
   {
     "shape": "A",
     "type": "minor 9th",
-    "first": {
-      "fret": 0,
-      "tone": 7
-    },
-    "second": {
-      "fret": 2,
-      "tone": 2
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 3
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 7
-    }
+    "sixth": "0",
+    "fifth": "2",
+    "fourth": "2",
+    "third": "0",
+    "second": "1",
+    "first": "0"
   },
   {
     "shape": "A",
     "type": "minor 9th",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 2,
-      "tone": 2
-    },
-    "third": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 3
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "2",
+    "fourth": "2",
+    "third": "0",
+    "second": "1",
+    "first": null
   },
   {
     "shape": "A",
     "type": "half diminished",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 0,
-      "tone": 0
-    },
-    "third": {
-      "fret": 1,
-      "tone": 6
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 10
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 3
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "0",
+    "fourth": "1",
+    "third": "0",
+    "second": "1",
+    "first": null
   },
   {
     "shape": "A",
     "type": "diminished",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 0,
-      "tone": 0
-    },
-    "third": {
-      "fret": 1,
-      "tone": 6
-    },
-    "fourth": {
-      "fret": -1,
-      "tone": 9
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 3
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "0",
+    "fourth": "1",
+    "third": "-1",
+    "second": "1",
+    "first": null
   },
   {
     "shape": "G",
     "type": "major",
-    "first": {
-      "fret": 3,
-      "tone": 0
-    },
-    "second": {
-      "fret": 2,
-      "tone": 4
-    },
-    "third": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": 3,
-      "tone": 0
-    }
+    "sixth": "3",
+    "fifth": "2",
+    "fourth": "0",
+    "third": "0",
+    "second": "0",
+    "first": "3"
   },
   {
     "shape": "G",
     "type": "major",
-    "first": {
-      "fret": 3,
-      "tone": 0
-    },
-    "second": {
-      "fret": 2,
-      "tone": 4
-    },
-    "third": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fifth": {
-      "fret": 3,
-      "tone": 7
-    },
-    "sixth": {
-      "fret": 3,
-      "tone": 0
-    }
+    "sixth": "3",
+    "fifth": "2",
+    "fourth": "0",
+    "third": "0",
+    "second": "3",
+    "first": "3"
   },
   {
     "shape": "G",
     "type": "major",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": 3,
-      "tone": 0
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "0",
+    "third": "0",
+    "second": "0",
+    "first": "3"
   },
   {
     "shape": "G",
     "type": "major 7th",
-    "first": {
-      "fret": 3,
-      "tone": 0
-    },
-    "second": {
-      "fret": 2,
-      "tone": 4
-    },
-    "third": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 11
-    }
+    "sixth": "3",
+    "fifth": "2",
+    "fourth": "0",
+    "third": "0",
+    "second": "0",
+    "first": "2"
   },
   {
     "shape": "G",
     "type": "major 7th",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 11
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "0",
+    "third": "0",
+    "second": "0",
+    "first": "2"
   },
   {
     "shape": "G",
     "type": "dominate 7th",
-    "first": {
-      "fret": 3,
-      "tone": 0
-    },
-    "second": {
-      "fret": 2,
-      "tone": 4
-    },
-    "third": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": 1,
-      "tone": 10
-    }
+    "sixth": "3",
+    "fifth": "2",
+    "fourth": "0",
+    "third": "0",
+    "second": "0",
+    "first": "1"
   },
   {
     "shape": "G",
     "type": "dominate 7th",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 4
-    },
-    "sixth": {
-      "fret": 1,
-      "tone": 10
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "0",
+    "third": "0",
+    "second": "0",
+    "first": "1"
   },
   {
     "shape": "G",
     "type": "minor",
-    "first": {
-      "fret": 3,
-      "tone": 0
-    },
-    "second": {
-      "fret": 1,
-      "tone": 3
-    },
-    "third": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fifth": {
-      "fret": -1,
-      "tone": 3
-    },
-    "sixth": {
-      "fret": 3,
-      "tone": 0
-    }
+    "sixth": "3",
+    "fifth": "1",
+    "fourth": "0",
+    "third": "0",
+    "second": "-1",
+    "first": "3"
   },
   {
     "shape": "G",
     "type": "minor",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fifth": {
-      "fret": -1,
-      "tone": 3
-    },
-    "sixth": {
-      "fret": 3,
-      "tone": 0
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "0",
+    "third": "0",
+    "second": "-1",
+    "first": "3"
   },
   {
     "shape": "G",
     "type": "minor 7th",
-    "first": {
-      "fret": 3,
-      "tone": 0
-    },
-    "second": {
-      "fret": 1,
-      "tone": 3
-    },
-    "third": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fifth": {
-      "fret": -1,
-      "tone": 3
-    },
-    "sixth": {
-      "fret": 1,
-      "tone": 10
-    }
+    "sixth": "3",
+    "fifth": "1",
+    "fourth": "0",
+    "third": "0",
+    "second": "-1",
+    "first": "1"
   },
   {
     "shape": "G",
     "type": "minor 7th",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 0,
-      "tone": 7
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fifth": {
-      "fret": -1,
-      "tone": 3
-    },
-    "sixth": {
-      "fret": 1,
-      "tone": 10
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "0",
+    "third": "0",
+    "second": "-1",
+    "first": "1"
   },
   {
     "shape": "E",
     "type": "major",
-    "first": {
-      "fret": 0,
-      "tone": 0
-    },
-    "second": {
-      "fret": 2,
-      "tone": 7
-    },
-    "third": {
-      "fret": 2,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 1,
-      "tone": 4
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 7
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 0
-    }
+    "sixth": "0",
+    "fifth": "2",
+    "fourth": "2",
+    "third": "1",
+    "second": "0",
+    "first": "0"
   },
   {
     "shape": "E",
     "type": "major",
-    "first": {
-      "fret": 0,
-      "tone": 0
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 2,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 1,
-      "tone": 4
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 7
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "2",
+    "third": "1",
+    "second": "0",
+    "first": "0"
+  },
+  {
+    "shape": "E",
+    "type": "major",
+    "sixth": "0",
+    "fifth": null,
+    "fourth": "2",
+    "third": "1",
+    "second": "0",
+    "first": null
   },
   {
     "shape": "E",
     "type": "major 7th",
-    "first": {
-      "fret": 0,
-      "tone": 0
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 1,
-      "tone": 11
-    },
-    "fourth": {
-      "fret": 1,
-      "tone": 4
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 7
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": "0",
+    "fifth": "2",
+    "fourth": "1",
+    "third": "1",
+    "second": "0",
+    "first": "0"
   },
   {
     "shape": "E",
     "type": "major 7th",
-    "first": {
-      "fret": 0,
-      "tone": 0
-    },
-    "second": {
-      "fret": 2,
-      "tone": 7
-    },
-    "third": {
-      "fret": 1,
-      "tone": 11
-    },
-    "fourth": {
-      "fret": 1,
-      "tone": 4
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 7
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 0
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "2",
+    "third": "1",
+    "second": "0",
+    "first": "-1"
+  },
+  {
+    "shape": "E",
+    "type": "major 7th",
+    "sixth": "0",
+    "fifth": null,
+    "fourth": "1",
+    "third": "1",
+    "second": "0",
+    "first": null
   },
   {
     "shape": "E",
     "type": "dominate 7th",
-    "first": {
-      "fret": 0,
-      "tone": 0
-    },
-    "second": {
-      "fret": 2,
-      "tone": 7
-    },
-    "third": {
-      "fret": 0,
-      "tone": 10
-    },
-    "fourth": {
-      "fret": 1,
-      "tone": 4
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 7
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 0
-    }
+    "sixth": "0",
+    "fifth": "2",
+    "fourth": "0",
+    "third": "1",
+    "second": "0",
+    "first": "0"
   },
   {
     "shape": "E",
     "type": "dominate 7th",
-    "first": {
-      "fret": 0,
-      "tone": 0
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 0,
-      "tone": 10
-    },
-    "fourth": {
-      "fret": 1,
-      "tone": 4
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 7
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "0",
+    "third": "1",
+    "second": "0",
+    "first": "0"
+  },
+  {
+    "shape": "E",
+    "type": "dominate 7th",
+    "sixth": "0",
+    "fifth": null,
+    "fourth": "0",
+    "third": "1",
+    "second": "0",
+    "first": null
   },
   {
     "shape": "E",
     "type": "6",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 2,
-      "tone": 7
-    },
-    "third": {
-      "fret": 2,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 1,
-      "tone": 4
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 9
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": "2",
+    "fourth": "2",
+    "third": "1",
+    "second": "2",
+    "first": null
   },
   {
     "shape": "E",
     "type": "69",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 2,
-      "tone": 7
-    },
-    "third": {
-      "fret": 2,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 1,
-      "tone": 4
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 9
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 2
-    }
+    "sixth": null,
+    "fifth": "2",
+    "fourth": "2",
+    "third": "1",
+    "second": "2",
+    "first": "2"
   },
   {
     "shape": "E",
     "type": "minor",
-    "first": {
-      "fret": 0,
-      "tone": 0
-    },
-    "second": {
-      "fret": 2,
-      "tone": 7
-    },
-    "third": {
-      "fret": 2,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 3
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 7
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 0
-    }
+    "sixth": "0",
+    "fifth": "2",
+    "fourth": "2",
+    "third": "0",
+    "second": "0",
+    "first": "0"
   },
   {
     "shape": "E",
     "type": "minor",
-    "first": {
-      "fret": 0,
-      "tone": 0
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 2,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 3
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 7
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": "0",
+    "fifth": null,
+    "fourth": "2",
+    "third": "0",
+    "second": "0",
+    "first": null
   },
   {
     "shape": "E",
     "type": "minor 7th",
-    "first": {
-      "fret": 0,
-      "tone": 0
-    },
-    "second": {
-      "fret": 2,
-      "tone": 7
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 3
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 7
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 0
-    }
+    "sixth": "0",
+    "fifth": "2",
+    "fourth": "0",
+    "third": "0",
+    "second": "0",
+    "first": "0"
   },
   {
     "shape": "E",
     "type": "minor 7th",
-    "first": {
-      "fret": 0,
-      "tone": 0
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 0,
-      "tone": 10
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 3
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 7
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "0",
+    "third": "0",
+    "second": "0",
+    "first": "0"
+  },
+  {
+    "shape": "E",
+    "type": "minor 7th",
+    "sixth": "0",
+    "fifth": null,
+    "fourth": "0",
+    "third": "0",
+    "second": "0",
+    "first": null
   },
   {
     "shape": "E",
     "type": "half diminished",
-    "first": {
-      "fret": 0,
-      "tone": 0
-    },
-    "second": {
-      "fret": 1,
-      "tone": 6
-    },
-    "third": {
-      "fret": 2,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 3
-    },
-    "fifth": {
-      "fret": 3,
-      "tone": 10
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 0
-    }
+    "sixth": "0",
+    "fifth": "1",
+    "fourth": "2",
+    "third": "0",
+    "second": "3",
+    "first": "0"
   },
   {
     "shape": "E",
     "type": "half diminished",
-    "first": {
-      "fret": 0,
-      "tone": 0
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 0,
-      "tone": 10
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 3
-    },
-    "fifth": {
-      "fret": -1,
-      "tone": 6
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": "0",
+    "fifth": null,
+    "fourth": "0",
+    "third": "0",
+    "second": "-1",
+    "first": null
   },
   {
     "shape": "E",
     "type": "diminished",
-    "first": {
-      "fret": 0,
-      "tone": 0
-    },
-    "second": {
-      "fret": 1,
-      "tone": 6
-    },
-    "third": {
-      "fret": 2,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 3
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 9
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 0
-    }
+    "sixth": "0",
+    "fifth": "1",
+    "fourth": "2",
+    "third": "0",
+    "second": "2",
+    "first": "0"
   },
   {
     "shape": "E",
     "type": "diminished",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": -1,
-      "tone": 9
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 3
-    },
-    "fifth": {
-      "fret": -1,
-      "tone": 6
-    },
-    "sixth": {
-      "fret": 0,
-      "tone": 0
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "-1",
+    "third": "0",
+    "second": "-1",
+    "first": "0"
   },
   {
     "shape": "E",
     "type": "diminished",
-    "first": {
-      "fret": 0,
-      "tone": 0
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": -1,
-      "tone": 9
-    },
-    "fourth": {
-      "fret": 0,
-      "tone": 3
-    },
-    "fifth": {
-      "fret": -1,
-      "tone": 6
-    },
-    "sixth": {
-      "fret": null,
-      "tone": null
-    }
+    "sixth": "0",
+    "fifth": null,
+    "fourth": "-1",
+    "third": "0",
+    "second": "-1",
+    "first": null
   },
   {
     "shape": "D",
     "type": "major",
-    "first": {
-      "fret": -2,
-      "tone": 0
-    },
-    "second": {
-      "fret": 0,
-      "tone": 7
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 3,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 4
-    }
+    "sixth": "-2",
+    "fifth": "0",
+    "fourth": "0",
+    "third": "2",
+    "second": "3",
+    "first": "2"
   },
   {
     "shape": "D",
     "type": "major",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 0,
-      "tone": 7
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 3,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 4
-    }
+    "sixth": null,
+    "fifth": "0",
+    "fourth": "0",
+    "third": "2",
+    "second": "3",
+    "first": "2"
   },
   {
     "shape": "D",
     "type": "major",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 3,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 4
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "0",
+    "third": "2",
+    "second": "3",
+    "first": "2"
   },
   {
     "shape": "D",
     "type": "major 7th",
-    "first": {
-      "fret": -2,
-      "tone": 0
-    },
-    "second": {
-      "fret": 0,
-      "tone": 7
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 11
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 4
-    }
+    "sixth": "-2",
+    "fifth": "0",
+    "fourth": "0",
+    "third": "2",
+    "second": "2",
+    "first": "2"
   },
   {
     "shape": "D",
     "type": "major 7th",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 0,
-      "tone": 7
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 11
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 4
-    }
+    "sixth": null,
+    "fifth": "0",
+    "fourth": "0",
+    "third": "2",
+    "second": "2",
+    "first": "2"
   },
   {
     "shape": "D",
     "type": "major 7th",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 2,
-      "tone": 11
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 4
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "0",
+    "third": "2",
+    "second": "2",
+    "first": "2"
   },
   {
     "shape": "D",
     "type": "dominate 7th",
-    "first": {
-      "fret": -2,
-      "tone": 0
-    },
-    "second": {
-      "fret": 0,
-      "tone": 7
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 10
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 4
-    }
+    "sixth": "-2",
+    "fifth": "0",
+    "fourth": "0",
+    "third": "2",
+    "second": "1",
+    "first": "2"
   },
   {
     "shape": "D",
     "type": "dominate 7th",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 0,
-      "tone": 7
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 10
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 4
-    }
+    "sixth": null,
+    "fifth": "0",
+    "fourth": "0",
+    "third": "2",
+    "second": "1",
+    "first": "2"
   },
   {
     "shape": "D",
     "type": "dominate 7th",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 10
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 4
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "0",
+    "third": "2",
+    "second": "1",
+    "first": "2"
   },
   {
     "shape": "D",
     "type": "6",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 0,
-      "tone": 7
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 9
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 4
-    }
-  },
-  {
-    "shape": "D",
-    "type": "6",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 9
-    },
-    "sixth": {
-      "fret": 2,
-      "tone": 4
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "0",
+    "third": "2",
+    "second": "0",
+    "first": "2"
   },
   {
     "shape": "D",
     "type": "minor",
-    "first": {
-      "fret": -2,
-      "tone": 0
-    },
-    "second": {
-      "fret": 0,
-      "tone": 7
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 3,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": 1,
-      "tone": 3
-    }
+    "sixth": "-2",
+    "fifth": "0",
+    "fourth": "0",
+    "third": "2",
+    "second": "3",
+    "first": "1"
   },
   {
     "shape": "D",
     "type": "minor",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 0,
-      "tone": 7
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 3,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": 1,
-      "tone": 3
-    }
+    "sixth": null,
+    "fifth": "0",
+    "fourth": "0",
+    "third": "2",
+    "second": "3",
+    "first": "1"
   },
   {
     "shape": "D",
     "type": "minor",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 3,
-      "tone": 0
-    },
-    "sixth": {
-      "fret": 1,
-      "tone": 3
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "0",
+    "third": "2",
+    "second": "3",
+    "first": "1"
   },
   {
     "shape": "D",
     "type": "minor 7th",
-    "first": {
-      "fret": -2,
-      "tone": 0
-    },
-    "second": {
-      "fret": 0,
-      "tone": 7
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 10
-    },
-    "sixth": {
-      "fret": 1,
-      "tone": 3
-    }
+    "sixth": "-2",
+    "fifth": "0",
+    "fourth": "0",
+    "third": "2",
+    "second": "1",
+    "first": "1"
   },
   {
     "shape": "D",
     "type": "minor 7th",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": 0,
-      "tone": 7
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 10
-    },
-    "sixth": {
-      "fret": 1,
-      "tone": 3
-    }
+    "sixth": null,
+    "fifth": "0",
+    "fourth": "0",
+    "third": "2",
+    "second": "1",
+    "first": "1"
   },
   {
     "shape": "D",
     "type": "minor 7th",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 2,
-      "tone": 7
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 10
-    },
-    "sixth": {
-      "fret": 1,
-      "tone": 3
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "0",
+    "third": "2",
+    "second": "1",
+    "first": "1"
   },
   {
     "shape": "D",
     "type": "half diminished",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 1,
-      "tone": 6
-    },
-    "fifth": {
-      "fret": 1,
-      "tone": 10
-    },
-    "sixth": {
-      "fret": 1,
-      "tone": 3
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "0",
+    "third": "1",
+    "second": "1",
+    "first": "1"
   },
   {
     "shape": "D",
     "type": "diminished",
-    "first": {
-      "fret": null,
-      "tone": null
-    },
-    "second": {
-      "fret": null,
-      "tone": null
-    },
-    "third": {
-      "fret": 0,
-      "tone": 0
-    },
-    "fourth": {
-      "fret": 1,
-      "tone": 6
-    },
-    "fifth": {
-      "fret": 0,
-      "tone": 9
-    },
-    "sixth": {
-      "fret": 1,
-      "tone": 3
-    }
+    "sixth": null,
+    "fifth": null,
+    "fourth": "0",
+    "third": "1",
+    "second": "0",
+    "first": "1"
   }
-]
+ ]

@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_CHORDS } from '../../../utils/queries';
 import {
-  IStringData,
   IChordTab,
   emptyTab,
   tabStrings,
   convertChordsToTabs,
   updateChordsWithPosition,
   sortChordsByLowest,
+  getTone
 } from '../../../helpers/common';
 import {
   getQualityFromAbbrev
@@ -105,11 +105,14 @@ function Display(props: {
         }}
         onMouseOut={() => setShowDetail(false)}
       >
-        {tabStrings.map((tabString) =>
+        {renderTab.map((fret, i) =>
           <Cell
-            key={tabString}
+            key={i}
             showColors={props.showColors}
-            data={renderTab[tabString]}
+            data={{
+              fret,
+              tone: getTone(renderTab.shape, tabStrings[i], fret)
+            }}
           />
         )}
       </div>

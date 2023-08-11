@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Config from '../components/calculator/Config';
 import ColorKey from '../components/calculator/ColorKey';
 import TabView from '../components/calculator/TabView';
-import { IChordTab } from '../helpers/common';
+import { TabValue } from '../helpers/common';
 import { getTabsFromChordTabArray } from '../helpers/export';
 
 function Tabulator() {
@@ -11,10 +11,10 @@ function Tabulator() {
   const [editingRow, setEditingRow] = useState<number | undefined>(0);
   const [showColors, toggleShowColors] = useState<boolean>(true);
 
-  const tabColumns: IChordTab[][] = [];
+  const tabColumns: TabValue[][][] = [];
   function onChange(rowNum: number) {
     return function (columnNum: number) {
-      return function (data: IChordTab) {
+      return function (data: TabValue[]) {
         if (!tabColumns[rowNum]) {
           tabColumns[rowNum] = [];
         }
