@@ -27,7 +27,7 @@ export interface IChordTab {
 }
 
 export type TabString = keyof IChordTab;
-export const tabStrings: TabString[] = ['sixth', 'fifth', 'fourth', 'third', 'second', 'first'];
+export const tabStrings: TabString[] = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth'];
 export type stringPitch = 'E' | 'A' | 'D' | 'G' | 'B' | 'e';
 
 export function getMinOrMaxFretValue(tab: IChordTab, comparator: (a: number, b: number) => boolean): number {
@@ -65,19 +65,17 @@ export function convertChordsToTabs(chords: IChordData[], root: string): IChordT
 
   function getStringValue(root: string, chord: IChordData, string: TabString): IStringData {
     const {shape, frets} = chord;
-    const index = tabStrings.indexOf(string);
-    const fret = frets[index];
-
     const offset = pitchDifference(shape, root);
+    const index = tabStrings.indexOf(string);
+    const relativeFret = frets[index];
+    const fret = getValue(relativeFret, offset);
     const stringPitch = getStringPitch(string);
-    if (!stringPitch) return {
-      fret: null,
-      tone: null
-    }
+    if (!stringPitch) return emptyStringData;
+    const tone = getTone(root, fret, stringPitch)
 
     return {
-      fret: getValue(fret, offset),
-      tone: getTone(root, fret, stringPitch)
+      fret,
+      tone
     };
   }
 
@@ -145,29 +143,16 @@ export const getStringPitch = (tabString: TabString): stringPitch | null => {
   return name;
 }
 
+export const emptyStringData: IStringData = {
+  fret: null,
+  tone: null
+}
+
 export const emptyTab: IChordTab = {
-  "sixth": {
-    fret: null,
-    tone: null
-  },
-  "fifth": {
-    fret: null,
-    tone: null
-  },
-  "fourth": {
-    fret: null,
-    tone: null
-  },
-  "third": {
-    fret: null,
-    tone: null
-  },
-  "second": {
-    fret: null,
-    tone: null
-  },
-  "first": {
-    fret: null,
-    tone: null
-  },
+  "first": emptyStringData,
+  "second": emptyStringData,
+  "third": emptyStringData,
+  "fourth": emptyStringData,
+  "fifth": emptyStringData,
+  "sixth": emptyStringData,
 }

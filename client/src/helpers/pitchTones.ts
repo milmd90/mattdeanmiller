@@ -44,12 +44,6 @@ export function getTone(root: string, fret: TabValue, string: stringPitch): TabV
   const rootTone = convertPitchToTone(root);
   if (null === stringTone || null === rootTone) return null;
   const result = (12 + (stringTone + fret) - rootTone) % 12;
-  console.log('getTone', {
-    root,
-    string,
-    fret,
-    result
-  })
 
   return result;
 }
