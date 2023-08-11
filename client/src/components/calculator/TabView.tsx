@@ -17,7 +17,7 @@ function StartColumn(props: {
           <div key={tabString}>
             {stringToNote(tabString)} |
           </div>
-        )}
+        ).reverse()}
       </div>
       {
         props.isEditing &&

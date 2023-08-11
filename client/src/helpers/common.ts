@@ -1,6 +1,6 @@
 import {
   pitchDifference,
-  getPitch,
+  getTone
 } from './pitchTones';
 
 export type TabValue = number | null;
@@ -63,14 +63,11 @@ export function convertChordsToTabs(chords: IChordData[], root: string): IChordT
     return input + offset;
   }
 
-  function getTone(root: string, fret: TabValue, string: stringPitch): TabValue {
-    return pitchDifference(string, root);
-  }
-
   function getStringValue(root: string, chord: IChordData, string: TabString): IStringData {
     const {shape, frets} = chord;
-    console.log('getStringValue',{chord})
-    const fret = frets[tabStrings.indexOf(string)];
+    const index = tabStrings.indexOf(string);
+    const fret = frets[index];
+
     const offset = pitchDifference(shape, root);
     const stringPitch = stringToNote(string);
     if (!stringPitch) return {
@@ -79,7 +76,7 @@ export function convertChordsToTabs(chords: IChordData[], root: string): IChordT
     }
 
     return {
-      fret: getValue(frets[tabStrings.indexOf(string)], offset),
+      fret: getValue(fret, offset),
       tone: getTone(root, fret, stringPitch)
     };
   }
@@ -132,12 +129,12 @@ export function sortChordsByLowest(tabArray: IChordTab[]): IChordTab[] {
 }
 
 export const stringToNote = (tabString: TabString): stringPitch | null => {	
-  if (tabString === "sixth") return "e";	
-  if (tabString === "fifth") return "B";	
-  if (tabString === "fourth") return "G";	
-  if (tabString === "third") return "D";	
-  if (tabString === "second") return "A";	
-  if (tabString === "first") return "E";	
+  if (tabString === "first") return "e";	
+  if (tabString === "second") return "B";	
+  if (tabString === "third") return "G";	
+  if (tabString === "fourth") return "D";	
+  if (tabString === "fifth") return "A";	
+  if (tabString === "sixth") return "E";	
   return null;	
 }
 
