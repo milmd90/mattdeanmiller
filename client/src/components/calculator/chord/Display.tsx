@@ -107,7 +107,7 @@ function Display(props: {
       >
         {tabStrings.map((tabString, i) =>
           <Cell
-          key={tabString}
+            key={tabString}
             showColors={props.showColors}
             data={renderTab[tabString]}
           />
