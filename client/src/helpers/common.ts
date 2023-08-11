@@ -69,7 +69,7 @@ export function convertChordsToTabs(chords: IChordData[], root: string): IChordT
     const fret = frets[index];
 
     const offset = pitchDifference(shape, root);
-    const stringPitch = stringToNote(string);
+    const stringPitch = getStringPitch(string);
     if (!stringPitch) return {
       fret: null,
       tone: null
@@ -128,7 +128,7 @@ export function sortChordsByLowest(tabArray: IChordTab[]): IChordTab[] {
   });
 }
 
-export const stringToNote = (tabString: TabString): stringPitch | null => {	
+export const getStringName = (tabString: TabString): stringPitch | null => {
   if (tabString === "first") return "e";	
   if (tabString === "second") return "B";	
   if (tabString === "third") return "G";	
@@ -136,6 +136,13 @@ export const stringToNote = (tabString: TabString): stringPitch | null => {
   if (tabString === "fifth") return "A";	
   if (tabString === "sixth") return "E";	
   return null;	
+}
+
+export const getStringPitch = (tabString: TabString): stringPitch | null => {
+  const name = getStringName(tabString);
+  if (name === null) return null;
+  if (name === 'e') return 'E';
+  return name;
 }
 
 export const emptyTab: IChordTab = {

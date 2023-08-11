@@ -1,4 +1,4 @@
-import {IChordTab, stringToNote, tabStrings} from '../helpers/common';
+import {IChordTab, getStringName, tabStrings} from '../helpers/common';
 
 function getTabsFromChordTabRow(chordTabArray: IChordTab[], includeSpaces=true ): string {
   const tabObject: any = {};
@@ -16,7 +16,7 @@ function getTabsFromChordTabRow(chordTabArray: IChordTab[], includeSpaces=true )
 
   let tabTxt: string = '';
   tabStrings.forEach((tabString) => {
-    const stringNote = stringToNote(tabString);
+    const stringNote = getStringName(tabString);
     tabTxt = tabTxt + `${stringNote} | ` + tabObject[tabString].join('') + '|\n';
   })
 
