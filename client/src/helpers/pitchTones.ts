@@ -40,7 +40,16 @@ export function pitchDifference(start: string, end: string): TabValue {
 
 export function getTone(root: string, fret: TabValue, string: stringPitch): TabValue {
   if (null === fret) return null;
-  let diff = pitchDifference(root, string);
-  if (null === diff) return null;
-  return (diff + fret) % 12;
+  const stringTone = convertPitchToTone(string);
+  const rootTone = convertPitchToTone(root);
+  if (null === stringTone || null === rootTone) return null;
+  const result = (12 + (stringTone + fret) - rootTone) % 12;
+  console.log('getTone', {
+    root,
+    string,
+    fret,
+    result
+  })
+
+  return result;
 }
