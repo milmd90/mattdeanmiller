@@ -1,5 +1,5 @@
 import React from 'react';
-import { TabValue, tabStrings } from '../../helpers/common';
+import { IChordTab, tabStrings } from '../../helpers/common';
 import Chord from './chord/Chord';
 import { Tooltip } from 'react-tooltip';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

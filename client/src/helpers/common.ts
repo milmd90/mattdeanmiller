@@ -1,4 +1,7 @@
-import {pitchDifference} from './pitchTones';
+import {
+  pitchDifference,
+  getPitch,
+} from './pitchTones';
 
 export type TabValue = number | null;
 
@@ -15,13 +18,12 @@ export interface IStringData {
 };
 
 export interface IChordTab {
-    "first": IStringData,
-    "second": IStringData,
-    "third": IStringData,
-    "fourth": IStringData,
-    "fifth": IStringData,
-    "sixth": IStringData,
-  
+  "first": IStringData,
+  "second": IStringData,
+  "third": IStringData,
+  "fourth": IStringData,
+  "fifth": IStringData,
+  "sixth": IStringData,
 }
 
 export type tabString = 'E' | 'A' | 'D' | 'G' | 'B' | 'e';
@@ -53,16 +55,37 @@ export function getMaxFretValue(tab: TabValue[]): number {
   })
 }
 
-export function convertChordsToTabs(chords: IChordData[], root: string): TabValue[][] {
+export function convertChordsToTabs(chords: IChordData[], root: string): IChordTab[] {
   function getValue(input: TabValue, offset: number | null): TabValue {
     if (input === null || offset === null) return input;
     return input + offset;
   }
 
-  return chords.map((chord) => {
+  function getTone(root: string, fret: TabValue, string: number): TabValue {
+    const pitch = getPitch(fret, string);
+    const offset = pitchDifference(pitch, root);
+  }
+
+  function getStringValue(root: string, chord: IChordData, string: number): IStringData {
     const {shape, frets} = chord;
+    const fret = frets[string];
     const offset = pitchDifference(shape, root);
-    return frets.map(fret => getValue(fret, offset))
+
+    return {
+      fret: getValue(frets[string], offset),
+      tone: getTone(root, fret, string)
+    };
+  }
+
+  return chords.map((chord) => {
+    return {
+      first: getStringValue(root, chord, 0),
+      second: getStringValue(root, chord, 1),
+      third: getStringValue(root, chord, 2),
+      fourth: getStringValue(root, chord, 3),
+      fifth: getStringValue(root, chord, 4),
+      sixth: getStringValue(root, chord, 5),
+    };
   });
 }
 
@@ -98,10 +121,6 @@ export function sortChordsByLowest(tabArray: TabValue[][]):TabValue[][] {
     ) return 0;
     return minA - minB;
   });
-}
-
-export function getTone(root: string, string: tabString, fret: TabValue): number {
-
 }
 
 export const emptyTab: TabValue[] = [null, null, null, null, null, null];
