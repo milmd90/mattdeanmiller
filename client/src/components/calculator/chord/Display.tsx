@@ -8,7 +8,7 @@ import {
   tabStrings,
   convertChordsToTabs,
   updateChordsWithPosition,
-  sortChordsByLowest
+  sortChordsByLowest,
 } from '../../../helpers/common';
 import {
   getQualityFromAbbrev
@@ -106,7 +106,7 @@ function Display(props: {
         }}
         onMouseOut={() => setShowDetail(false)}
       >
-        {tabStrings.map((tabString, i) =>
+        {tabStrings.map((tabString) =>
           <Cell
             key={tabString}
             showColors={props.showColors}
