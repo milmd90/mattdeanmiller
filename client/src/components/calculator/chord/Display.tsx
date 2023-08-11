@@ -105,14 +105,11 @@ function Display(props: {
         }}
         onMouseOut={() => setShowDetail(false)}
       >
-        {renderTab.map((fret, i) =>
+        {tabStrings.map((tabString, i) =>
           <Cell
-            key={i}
+          key={tabString}
             showColors={props.showColors}
-            data={{
-              fret,
-              tone: getTone(renderTab.shape, tabStrings[i], fret)
-            }}
+            data={renderTab[tabString]}
           />
         )}
       </div>

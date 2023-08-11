@@ -1,5 +1,5 @@
 import {
-  TabValue[],
+  IChordTab,
   tabStrings,
   TabString,
   getMinFretValue,
@@ -9,7 +9,7 @@ import {
 
 function TabDetailRow(props: {
   tabString: TabString
-  tab: TabValue[]
+  tab: IChordTab
   min: number
   max: number
 }) {
@@ -73,7 +73,7 @@ function FretRow(props: {
 }
 
 function TabDetail(props: {
-  tab: TabValue[];
+  tab: IChordTab;
   hide?: boolean
 }) {
   const { tab, hide } = props;

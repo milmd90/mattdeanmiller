@@ -117,7 +117,7 @@ export default function TabView(props: {
   numColumns: number,
   isEditing: boolean,
   handleEditClick: () => void,
-  onChange: (columnNum: number) => (data: TabValue[]) => void
+  onChange: (columnNum: number) => (data: IChordTab) => void
 }) {
   function renderChords(numColumns: number) {
     const chords = [];
