@@ -16,7 +16,7 @@ const chordSchema = new Schema({
     trim: true,
   },
   "frets": {
-    type: TabValue[], 
+    type: [Number], 
     required: true
   }
 });

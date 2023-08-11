@@ -69,6 +69,7 @@ export function convertChordsToTabs(chords: IChordData[], root: string): IChordT
 
   function getStringValue(root: string, chord: IChordData, string: TabString): IStringData {
     const {shape, frets} = chord;
+    console.log('getStringValue',{chord})
     const fret = frets[tabStrings.indexOf(string)];
     const offset = pitchDifference(shape, root);
     const stringPitch = stringToNote(string);

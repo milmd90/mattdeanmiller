@@ -59,7 +59,8 @@ function Display(props: {
       type,
     },
   });
-  if (loading || data.chords.length === 0 || !tone || !type) {
+  console.log('Display', {data})
+  if (loading || !data || !data.chords || data.chords.length === 0 || !tone || !type) {
     props.onChange(emptyTab);
     return (
       <div className="display">
