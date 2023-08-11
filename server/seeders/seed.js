@@ -6,7 +6,7 @@ db.once('open', async () => {
   await Chord.deleteMany({});
 
   try {
-    formattedChords = chords.forEach(chord => {
+    await chords.forEach(async chord => {
       const {
         type,
         shape,
@@ -19,7 +19,7 @@ db.once('open', async () => {
       } = chord;
       console.log('create')
 
-      Chord.create({
+      await Chord.create({
         type,
         shape,
         frets: [
