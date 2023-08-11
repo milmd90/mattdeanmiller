@@ -2,166 +2,288 @@ const db = require('../config/connection');
 const { Chord } = require('../models');
 const chords = require('./chordSeeds.json');
 
+let completeDictionary = [];
+const createDictionary = async (chords) => {
+
+  try {
+    chords.forEach((chord) => {
+      const { 
+        type,
+        shape,
+        first,
+        second,
+        third,
+        fourth,
+        fifth,
+        sixth
+      } = chord;
+
+
+      completeDictionary.push({
+        type: chord.type,
+        shape: chord.shape,
+        frets: [
+          chord.first,
+          chord.second, 
+          chord.third, 
+          chord.fourth, 
+          chord.fifth, 
+          chord.sixth,
+        ]
+      });
+
+      if (
+        first !== null &&
+        second !== null &&
+        third !== null &&
+        fourth !== null &&
+        fifth !== null &&
+        sixth !== null
+      ) {
+        switch(shape) {
+          case 'C':
+            completeDictionary.push({
+              type,
+              shape,
+              frets: [
+                first,
+                second, 
+                third, 
+                fourth, 
+                null, 
+                null,
+              ]
+            });
+            completeDictionary.push({
+              type,
+              shape,
+              frets: [
+                null,
+                second, 
+                third, 
+                fourth, 
+                fifth, 
+                null,
+              ]
+            });
+            completeDictionary.push({
+              type,
+              shape,
+              frets: [
+                first,
+                second, 
+                third, 
+                null, 
+                null, 
+                sixth,
+              ]
+            });
+            completeDictionary.push({
+              type,
+              shape,
+              frets: [
+                null,
+                second, 
+                third, 
+                fourth, 
+                null, 
+                sixth,
+              ]
+            });
+            return;
+          case 'A':
+            completeDictionary.push({
+              type,
+              shape,
+              frets: [
+                first,
+                second, 
+                third, 
+                fourth, 
+                fifth, 
+                null,
+              ]
+            });
+            completeDictionary.push({
+              type,
+              shape,
+              frets: [
+                first,
+                second, 
+                third, 
+                fourth, 
+                null, 
+                null,
+              ]
+            });
+            completeDictionary.push({
+              type,
+              shape,
+              frets: [
+                null,
+                second, 
+                third, 
+                fourth, 
+                fifth, 
+                null,
+              ]
+            });
+            return;
+          case 'G':
+            completeDictionary.push({
+              type,
+              shape,
+              frets: [
+                first,
+                second, 
+                third, 
+                fourth, 
+                fifth, 
+                null,
+              ]
+            });
+            completeDictionary.push({
+              type,
+              shape,
+              frets: [
+                first,
+                second, 
+                third, 
+                fourth, 
+                null, 
+                null,
+              ]
+            });
+            completeDictionary.push({
+              type,
+              shape,
+              frets: [
+                null,
+                second, 
+                third, 
+                fourth, 
+                fifth, 
+                null,
+              ]
+            });
+            completeDictionary.push({
+              type,
+              shape,
+              frets: [
+                first,
+                second, 
+                third, 
+                fourth, 
+                null, 
+                sixth,
+              ]
+            });
+            return;
+          case 'E':
+            completeDictionary.push({
+              type,
+              shape,
+              frets: [
+                null,
+                second, 
+                third, 
+                fourth, 
+                null, 
+                sixth,
+              ]
+            });
+            completeDictionary.push({
+              type,
+              shape,
+              frets: [
+                first,
+                second, 
+                third, 
+                fourth, 
+                null, 
+                null,
+              ]
+            });
+            completeDictionary.push({
+              type,
+              shape,
+              frets: [
+                null,
+                second, 
+                third, 
+                fourth, 
+                fifth, 
+                null,
+              ]
+            });
+            return;
+          case 'D':
+            completeDictionary.push({
+              type,
+              shape,
+              frets: [
+                first,
+                second, 
+                third, 
+                fourth, 
+                fifth, 
+                null,
+              ]
+            });
+            completeDictionary.push({
+              type,
+              shape,
+              frets: [
+                first,
+                second, 
+                third, 
+                fourth, 
+                null, 
+                null,
+              ]
+            });
+            completeDictionary.push({
+              type,
+              shape,
+              frets: [
+                first,
+                second, 
+                third, 
+                fourth, 
+                null, 
+                sixth,
+              ]
+            });
+            completeDictionary.push({
+              type,
+              shape,
+              frets: [
+                null,
+                second, 
+                third, 
+                fourth, 
+                fifth, 
+                sixth,
+              ]
+            });
+            return;
+        }
+      }
+    })
+
+  } catch (err) {
+    console.log({err})
+    throw err;
+  }
+}
+
+
 db.once('open', async () => {
   await Chord.deleteMany({});
 
   try {
-    await chords.forEach(async chord => {
-      const {
-        type,
-        shape,
-        first, 
-        second, 
-        third, 
-        fourth, 
-        fifth, 
-        sixth,
-      } = chord;
-      console.log('create')
-
-      await Chord.create({
-        type,
-        shape,
-        frets: [
-          first,
-          second, 
-          third, 
-          fourth, 
-          fifth, 
-          sixth,
-        ]
-      });
-
-    //   if (
-    //     first !== null &&
-    //     second !== null &&
-    //     third !== null &&
-    //     fourth !== null &&
-    //     fifth !== null &&
-    //     sixth !== null
-    //   ) {
-    //     switch(shape) {
-    //       case 'C':
-    //         Chord.create({
-    //           type,
-    //           shape,
-    //           frets: [
-    //             first,
-    //             second, 
-    //             third, 
-    //             fourth, 
-    //             null, 
-    //             null,
-    //           ]
-    //         });
-    //         Chord.create({
-    //           type,
-    //           shape,
-    //           frets: [
-    //             null,
-    //             second, 
-    //             third, 
-    //             fourth, 
-    //             fifth, 
-    //             null,
-    //           ]
-    //         });
-    //         Chord.create({
-    //           type,
-    //           shape,
-    //           frets: [
-    //             first,
-    //             second, 
-    //             third, 
-    //             null, 
-    //             null, 
-    //             sixth,
-    //           ]
-    //         });
-    //         Chord.create({
-    //           type,
-    //           shape,
-    //           frets: [
-    //             null,
-    //             second, 
-    //             third, 
-    //             fourth, 
-    //             null, 
-    //             sixth,
-    //           ]
-    //         });
-    //         return;
-    //       case 'A':
-    //         Chord.create({
-    //           type,
-    //           shape,
-    //           frets: [
-    //             first,
-    //             second, 
-    //             third, 
-    //             fourth, 
-    //             fifth, 
-    //             null,
-    //           ]
-    //         });
-    //         Chord.create({
-    //           type,
-    //           shape,
-    //           frets: [
-    //             null,
-    //             second, 
-    //             third, 
-    //             fourth, 
-    //             fifth, 
-    //             null,
-    //           ]
-    //         });
-    //         return;
-    //       case 'G':
-    //         Chord.create({
-    //           type,
-    //           shape,
-    //           frets: [
-    //             first,
-    //             second, 
-    //             third, 
-    //             fourth, 
-    //             fifth, 
-    //             sixth,
-    //           ]
-    //         });
-    //         return;
-    //       case 'E':
-    //         Chord.create({
-    //           type,
-    //           shape,
-    //           frets: [
-    //             first,
-    //             second, 
-    //             third, 
-    //             fourth, 
-    //             fifth, 
-    //             sixth,
-    //           ]
-    //         });
-    //         return;
-    //       case 'D':
-    //         Chord.create({
-    //           type,
-    //           shape,
-    //           frets: [
-    //             first,
-    //             second, 
-    //             third, 
-    //             fourth, 
-    //             fifth, 
-    //             sixth,
-    //           ]
-    //         });
-    //         return;
-    //     }
-    //   }
-    });
+    createDictionary(chords);
+    await Chord.create(completeDictionary);
 
     process.exit(0);
   } catch (err) {
