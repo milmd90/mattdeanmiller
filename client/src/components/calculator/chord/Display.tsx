@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_CHORDS } from '../../../utils/queries';
 import {
+  IStringData,
   IChordTab,
   emptyTab,
   tabStrings,
   convertChordsToTabs,
   updateChordsWithPosition,
-  sortChordsByLowest,
-  getTone
+  sortChordsByLowest
 } from '../../../helpers/common';
 import {
   getQualityFromAbbrev

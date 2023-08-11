@@ -28,6 +28,7 @@ export interface IChordTab {
 
 export type TabString = keyof IChordTab;
 export const tabStrings: TabString[] = ['sixth', 'fifth', 'fourth', 'third', 'second', 'first'];
+export type stringPitch = 'E' | 'A' | 'D' | 'G' | 'B' | 'e';
 
 export function getMinOrMaxFretValue(tab: IChordTab, comparator: (a: number, b: number) => boolean): number {
   let minOrMax: number | undefined;
@@ -57,45 +58,41 @@ export function getMaxFretValue(tab: IChordTab): number {
 }
 
 export function convertChordsToTabs(chords: IChordData[], root: string): IChordTab[] {
-  function getStringPitch(string: number): string | undefined {
-    return ['E', 'A', 'D', 'G', 'B', 'e'][string];
-  }
-
   function getValue(input: TabValue, offset: number | null): TabValue {
     if (input === null || offset === null) return input;
     return input + offset;
   }
 
-  function getTone(root: string, fret: TabValue, string: string): TabValue {
+  function getTone(root: string, fret: TabValue, string: TabString): TabValue {
     const pitch = getPitch(string, fret);
     return pitchDifference(pitch, root);
 
   }
 
-  function getStringValue(root: string, chord: IChordData, string: number): IStringData {
+  function getStringValue(root: string, chord: IChordData, string: TabString): IStringData {
     const {shape, frets} = chord;
-    const fret = frets[string];
+    const fret = frets[tabStrings.indexOf(string)];
     const offset = pitchDifference(shape, root);
-    const stringPitch = getStringPitch(string);
+    const stringPitch = stringToNote(string);
     if (!stringPitch) return {
       fret: null,
       tone: null
     }
 
     return {
-      fret: getValue(frets[string], offset),
+      fret: getValue(frets[tabStrings.indexOf(string)], offset),
       tone: getTone(root, fret, stringPitch)
     };
   }
 
   return chords.map((chord) => {
     return {
-      first: getStringValue(root, chord, 0),
-      second: getStringValue(root, chord, 1),
-      third: getStringValue(root, chord, 2),
-      fourth: getStringValue(root, chord, 3),
-      fifth: getStringValue(root, chord, 4),
-      sixth: getStringValue(root, chord, 5),
+      first: getStringValue(root, chord, "first"),
+      second: getStringValue(root, chord, "second"),
+      third: getStringValue(root, chord, "third"),
+      fourth: getStringValue(root, chord, "fourth"),
+      fifth: getStringValue(root, chord, "fifth"),
+      sixth: getStringValue(root, chord, "sixth"),
     };
   });
 }
@@ -133,6 +130,16 @@ export function sortChordsByLowest(tabArray: IChordTab[]): IChordTab[] {
     ) return 0;
     return minA - minB;
   });
+}
+
+export const stringToNote = (tabString: TabString): string => {	
+  if (tabString === "sixth") return "e";	
+  if (tabString === "fifth") return "B";	
+  if (tabString === "fourth") return "G";	
+  if (tabString === "third") return "D";	
+  if (tabString === "second") return "A";	
+  if (tabString === "first") return "E";	
+  return "";	
 }
 
 export const emptyTab: IChordTab = {
