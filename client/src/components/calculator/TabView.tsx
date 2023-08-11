@@ -1,5 +1,5 @@
 import React from 'react';
-import { IChordTab, tabStrings } from '../../helpers/common';
+import { IChordTab, tabStrings, stringToNote } from '../../helpers/common';
 import Chord from './chord/Chord';
 import { Tooltip } from 'react-tooltip';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,7 +15,7 @@ function StartColumn(props: {
       <div className='tab-row'>
         {tabStrings.map((tabString) =>
           <div key={tabString}>
-            {tabString} |
+            {stringToNote(tabString)} |
           </div>
         )}
       </div>
