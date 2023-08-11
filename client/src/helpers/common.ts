@@ -5,16 +5,16 @@ import {
 
 export type TabValue = number | null;
 
+export interface IStringData {
+  "fret": TabValue,
+  "tone": TabValue
+};
+
 export interface IChordData {
   "shape": any,
   "type": any,
   "option": any,
   "frets": TabValue[],
-};
-
-export interface IStringData {
-  "fret": TabValue,
-  "tone": TabValue
 };
 
 export interface IChordTab {
@@ -65,7 +65,6 @@ export function convertChordsToTabs(chords: IChordData[], root: string): IChordT
 
   function getTone(root: string, fret: TabValue, string: stringPitch): TabValue {
     return pitchDifference(string, root);
-
   }
 
   function getStringValue(root: string, chord: IChordData, string: TabString): IStringData {
