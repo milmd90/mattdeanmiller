@@ -195,7 +195,7 @@ a {
 }
 
 .narrow {
-  width: 50%;
+  max-width: 500px;
 }
 
 .error-message {
@@ -486,4 +486,11 @@ a {
   top: -15px;
   width: 40%;
   padding-left: 20px;
+}
+
+@media all and (max-width: 1024px) {
+  /* put your css styles in here */
+  .page {
+    margin: 20px;
+  }
 }
