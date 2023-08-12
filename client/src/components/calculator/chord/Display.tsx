@@ -7,6 +7,7 @@ import {
   emptyTab,
   tabStrings,
   convertChordsToTabs,
+  createChordVariations,
   updateChordsWithPosition,
   sortChordsByLowest,
 } from '../../../helpers/common';
@@ -59,7 +60,8 @@ function Display(props: {
       type,
     },
   });
-  if (loading || data.chords.length === 0 || !tone || !type) {
+
+  if (loading || !data || !data.chords || data.chords.length === 0 || !tone || !type) {
     props.onChange(emptyTab);
     return (
       <div className="display">
@@ -78,7 +80,8 @@ function Display(props: {
     )
   }
 
-  let tabArray: IChordTab[] = convertChordsToTabs(data.chords, root)
+  let tabArray: IChordTab[] = convertChordsToTabs(data.chords, root);
+  tabArray = createChordVariations(tabArray);
   tabArray = updateChordsWithPosition(tabArray, position);
   tabArray = sortChordsByLowest(tabArray);
 

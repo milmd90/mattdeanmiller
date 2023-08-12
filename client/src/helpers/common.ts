@@ -1,6 +1,9 @@
-import {pitchDifference} from './pitchTones';
+import {
+  pitchDifference,
+  getTone
+} from './pitchTones';
 
-type TabValue = number | null;
+export type TabValue = number | null;
 
 export interface IStringData {
   "fret": TabValue,
@@ -11,12 +14,7 @@ export interface IChordData {
   "shape": any,
   "type": any,
   "option": any,
-  "first": IStringData,
-  "second": IStringData,
-  "third": IStringData,
-  "fourth": IStringData,
-  "fifth": IStringData,
-  "sixth": IStringData,
+  "frets": TabValue[],
 };
 
 export interface IChordTab {
@@ -29,8 +27,8 @@ export interface IChordTab {
 }
 
 export type TabString = keyof IChordTab;
-export const tabStrings: TabString[] = ['sixth', 'fifth', 'fourth', 'third', 'second', 'first'];
-
+export const tabStrings: TabString[] = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth'];
+export type stringPitch = 'E' | 'A' | 'D' | 'G' | 'B' | 'e';
 
 export function getMinOrMaxFretValue(tab: IChordTab, comparator: (a: number, b: number) => boolean): number {
   let minOrMax: number | undefined;
@@ -65,43 +63,124 @@ export function convertChordsToTabs(chords: IChordData[], root: string): IChordT
     return input + offset;
   }
 
-  return chords.map((chord) => {
-    const offset = pitchDifference(chord.shape, root);
+  function getStringValue(root: string, chord: IChordData, string: TabString): IStringData {
+    const {shape, frets} = chord;
+    const offset = pitchDifference(shape, root);
+    const index = tabStrings.indexOf(string);
+    const relativeFret = frets[index];
+    const fret = getValue(relativeFret, offset);
+    const stringPitch = getStringPitch(string);
+    if (!stringPitch) return emptyStringData;
+    const tone = getTone(root, fret, stringPitch)
+
     return {
-      first: {
-        fret: getValue(chord.first.fret, offset),
-        tone: getValue(chord.first.tone, null)
-      },
-      second: {
-        fret: getValue(chord.second.fret, offset),
-        tone: getValue(chord.second.tone, null)
-      },
-      third: {
-        fret: getValue(chord.third.fret, offset),
-        tone: getValue(chord.third.tone, null)
-      },
-      fourth: {
-        fret: getValue(chord.fourth.fret, offset),
-        tone: getValue(chord.fourth.tone, null)
-      },
-      fifth: {
-        fret: getValue(chord.fifth.fret, offset),
-        tone: getValue(chord.fifth.tone, null)
-      },
-      sixth: {
-        fret: getValue(chord.sixth.fret, offset),
-        tone: getValue(chord.sixth.tone, null)
-      },
+      fret,
+      tone
     };
-  })
+  }
+
+  return chords.map((chord) => {
+    return {
+      first: getStringValue(root, chord, "first"),
+      second: getStringValue(root, chord, "second"),
+      third: getStringValue(root, chord, "third"),
+      fourth: getStringValue(root, chord, "fourth"),
+      fifth: getStringValue(root, chord, "fifth"),
+      sixth: getStringValue(root, chord, "sixth"),
+    };
+  });
 }
 
+export function createChordVariations(tabArray: IChordTab[]): IChordTab[] {
+  const resultsLog: string[] = [];
+  const resultAray: IChordTab[] = [];
+
+  const createTab = (tab: IChordTab, filter: boolean[]): {newTab: IChordTab, resultKey: string} => {
+    const newTab = {
+      first: filter[0] ? tab.first : emptyStringData,
+      second: filter[1] ? tab.second : emptyStringData,
+      third: filter[2] ? tab.third : emptyStringData,
+      fourth: filter[3] ? tab.fourth : emptyStringData,
+      fifth: filter[4] ? tab.fifth : emptyStringData,
+      sixth: filter[5] ? tab.sixth : emptyStringData,
+    }
+    const values = [];
+    values.push(newTab.first.fret == null ? 'X' : newTab.first.fret);
+    values.push(newTab.second.fret == null ? 'X' : newTab.second.fret);
+    values.push(newTab.third.fret == null ? 'X' : newTab.third.fret);
+    values.push(newTab.fourth.fret == null ? 'X' : newTab.fourth.fret);
+    values.push(newTab.fifth.fret == null ? 'X' : newTab.fifth.fret);
+    values.push(newTab.sixth.fret == null ? 'X' : newTab.sixth.fret);
+    const resultKey = values.join('.');
+
+    return {newTab, resultKey}
+  }
+
+  const getNumTones = (tab: IChordTab) => {
+    const tones: number[] = [];
+    tabStrings.forEach(tabString => {
+      const tone = tab[tabString].tone;
+      if (tone !== null && !tones.includes(tone)) {
+        // console.log('de dup!', {tone});
+        tones.push(tone);
+      } 
+    })
+    return tones.length;
+  }
+
+  const createPermutations = async (tab: IChordTab) => {
+    const numTones = getNumTones(tab);
+
+    // Every combination
+    // const filterArray: boolean[][] = [];
+    // const AMOUNT_OF_VARIABLES = 6;
+    // for (let i = 0; i < (1 << AMOUNT_OF_VARIABLES); i++) {
+    //   let boolArr = [];
+    //   for (let j = AMOUNT_OF_VARIABLES - 1; j >= 0; j--) {
+    //     boolArr.push(Boolean(i & (1 << j)));
+    //   }
+    //   filterArray.push(boolArr);
+    // }
+
+    // Select Combinations
+    const filterArray: boolean[][] = [
+      // X     X     X     X     X     X 
+      [true, true, true, true, true, true],
+      // X     X     X     X     X       
+      [true, true, true, true, true, false],
+      // X     X     X     X     
+      [true, true, true, true, false, false],
+      // X     X     X           X       
+      [true, true, true, false, true, false],
+      // X     X     X                   X
+      [true, true, true, false, false, true],
+      // X     X     X       
+      [true, true, true, false, false, false],
+      //       X     X     X     X    
+      [false, true, true, true, true, false],
+      //       X     X      X            X
+      [false, true, true, true, false, true],
+    ];
+    filterArray.forEach((filter) => {
+      const {newTab, resultKey} = createTab(tab, filter);
+      const newNumTones = getNumTones(newTab);
+      if (numTones === newNumTones && !resultsLog.includes(resultKey)) {
+        resultsLog.push(resultKey);
+        resultAray.push(newTab);
+      }
+    })
+  }
+
+  tabArray.forEach((tab) => {
+    createPermutations(tab);
+  })
+  return resultAray;
+}
 export function updateChordsWithPosition(tabArray: IChordTab[], position: string): IChordTab[] {
   let numPos: number = parseInt(position);
   if (isNaN(numPos)) numPos = 0;
 
   return tabArray.map((startTab) => {
-    // let tab = {...startTab};
     let tab = JSON.parse(JSON.stringify(startTab));
     let minFret = getMinFretValue(tab);
     if (typeof minFret !== 'number') return tab;
@@ -132,39 +211,33 @@ export function sortChordsByLowest(tabArray: IChordTab[]): IChordTab[] {
   });
 }
 
-export const stringToNote = (tabString: TabString): String => {
-  if (tabString === "sixth") return "e";
-  if (tabString === "fifth") return "B";
-  if (tabString === "fourth") return "G";
-  if (tabString === "third") return "D";
-  if (tabString === "second") return "A";
-  if (tabString === "first") return "E";
-  return "";
+export const getStringName = (tabString: TabString): stringPitch | null => {
+  if (tabString === "first") return "e";	
+  if (tabString === "second") return "B";	
+  if (tabString === "third") return "G";	
+  if (tabString === "fourth") return "D";	
+  if (tabString === "fifth") return "A";	
+  if (tabString === "sixth") return "E";	
+  return null;	
+}
+
+export const getStringPitch = (tabString: TabString): stringPitch | null => {
+  const name = getStringName(tabString);
+  if (name === null) return null;
+  if (name === 'e') return 'E';
+  return name;
+}
+
+export const emptyStringData: IStringData = {
+  fret: null,
+  tone: null
 }
 
 export const emptyTab: IChordTab = {
-  "sixth": {
-    fret: null,
-    tone: null
-  },
-  "fifth": {
-    fret: null,
-    tone: null
-  },
-  "fourth": {
-    fret: null,
-    tone: null
-  },
-  "third": {
-    fret: null,
-    tone: null
-  },
-  "second": {
-    fret: null,
-    tone: null
-  },
-  "first": {
-    fret: null,
-    tone: null
-  },
+  "first": emptyStringData,
+  "second": emptyStringData,
+  "third": emptyStringData,
+  "fourth": emptyStringData,
+  "fifth": emptyStringData,
+  "sixth": emptyStringData,
 }

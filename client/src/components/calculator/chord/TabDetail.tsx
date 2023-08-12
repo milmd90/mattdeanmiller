@@ -4,7 +4,7 @@ import {
   TabString,
   getMinFretValue,
   getMaxFretValue,
-  stringToNote
+  getStringName
 } from '../../../helpers/common';
 
 function TabDetailRow(props: {
@@ -15,7 +15,7 @@ function TabDetailRow(props: {
 }) {
   const { tabString, tab, min, max } = props;
   const fretValue = tab[tabString].fret;
-  const stringTone = stringToNote(tabString);
+  const stringTone = getStringName(tabString);
 
   const cells = [];
   cells.push(

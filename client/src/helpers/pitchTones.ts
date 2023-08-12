@@ -1,6 +1,7 @@
 import * as pitchTones from '../dictionary/pitchTones.json';
+import { TabValue, stringPitch} from './common';
 
-export function convertPitchToTone(pitch: string): number | undefined {
+export function convertPitchToTone(pitch: string): TabValue {
   if (
     pitch === "Ab" ||
     pitch === "A" ||
@@ -26,12 +27,23 @@ export function convertPitchToTone(pitch: string): number | undefined {
   ) {
     return pitchTones[pitch]
   }
+  return null
 }
 
-export function pitchDifference(start: string, end: string): number | null {
+export function pitchDifference(start: string, end: string): TabValue {
   const startTone = convertPitchToTone(start);
   const endTone = convertPitchToTone(end);
-  if (!startTone || !endTone) return null;
+  if (null === startTone || null === endTone) return null;
 
   return (12 + endTone - startTone) % 12;
+}
+
+export function getTone(root: string, fret: TabValue, string: stringPitch): TabValue {
+  if (null === fret) return null;
+  const stringTone = convertPitchToTone(string);
+  const rootTone = convertPitchToTone(root);
+  if (null === stringTone || null === rootTone) return null;
+  const result = (12 + (stringTone + fret) - rootTone) % 12;
+
+  return result;
 }

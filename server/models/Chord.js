@@ -1,14 +1,5 @@
 const { Schema, model } = require('mongoose');
 
-const guitarString = new Schema({
-  "fret": {
-    type: Number,
-  },
-  "tone": {
-    type: Number,
-  },
-});
-
 const chordSchema = new Schema({
   "type": {
     type: String,
@@ -24,29 +15,13 @@ const chordSchema = new Schema({
     maxlength: 280,
     trim: true,
   },
-  "first": {
-    type: guitarString,
-    required: 'missing first',
+  "frets": {
+    type: [Number], 
+    required: true
   },
-  "second": {
-    type: guitarString,
-    required: 'missing second',
-  },
-  "third": {
-    type: guitarString,
-    required: 'missing third',
-  },
-  "fourth": {
-    type: guitarString,
-    required: 'missing fourth',
-  },
-  "fifth": {
-    type: guitarString,
-    required: 'missing fifth',
-  },
-  "sixth": {
-    type: guitarString,
-    required: 'missing sixth',
+  "user": {
+    type: Schema.Types.ObjectId,
+    ref: "User"
   },
 });
 

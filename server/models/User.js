@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Chord = require('./Chord');
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
@@ -14,6 +15,24 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
+  userType: {
+    type: String,
+    default: "user",
+  },
+  chords: [{
+    type: Schema.Types.ObjectId,
+    ref: "Chord"
+  }],
+});
+
+// TODO fix cascade delete
+userSchema.pre('deleteOne', async function (next) {
+  // console.log("userSchema.pre('remove'", {
+  //   this: this, 
+  //   id: this._id, 
+  // });
+  await Chord.deleteMany({user: this._id})
+  next();
 });
 
 // set up pre-save middleware to create password
