@@ -18,7 +18,11 @@ const chordSchema = new Schema({
   "frets": {
     type: [Number], 
     required: true
-  }
+  },
+  "user": {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  },
 });
 
 const Chord = model('Chord', chordSchema);

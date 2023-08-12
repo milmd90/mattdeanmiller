@@ -1,11 +1,10 @@
 const db = require('../config/connection');
-const { Chord } = require('../models');
+const { Chord, User } = require('../models');
 const chords = require('./chordSeeds.json');
-
 
 let completeDictionary = [];
 
-const createPermutations = async (chord) => {
+const createPermutations = async (chord, userId) => {
   const { 
     type,
     shape,
@@ -27,7 +26,8 @@ const createPermutations = async (chord) => {
       fourth, 
       fifth, 
       null,
-    ]
+    ],
+    user: userId,
   });
   completeDictionary.push({
     type,
@@ -39,7 +39,8 @@ const createPermutations = async (chord) => {
       fourth, 
       null, 
       null,
-    ]
+    ],
+    user: userId,
   });
   completeDictionary.push({
     type,
@@ -51,7 +52,8 @@ const createPermutations = async (chord) => {
       fourth, 
       fifth, 
       null,
-    ]
+    ],
+    user: userId,
   });
   completeDictionary.push({
     type,
@@ -63,7 +65,8 @@ const createPermutations = async (chord) => {
       null, 
       null, 
       sixth,
-    ]
+    ],
+    user: userId,
   });
   completeDictionary.push({
     type,
@@ -75,12 +78,12 @@ const createPermutations = async (chord) => {
       fourth, 
       null, 
       sixth,
-    ]
+    ],
+    user: userId,
   });
 }
 
-const createDictionary = async (chords) => {
-
+const createDictionary = async (chords, userId) => {
   try {
     chords.forEach((chord) => {
       completeDictionary.push({
@@ -93,7 +96,8 @@ const createDictionary = async (chords) => {
           chord.fourth, 
           chord.fifth, 
           chord.sixth,
-        ]
+        ],
+        user: userId,
       });
 
       if (
@@ -104,7 +108,7 @@ const createDictionary = async (chords) => {
         chord.fifth !== null &&
         chord.sixth !== null
       ) {
-        createPermutations(chord);
+        createPermutations(chord, userId);
       }
     })
 
@@ -116,10 +120,17 @@ const createDictionary = async (chords) => {
 
 
 db.once('open', async () => {
-  await Chord.deleteMany({});
+  await User.deleteOne({username: "system"});
+  await Chord.deleteMany({})
+
+  const user = await User.create({
+    username: "system",
+    password: "testing",
+    userType: "system"
+  });
 
   try {
-    createDictionary(chords);
+    createDictionary(chords, user._id);
     await Chord.create(completeDictionary);
 
     process.exit(0);

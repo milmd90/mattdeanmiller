@@ -6,12 +6,15 @@ const typeDefs = gql`
     type: String
     shape: String
     frets: [Int]
+    user: User
   }
 
   type User {
     _id: ID
     username: String
     password: String
+    userType: String
+    chords: [Chord]
   }
 
   type Auth {
