@@ -91,6 +91,91 @@ export function convertChordsToTabs(chords: IChordData[], root: string): IChordT
   });
 }
 
+export function createChordVariations(tabArray: IChordTab[]): IChordTab[] {
+  const resultsLog: string[] = [];
+  const resultAray: IChordTab[] = [];
+
+  const createTab = (tab: IChordTab, filter: boolean[]): {newTab: IChordTab, resultKey: string} => {
+    const newTab = {
+      first: filter[0] ? tab.first : emptyStringData,
+      second: filter[1] ? tab.second : emptyStringData,
+      third: filter[2] ? tab.third : emptyStringData,
+      fourth: filter[3] ? tab.fourth : emptyStringData,
+      fifth: filter[4] ? tab.fifth : emptyStringData,
+      sixth: filter[5] ? tab.sixth : emptyStringData,
+    }
+    const values = [];
+    values.push(newTab.first.fret == null ? 'X' : newTab.first.fret);
+    values.push(newTab.second.fret == null ? 'X' : newTab.second.fret);
+    values.push(newTab.third.fret == null ? 'X' : newTab.third.fret);
+    values.push(newTab.fourth.fret == null ? 'X' : newTab.fourth.fret);
+    values.push(newTab.fifth.fret == null ? 'X' : newTab.fifth.fret);
+    values.push(newTab.sixth.fret == null ? 'X' : newTab.sixth.fret);
+    const resultKey = values.join('.');
+
+    return {newTab, resultKey}
+  }
+
+  const getNumTones = (tab: IChordTab) => {
+    const tones: number[] = [];
+    tabStrings.forEach(tabString => {
+      const tone = tab[tabString].tone;
+      if (tone !== null && !tones.includes(tone)) {
+        // console.log('de dup!', {tone});
+        tones.push(tone);
+      } 
+    })
+    return tones.length;
+  }
+
+  const createPermutations = async (tab: IChordTab) => {
+    const numTones = getNumTones(tab);
+
+    // Every combination
+    // const filterArray: boolean[][] = [];
+    // const AMOUNT_OF_VARIABLES = 6;
+    // for (let i = 0; i < (1 << AMOUNT_OF_VARIABLES); i++) {
+    //   let boolArr = [];
+    //   for (let j = AMOUNT_OF_VARIABLES - 1; j >= 0; j--) {
+    //     boolArr.push(Boolean(i & (1 << j)));
+    //   }
+    //   filterArray.push(boolArr);
+    // }
+
+    // Select Combinations
+    const filterArray: boolean[][] = [
+      // X     X     X     X     X     X 
+      [true, true, true, true, true, true],
+      // X     X     X     X     X       
+      [true, true, true, true, true, false],
+      // X     X     X     X     
+      [true, true, true, true, false, false],
+      // X     X     X           X       
+      [true, true, true, false, true, false],
+      // X     X     X                   X
+      [true, true, true, false, false, true],
+      // X     X     X       
+      [true, true, true, false, false, false],
+      //       X     X     X     X    
+      [false, true, true, true, true, false],
+      //       X     X      X            X
+      [false, true, true, true, false, true],
+    ];
+    filterArray.forEach((filter) => {
+      const {newTab, resultKey} = createTab(tab, filter);
+      const newNumTones = getNumTones(newTab);
+      if (numTones === newNumTones && !resultsLog.includes(resultKey)) {
+        resultsLog.push(resultKey);
+        resultAray.push(newTab);
+      }
+    })
+  }
+
+  tabArray.forEach((tab) => {
+    createPermutations(tab);
+  })
+  return resultAray;
+}
 export function updateChordsWithPosition(tabArray: IChordTab[], position: string): IChordTab[] {
   let numPos: number = parseInt(position);
   if (isNaN(numPos)) numPos = 0;
