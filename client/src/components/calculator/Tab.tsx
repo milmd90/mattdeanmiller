@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IChordTab, tabStrings, getStringName } from '../../helpers/common';
 import Chord from './chord/Chord';
 import { Tooltip } from 'react-tooltip';
@@ -112,7 +112,7 @@ function EndColumn(props: {
   );
 }
 
-export default function TabView(props: {
+function TabView(props: {
   showColors: boolean,
   numColumns: number,
   isEditing: boolean,
@@ -147,3 +147,29 @@ export default function TabView(props: {
     </div>
   )
 }
+
+
+export default function Tab(props: {
+  showColors: boolean,
+  numRows: number,
+  numColumns: number,
+  onChange: (rowNum: number) => (columnNum: number) => (data: IChordTab) => void,
+}) {
+  const [editingRow, setEditingRow] = useState<number | undefined>(0);
+
+  const views = [];
+  for (let rowNum = 0; rowNum < props.numRows; rowNum++) {
+    views.push(
+      <TabView
+        key={rowNum}
+        showColors={props.showColors}
+        numColumns={props.numColumns}
+        isEditing={editingRow === rowNum}
+        handleEditClick={() => setEditingRow(editingRow === rowNum ? undefined : rowNum)}
+        onChange={props.onChange(rowNum)}
+      />
+    )
+  }
+  return (<> {views} </>);
+}
+
