@@ -32,6 +32,11 @@
   "mi 9": "minor 9th",
   "min 9": "minor 9th",
   "minor 9": "minor 9th",
+  "7b5": "half diminished",
+  "hd": "half diminished",
+  "half": "half diminished",
   "half dim": "half diminished",
+  "half-dim": "half diminished",
+  "di": "diminished",
   "dim": "diminished"
 }
