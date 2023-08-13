@@ -217,6 +217,7 @@ a {
   flex-grow: 1;
   margin-bottom: 40px;
   min-height: 0;
+  max-height: 80vh;
 }
 
 #tab {
@@ -511,5 +512,9 @@ a {
   }
   #tabulator {
     flex-direction: column;
+    max-height: none;
+  }
+  .edit {
+    display: none;
   }
 }
