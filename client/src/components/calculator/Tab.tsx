@@ -170,6 +170,6 @@ export default function Tab(props: {
       />
     )
   }
-  return (<> {views} </>);
+  return <> {views} </>;
 }
 
