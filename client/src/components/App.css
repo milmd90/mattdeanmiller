@@ -152,10 +152,6 @@ a {
   width: 100%;
 }
 
-.window {
-  height: 75vh;
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -221,15 +217,20 @@ a {
   flex-grow: 1;
   margin-bottom: 40px;
   min-height: 0;
+  max-height: 80vh;
 }
 
-#tab-views {
+#tab {
   display: flex;
   flex-direction: column;
   overflow: scroll;
   width: 70%;
   padding-top: 20px;
   padding-bottom: 40px;
+}
+
+#tab-mobile {
+  display: none;
 }
 
 .tab-view {
@@ -489,9 +490,31 @@ a {
   padding-left: 20px;
 }
 
+/* mobile styles */
 @media all and (max-width: 1024px) {
-  /* put your css styles in here */
   .page {
     margin: 20px;
+  }
+  #tabulator {
+    align-items: center;
+  }
+  #tab-mobile {
+    display: flex;
+    width: 250px;
+  }
+  #sidebar {
+    margin: 0;
+    width: 250px;
+  }
+  #tab,
+  #config {
+    display: none;
+  }
+  #tabulator {
+    flex-direction: column;
+    max-height: none;
+  }
+  .edit {
+    display: none;
   }
 }

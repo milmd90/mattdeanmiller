@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import Config from '../components/calculator/Config';
 import ColorKey from '../components/calculator/ColorKey';
-import TabView from '../components/calculator/TabView';
+import Tab from '../components/calculator/Tab';
 import { IChordTab } from '../helpers/common';
 import { getTabsFromChordTabArray } from '../helpers/export';
 
 function Tabulator() {
   const [numColumns, setNumColumns] = useState<number>(16);
   const [numRows, setNumRows] = useState<number>(1);
-  const [editingRow, setEditingRow] = useState<number | undefined>(0);
   const [showColors, toggleShowColors] = useState<boolean>(true);
 
   const tabColumns: IChordTab[][] = [];
@@ -26,27 +25,23 @@ function Tabulator() {
     getTabsFromChordTabArray(tabColumns);
   }
 
-  function renderTabViews(numRows: number) {
-    const views = [];
-    for (let rowNum = 0; rowNum < numRows; rowNum++) {
-      views.push(
-        <TabView
-          key={rowNum}
-          showColors={showColors}
-          numColumns={numColumns}
-          isEditing={editingRow === rowNum}
-          handleEditClick={() => setEditingRow(editingRow === rowNum ? undefined : rowNum)}
-          onChange={onChange(rowNum)}
-        />
-      )
-    }
-    return views;
-  }
-
   return (
-    <div id="tabulator" className='window'>
-      <div id='tab-views' className='container'>
-        {renderTabViews(numRows)}
+    <div id="tabulator" className=''>
+      <div id='tab-mobile' className='container'>
+        <Tab
+          onChange={onChange}
+          showColors={showColors}
+          numRows={1}
+          numColumns={1}
+        />
+      </div>
+      <div id='tab' className='container'>
+        <Tab
+          onChange={onChange}
+          showColors={showColors}
+          numRows={numRows}
+          numColumns={numColumns}
+        />
       </div>
       <div id='sidebar' className='column'>
         <Config
