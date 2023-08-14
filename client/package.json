@@ -27,8 +27,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build-css": "node-sass src/ -o src/ ",
+    "watch-css": "npm run build-css && node-sass src/ -o src/ -w -r",
+    "build-js": "react-scripts build",
+    "start-js": "react-scripts start",
+    "build": "concurrently \"npm run start build-*\"",
+    "start": "concurrently \"npm run watch-css\" \"npm run start-js\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -49,5 +53,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/node-sass": "^4.11.3"
   }
 }
