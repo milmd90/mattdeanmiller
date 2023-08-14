@@ -7,7 +7,6 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import './App.css';
 import Header from './header/Header';
 import OutsideClick from './OutsideClick';
 import Menu from './Menu';
