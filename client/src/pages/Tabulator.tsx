@@ -5,7 +5,7 @@ import Tab from '../components/calculator/Tab';
 import { IChordTab } from '../helpers/common';
 import { getTabsFromChordTabArray } from '../helpers/export';
 
-function Tabulator() {
+export default function Tabulator() {
   const [numColumns, setNumColumns] = useState<number>(16);
   const [numRows, setNumRows] = useState<number>(1);
   const [showColors, toggleShowColors] = useState<boolean>(true);
@@ -60,5 +60,3 @@ function Tabulator() {
     </div>
   );
 }
-
-export default Tabulator;

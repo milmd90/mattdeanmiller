@@ -148,7 +148,6 @@ function TabView(props: {
   )
 }
 
-
 export default function Tab(props: {
   showColors: boolean,
   numRows: number,
