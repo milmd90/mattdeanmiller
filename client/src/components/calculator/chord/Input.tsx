@@ -34,7 +34,7 @@ function Input(props: {
       type: e.target.value,
       shape,
       position,
-      option: 0,
+      option,
     });
   }
   const onChangeShape = (e: any) => {
@@ -44,7 +44,7 @@ function Input(props: {
       type,
       shape: shape.toUpperCase(),
       position,
-      option: 0,
+      option,
     });
   }
   const onChangePosition = (e: any) => {
@@ -53,7 +53,7 @@ function Input(props: {
       type,
       shape,
       position: e.target.value,
-      option: 0,
+      option,
     });
   }
   const onChangeOption = (e: any) => {
