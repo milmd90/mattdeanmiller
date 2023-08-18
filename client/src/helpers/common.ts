@@ -30,7 +30,7 @@ export type TabString = keyof IChordTab;
 export const tabStrings: TabString[] = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth'];
 export type stringPitch = 'E' | 'A' | 'D' | 'G' | 'B' | 'e';
 
-export function getMinOrMaxFretValue(tab: IChordTab, comparator: (a: number, b: number) => boolean): number {
+function getMinOrMaxFretValue(tab: IChordTab, comparator: (a: number, b: number) => boolean): number {
   let minOrMax: number | undefined;
   for (let tabString of tabStrings) {
     const fretValue = tab[tabString].fret;
@@ -78,6 +78,15 @@ export function convertChordsToTabs(chords: IChordData[], root: string): IChordT
       tone
     };
   }
+
+  // Add variations for diminished
+  // const adjChords = [];
+  // chords.forEach(chord => {
+  //   if (chord.type === 'diminished') {
+  //     console.log({chord})
+  //     adjChords.push(chord);
+  //   }
+  // });
 
   return chords.map((chord) => {
     return {
@@ -176,6 +185,7 @@ export function createChordVariations(tabArray: IChordTab[]): IChordTab[] {
   })
   return resultAray;
 }
+
 export function updateChordsWithPosition(tabArray: IChordTab[], position: string): IChordTab[] {
   let numPos: number = parseInt(position);
   if (isNaN(numPos)) numPos = 0;
@@ -221,7 +231,7 @@ export const getStringName = (tabString: TabString): stringPitch | null => {
   return null;	
 }
 
-export const getStringPitch = (tabString: TabString): stringPitch | null => {
+const getStringPitch = (tabString: TabString): stringPitch | null => {
   const name = getStringName(tabString);
   if (name === null) return null;
   if (name === 'e') return 'E';

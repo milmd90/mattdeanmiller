@@ -1,542 +1,572 @@
 [
   {
     "shape": "C",
-    "type": "major",
-    "sixth": 0,
-    "fifth": 3,
-    "fourth": 2,
-    "third": 0,
-    "second": 1,
-    "first": 0
-  },
-  {
-    "shape": "C",
-    "type": "major 7th",
-    "sixth": 0,
-    "fifth": 3,
-    "fourth": 2,
-    "third": 0,
-    "second": 0,
-    "first": 0
-  },
-  {
-    "shape": "C",
-    "type": "major 7th",
-    "sixth": 0,
-    "fifth": 2,
-    "fourth": 2,
-    "third": 0,
-    "second": 1,
-    "first": 0
-  },
-  {
-    "shape": "C",
-    "type": "dominate 7th",
-    "sixth": 0,
-    "fifth": 3,
-    "fourth": 2,
-    "third": 3,
-    "second": 1,
-    "first": 0
-  },
-  {
-    "shape": "C",
-    "type": "dominate 9th",
-    "sixth": 0,
-    "fifth": 3,
-    "fourth": 2,
-    "third": 3,
-    "second": 3,
-    "first": 0
-  },
-  {
-    "shape": "C",
     "type": "6",
-    "sixth": 0,
-    "fifth": 3,
-    "fourth": 2,
+    "first": 0,
+    "second": 1,
     "third": 2,
-    "second": 1,
-    "first": 0
+    "fourth": 2,
+    "fifth": 3,
+    "sixth": 0
   },
   {
     "shape": "C",
     "type": "6",
-    "sixth": 0,
-    "fifth": 0,
-    "fourth": 2,
-    "third": 0,
+    "first": 0,
     "second": 1,
-    "first": 0
+    "third": 0,
+    "fourth": 2,
+    "fifth": 0,
+    "sixth": 0
   },
   {
     "shape": "C",
     "type": "69",
-    "sixth": 0,
-    "fifth": 3,
-    "fourth": 2,
+    "first": 0,
+    "second": 3,
     "third": 2,
+    "fourth": 2,
+    "fifth": 3,
+    "sixth": 0
+  },
+  {
+    "shape": "C",
+    "type": "dominate 7th",
+    "first": 0,
+    "second": 1,
+    "third": 3,
+    "fourth": 2,
+    "fifth": 3,
+    "sixth": 0
+  },
+  {
+    "shape": "C",
+    "type": "dominate 9th",
+    "first": 0,
     "second": 3,
-    "first": 0
-  },
-  {
-    "shape": "C",
-    "type": "minor",
-    "sixth": -1,
-    "fifth": 3,
-    "fourth": 1,
-    "third": 0,
-    "second": 1,
-    "first": -1
-  },
-  {
-    "shape": "C",
-    "type": "minor 7th",
-    "sixth": -1,
-    "fifth": 3,
-    "fourth": 1,
     "third": 3,
-    "second": 1,
-    "first": -1
-  },
-  {
-    "shape": "C",
-    "type": "minor 9th",
-    "sixth": -1,
+    "fourth": 2,
     "fifth": 3,
-    "fourth": 1,
-    "third": 3,
-    "second": 3,
-    "first": -1
-  },
-  {
-    "shape": "C",
-    "type": "half diminished",
-    "sixth": 2,
-    "fifth": 3,
-    "fourth": 1,
-    "third": 3,
-    "second": 1,
-    "first": 2
+    "sixth": 0
   },
   {
     "shape": "C",
     "type": "diminished",
-    "sixth": 2,
-    "fifth": 3,
-    "fourth": 1,
-    "third": 2,
+    "first": 2,
     "second": 1,
-    "first": 2
-  },
-  {
-    "shape": "A",
-    "type": "major",
-    "sixth": 0,
-    "fifth": 0,
-    "fourth": 2,
     "third": 2,
-    "second": 2,
-    "first": 0
+    "fourth": 1,
+    "fifth": 3,
+    "sixth": 2
   },
   {
-    "shape": "A",
+    "shape": "C",
+    "type": "half diminished",
+    "first": 2,
+    "second": 1,
+    "third": 3,
+    "fourth": 1,
+    "fifth": 3,
+    "sixth": 2
+  },
+  {
+    "shape": "C",
+    "type": "major",
+    "first": 0,
+    "second": 1,
+    "third": 0,
+    "fourth": 2,
+    "fifth": 3,
+    "sixth": 0
+  },
+  {
+    "shape": "C",
     "type": "major 7th",
-    "sixth": 0,
-    "fifth": 0,
-    "fourth": 2,
-    "third": 1,
-    "second": 2,
-    "first": 0
-  },
-  {
-    "shape": "A",
-    "type": "dominate 7th",
-    "sixth": 0,
-    "fifth": 0,
-    "fourth": 2,
+    "first": 0,
+    "second": 0,
     "third": 0,
-    "second": 2,
-    "first": 0
+    "fourth": 2,
+    "fifth": 3,
+    "sixth": 0
   },
   {
-    "shape": "A",
-    "type": "dominate 9th",
-    "sixth": 0,
+    "shape": "C",
+    "type": "major 7th",
+    "first": 0,
+    "second": 1,
+    "third": 0,
+    "fourth": 2,
     "fifth": 2,
-    "fourth": 2,
+    "sixth": 0
+  },
+  {
+    "shape": "C",
+    "type": "minor",
+    "first": -1,
+    "second": 1,
     "third": 0,
-    "second": 2,
-    "first": 0
+    "fourth": 1,
+    "fifth": 3,
+    "sixth": -1
+  },
+  {
+    "shape": "C",
+    "type": "minor 7th",
+    "first": -1,
+    "second": 1,
+    "third": 3,
+    "fourth": 1,
+    "fifth": 3,
+    "sixth": -1
+  },
+  {
+    "shape": "C",
+    "type": "minor 9th",
+    "first": -1,
+    "second": 3,
+    "third": 3,
+    "fourth": 1,
+    "fifth": 3,
+    "sixth": -1
   },
   {
     "shape": "A",
     "type": "6",
-    "sixth": 0,
-    "fifth": 0,
-    "fourth": 2,
-    "third": 2,
+    "first": 2,
     "second": 2,
-    "first": 2
+    "third": 2,
+    "fourth": 2,
+    "fifth": 0,
+    "sixth": 0
   },
   {
     "shape": "A",
     "type": "69",
-    "sixth": 0,
-    "fifth": 0,
-    "fourth": 2,
+    "first": 2,
+    "second": 2,
     "third": 4,
-    "second": 2,
-    "first": 2
+    "fourth": 2,
+    "fifth": 0,
+    "sixth": 0
   },
   {
     "shape": "A",
     "type": "69",
-    "sixth": 0,
-    "fifth": 2,
-    "fourth": 2,
-    "third": 2,
+    "first": 2,
     "second": 2,
-    "first": 2
+    "third": 2,
+    "fourth": 2,
+    "fifth": 2,
+    "sixth": 0
   },
   {
     "shape": "A",
     "type": "69",
-    "sixth": 2,
-    "fifth": 2,
-    "fourth": 2,
+    "first": 2,
+    "second": 2,
     "third": 2,
-    "second": 2,
-    "first": 2
-  },
-  {
-    "shape": "A",
-    "type": "7b9",
-    "sixth": 0,
-    "fifth": 1,
     "fourth": 2,
-    "third": 0,
-    "second": 2,
-    "first": 0
+    "fifth": 2,
+    "sixth": 2
   },
   {
     "shape": "A",
     "type": "7#9",
-    "sixth": 0,
-    "fifth": 0,
-    "fourth": 2,
-    "third": 0,
+    "first": 0,
     "second": 1,
-    "first": 0
+    "third": 0,
+    "fourth": 2,
+    "fifth": 0,
+    "sixth": 0
+  },
+  {
+    "shape": "A",
+    "type": "7b9",
+    "first": 0,
+    "second": 2,
+    "third": 0,
+    "fourth": 2,
+    "fifth": 1,
+    "sixth": 0
+  },
+  {
+    "shape": "A",
+    "type": "dominate 7th",
+    "first": 0,
+    "second": 2,
+    "third": 0,
+    "fourth": 2,
+    "fifth": 0,
+    "sixth": 0
+  },
+  {
+    "shape": "A",
+    "type": "dominate 9th",
+    "first": 0,
+    "second": 2,
+    "third": 0,
+    "fourth": 2,
+    "fifth": 2,
+    "sixth": 0
+  },
+  {
+    "shape": "A",
+    "type": "diminished",
+    "first": -1,
+    "second": 1,
+    "third": -1,
+    "fourth": 1,
+    "fifth": 0,
+    "sixth": -1
+  },
+  {
+    "shape": "A",
+    "type": "half diminished",
+    "first": -1,
+    "second": 1,
+    "third": 0,
+    "fourth": 1,
+    "fifth": 0,
+    "sixth": -1
+  },
+  {
+    "shape": "A",
+    "type": "major",
+    "first": 0,
+    "second": 2,
+    "third": 2,
+    "fourth": 2,
+    "fifth": 0,
+    "sixth": 0
+  },
+  {
+    "shape": "A",
+    "type": "major 7th",
+    "first": 0,
+    "second": 2,
+    "third": 1,
+    "fourth": 2,
+    "fifth": 0,
+    "sixth": 0
   },
   {
     "shape": "A",
     "type": "minor",
-    "sixth": 0,
-    "fifth": 0,
-    "fourth": 2,
-    "third": 2,
+    "first": 0,
     "second": 1,
-    "first": 0
+    "third": 2,
+    "fourth": 2,
+    "fifth": 0,
+    "sixth": 0
   },
   {
     "shape": "A",
     "type": "minor 7th",
-    "sixth": 0,
-    "fifth": 0,
-    "fourth": 2,
-    "third": 0,
+    "first": 0,
     "second": 1,
-    "first": 0
+    "third": 0,
+    "fourth": 2,
+    "fifth": 0,
+    "sixth": 0
   },
   {
     "shape": "A",
     "type": "minor 9th",
-    "sixth": 0,
-    "fifth": 2,
+    "first": 0,
+    "second": 1,
+    "third": 0,
     "fourth": 2,
-    "third": 0,
-    "second": 1,
-    "first": 0
-  },
-  {
-    "shape": "A",
-    "type": "half diminished",
-    "sixth": -1,
-    "fifth": 0,
-    "fourth": 1,
-    "third": 0,
-    "second": 1,
-    "first": -1
-  },
-  {
-    "shape": "A",
-    "type": "diminished",
-    "sixth": -1,
-    "fifth": 0,
-    "fourth": 1,
-    "third": -1,
-    "second": 1,
-    "first": -1
-  },
-  {
-    "shape": "G",
-    "type": "major",
-    "sixth": 3,
     "fifth": 2,
-    "fourth": 0,
-    "third": 0,
-    "second": 0,
-    "first": 3
-  },
-  {
-    "shape": "G",
-    "type": "major",
-    "sixth": 3,
-    "fifth": 2,
-    "fourth": 0,
-    "third": 0,
-    "second": 3,
-    "first": 3
-  },
-  {
-    "shape": "G",
-    "type": "major 7th",
-    "sixth": 3,
-    "fifth": 2,
-    "fourth": 0,
-    "third": 0,
-    "second": 0,
-    "first": 2
+    "sixth": 0
   },
   {
     "shape": "G",
     "type": "dominate 7th",
-    "sixth": 3,
-    "fifth": 2,
-    "fourth": 0,
-    "third": 0,
+    "first": 1,
     "second": 0,
-    "first": 1
+    "third": 0,
+    "fourth": 0,
+    "fifth": 2,
+    "sixth": 3
+  },
+  {
+    "shape": "G",
+    "type": "diminished",
+    "first": 0,
+    "second": -1,
+    "third": 0,
+    "fourth": -1,
+    "fifth": 1,
+    "sixth": 0
+  },
+  {
+    "shape": "G",
+    "type": "half diminished",
+    "first": 1,
+    "second": -1,
+    "third": 0,
+    "fourth": -1,
+    "fifth": 1,
+    "sixth": 1
+  },
+  {
+    "shape": "G",
+    "type": "major",
+    "first": 3,
+    "second": 0,
+    "third": 0,
+    "fourth": 0,
+    "fifth": 2,
+    "sixth": 3
+  },
+  {
+    "shape": "G",
+    "type": "major",
+    "first": 3,
+    "second": 3,
+    "third": 0,
+    "fourth": 0,
+    "fifth": 2,
+    "sixth": 3
+  },
+  {
+    "shape": "G",
+    "type": "major 7th",
+    "first": 2,
+    "second": 0,
+    "third": 0,
+    "fourth": 0,
+    "fifth": 2,
+    "sixth": 3
   },
   {
     "shape": "G",
     "type": "minor",
-    "sixth": 3,
-    "fifth": 1,
-    "fourth": 0,
-    "third": 0,
+    "first": 3,
     "second": -1,
-    "first": 3
+    "third": 0,
+    "fourth": 0,
+    "fifth": 1,
+    "sixth": 3
   },
   {
     "shape": "G",
     "type": "minor 7th",
-    "sixth": 3,
-    "fifth": 1,
-    "fourth": 0,
-    "third": 0,
+    "first": 1,
     "second": -1,
-    "first": 1
-  },
-  {
-    "shape": "E",
-    "type": "major",
-    "sixth": 0,
-    "fifth": 2,
-    "fourth": 2,
-    "third": 1,
-    "second": 0,
-    "first": 0
-  },
-  {
-    "shape": "E",
-    "type": "major 7th",
-    "sixth": 0,
-    "fifth": 2,
-    "fourth": 1,
-    "third": 1,
-    "second": 0,
-    "first": 0
-  },
-  {
-    "shape": "E",
-    "type": "major 7th",
-    "sixth": -1,
-    "fifth": 2,
-    "fourth": 2,
-    "third": 1,
-    "second": 0,
-    "first": -1
-  },
-  {
-    "shape": "E",
-    "type": "dominate 7th",
-    "sixth": 0,
-    "fifth": 2,
+    "third": 0,
     "fourth": 0,
-    "third": 1,
-    "second": 0,
-    "first": 0
+    "fifth": 1,
+    "sixth": 3
   },
   {
     "shape": "E",
     "type": "6",
-    "sixth": 0,
-    "fifth": 2,
-    "fourth": 2,
-    "third": 1,
+    "first": 0,
     "second": 2,
-    "first": 0
+    "third": 1,
+    "fourth": 2,
+    "fifth": 2,
+    "sixth": 0
   },
   {
     "shape": "E",
     "type": "69",
-    "sixth": 0,
-    "fifth": 2,
-    "fourth": 2,
-    "third": 1,
+    "first": 2,
     "second": 2,
-    "first": 2
+    "third": 1,
+    "fourth": 2,
+    "fifth": 2,
+    "sixth": 0
+  },
+  {
+    "shape": "E",
+    "type": "dominate 7th",
+    "first": 0,
+    "second": 0,
+    "third": 1,
+    "fourth": 0,
+    "fifth": 2,
+    "sixth": 0
+  },
+  {
+    "shape": "E",
+    "type": "diminished",
+    "first": 0,
+    "second": -1,
+    "third": 0,
+    "fourth": -1,
+    "fifth": 1,
+    "sixth": 0
+  },
+  {
+    "shape": "E",
+    "type": "half diminished",
+    "first": 0,
+    "second": 3,
+    "third": 0,
+    "fourth": 2,
+    "fifth": 1,
+    "sixth": 0
+  },
+  {
+    "shape": "E",
+    "type": "half diminished",
+    "first": 0,
+    "second": -1,
+    "third": 0,
+    "fourth": 0,
+    "fifth": 1,
+    "sixth": 0
+  },
+  {
+    "shape": "E",
+    "type": "major",
+    "first": 0,
+    "second": 0,
+    "third": 1,
+    "fourth": 2,
+    "fifth": 2,
+    "sixth": 0
+  },
+  {
+    "shape": "E",
+    "type": "major 7th",
+    "first": 0,
+    "second": 0,
+    "third": 1,
+    "fourth": 1,
+    "fifth": 2,
+    "sixth": 0
+  },
+  {
+    "shape": "E",
+    "type": "major 7th",
+    "first": -1,
+    "second": 0,
+    "third": 1,
+    "fourth": 2,
+    "fifth": 2,
+    "sixth": -1
   },
   {
     "shape": "E",
     "type": "minor",
-    "sixth": 0,
-    "fifth": 2,
-    "fourth": 2,
-    "third": 0,
+    "first": 0,
     "second": 0,
-    "first": 0
+    "third": 0,
+    "fourth": 2,
+    "fifth": 2,
+    "sixth": 0
   },
   {
     "shape": "E",
     "type": "minor 7th",
-    "sixth": 0,
-    "fifth": 2,
-    "fourth": 0,
-    "third": 0,
+    "first": 0,
     "second": 0,
-    "first": 0
-  },
-  {
-    "shape": "E",
-    "type": "half diminished",
-    "sixth": 0,
-    "fifth": 1,
-    "fourth": 2,
     "third": 0,
-    "second": 3,
-    "first": 0
-  },
-  {
-    "shape": "E",
-    "type": "half diminished",
-    "sixth": 0,
-    "fifth": 1,
     "fourth": 0,
-    "third": 0,
-    "second": -1,
-    "first": 0
-  },
-  {
-    "shape": "E",
-    "type": "diminished",
-    "sixth": 0,
-    "fifth": 1,
-    "fourth": 2,
-    "third": 0,
-    "second": 2,
-    "first": 0
-  },
-  {
-    "shape": "E",
-    "type": "diminished",
-    "sixth": 0,
-    "fifth": 1,
-    "fourth": -1,
-    "third": 0,
-    "second": -1,
-    "first": 0
-  },
-  {
-    "shape": "D",
-    "type": "major",
-    "sixth": -2,
-    "fifth": 0,
-    "fourth": 0,
-    "third": 2,
-    "second": 3,
-    "first": 2
-  },
-  {
-    "shape": "D",
-    "type": "major 7th",
-    "sixth": -2,
-    "fifth": 0,
-    "fourth": 0,
-    "third": 2,
-    "second": 2,
-    "first": 2
-  },
-  {
-    "shape": "D",
-    "type": "dominate 7th",
-    "sixth": -2,
-    "fifth": 0,
-    "fourth": 0,
-    "third": 2,
-    "second": 1,
-    "first": 2
+    "fifth": 2,
+    "sixth": 0
   },
   {
     "shape": "D",
     "type": "6",
-    "sixth": 2,
-    "fifth": 2,
-    "fourth": 0,
-    "third": 2,
+    "first": 2,
     "second": 0,
-    "first": 2
-  },
-  {
-    "shape": "D",
-    "type": "minor",
-    "sixth": -2,
-    "fifth": 0,
-    "fourth": 0,
     "third": 2,
-    "second": 3,
-    "first": 1
+    "fourth": 0,
+    "fifth": 2,
+    "sixth": 2
   },
   {
     "shape": "D",
-    "type": "minor 7th",
-    "sixth": -2,
-    "fifth": 0,
-    "fourth": 0,
+    "type": "dominate 7th",
+    "first": 2,
+    "second": 1,
     "third": 2,
-    "second": 1,
-    "first": 1
-  },
-  {
-    "shape": "D",
-    "type": "half diminished",
-    "sixth": -2,
-    "fifth": -1,
     "fourth": 0,
-    "third": 1,
-    "second": 1,
-    "first": 1
+    "fifth": 0,
+    "sixth": -2
   },
   {
     "shape": "D",
     "type": "diminished",
-    "sixth": -2,
-    "fifth": -1,
-    "fourth": 0,
-    "third": 1,
+    "first": 1,
     "second": 0,
-    "first": 1
+    "third": 1,
+    "fourth": 0,
+    "fifth": -1,
+    "sixth": -2
+  },
+  {
+    "shape": "D",
+    "type": "diminished",
+    "first": 1,
+    "second": 0,
+    "third": 1,
+    "fourth": 0,
+    "fifth": -1,
+    "sixth": 1
+  },
+  {
+    "shape": "D",
+    "type": "half diminished",
+    "first": 1,
+    "second": 1,
+    "third": 1,
+    "fourth": 0,
+    "fifth": -1,
+    "sixth": -2
+  },
+  {
+    "shape": "D",
+    "type": "half diminished",
+    "first": 1,
+    "second": 1,
+    "third": 1,
+    "fourth": 0,
+    "fifth": -1,
+    "sixth": 1
+  },
+  {
+    "shape": "D",
+    "type": "major",
+    "first": 2,
+    "second": 3,
+    "third": 2,
+    "fourth": 0,
+    "fifth": 0,
+    "sixth": -2
+  },
+  {
+    "shape": "D",
+    "type": "major 7th",
+    "first": 2,
+    "second": 2,
+    "third": 2,
+    "fourth": 0,
+    "fifth": 0,
+    "sixth": -2
+  },
+  {
+    "shape": "D",
+    "type": "minor",
+    "first": 1,
+    "second": 3,
+    "third": 2,
+    "fourth": 0,
+    "fifth": 0,
+    "sixth": -2
+  },
+  {
+    "shape": "D",
+    "type": "minor 7th",
+    "first": 1,
+    "second": 1,
+    "third": 2,
+    "fourth": 0,
+    "fifth": 0,
+    "sixth": -2
   }
- ]
+]
