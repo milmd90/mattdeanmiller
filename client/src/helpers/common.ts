@@ -1,6 +1,7 @@
 import {
   pitchDifference,
-  getTone
+  getTone,
+  pitchUpInSemitones
 } from './pitchTones';
 
 export type TabValue = number | null;
@@ -80,24 +81,33 @@ export function convertChordsToTabs(chords: IChordData[], root: string): IChordT
   }
 
   // Add variations for diminished
-  // const adjChords = [];
-  // chords.forEach(chord => {
-  //   if (chord.type === 'diminished') {
-  //     console.log({chord})
-  //     adjChords.push(chord);
-  //   }
-  // });
-
-  return chords.map((chord) => {
-    return {
-      first: getStringValue(root, chord, "first"),
-      second: getStringValue(root, chord, "second"),
-      third: getStringValue(root, chord, "third"),
-      fourth: getStringValue(root, chord, "fourth"),
-      fifth: getStringValue(root, chord, "fifth"),
-      sixth: getStringValue(root, chord, "sixth"),
-    };
+  const roots = [root];
+  chords.forEach(chord => {
+    if (chord.type === 'diminished') {
+      [3, 6, 9].forEach(offset => {
+        const newRoot = pitchUpInSemitones(root, offset)
+        if (newRoot !== null) {
+          roots.push(newRoot);
+        }
+      });
+    }
   });
+
+  const tabs: IChordTab[] = [];
+  roots.forEach(root => {
+    chords.map((chord) => {
+      tabs.push({
+        first: getStringValue(root, chord, "first"),
+        second: getStringValue(root, chord, "second"),
+        third: getStringValue(root, chord, "third"),
+        fourth: getStringValue(root, chord, "fourth"),
+        fifth: getStringValue(root, chord, "fifth"),
+        sixth: getStringValue(root, chord, "sixth"),
+      });
+    });
+  });
+
+  return tabs;
 }
 
 export function createChordVariations(tabArray: IChordTab[]): IChordTab[] {
