@@ -81,21 +81,18 @@ export function convertChordsToTabs(chords: IChordData[], root: string): IChordT
   }
 
   // Add variations for diminished
-  const roots = [root];
+  const expandedChords: IChordData[] = [];
   chords.forEach(chord => {
+    expandedChords.push(chord);
     if (chord.type === 'diminished') {
       [3, 6, 9].forEach(offset => {
-        const newRoot = pitchUpInSemitones(root, offset)
-        if (newRoot !== null) {
-          roots.push(newRoot);
-        }
+        expandedChords.push(pitchUpInSemitones(chord, offset));
       });
     }
   });
 
   const tabs: IChordTab[] = [];
-  roots.forEach(root => {
-    chords.map((chord) => {
+    expandedChords.map((chord) => {
       tabs.push({
         first: getStringValue(root, chord, "first"),
         second: getStringValue(root, chord, "second"),
@@ -104,7 +101,6 @@ export function convertChordsToTabs(chords: IChordData[], root: string): IChordT
         fifth: getStringValue(root, chord, "fifth"),
         sixth: getStringValue(root, chord, "sixth"),
       });
-    });
   });
 
   return tabs;
@@ -140,7 +136,6 @@ export function createChordVariations(tabArray: IChordTab[]): IChordTab[] {
     tabStrings.forEach(tabString => {
       const tone = tab[tabString].tone;
       if (tone !== null && !tones.includes(tone)) {
-        // console.log('de dup!', {tone});
         tones.push(tone);
       } 
     })

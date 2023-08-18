@@ -1,4 +1,4 @@
-import { TabValue, stringPitch} from './common';
+import { IChordData, TabValue, stringPitch} from './common';
 
 const pitchTones = {
   "Ab": 0,
@@ -74,8 +74,15 @@ export function getTone(root: string, fret: TabValue, string: stringPitch): TabV
   return result;
 }
 
-export function pitchUpInSemitones(root: string, semitones: number): string | null {
-  const rootTone = convertPitchToTone(root);
-  if (rootTone === null) return null;
-  return tonePitchMap[(rootTone + semitones)%12];
+export function pitchUpInSemitones(chord: IChordData, semitones: number): IChordData {
+  const newFrets = chord.frets.map(fret => {
+    if (fret === null ) return null;
+    return fret + semitones;
+  })
+  return {
+    shape: chord.shape,
+    type: chord.type,
+    option: chord.option,
+    frets: newFrets,
+  };
 }
