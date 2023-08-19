@@ -106,7 +106,7 @@ export function convertChordsToTabs(chords: IChordData[], root: string): IChordT
   return tabs;
 }
 
-export function createChordVariations(tabArray: IChordTab[]): IChordTab[] {
+export function createChordVariations(tabArray: IChordTab[], type: string): IChordTab[] {
   const resultsLog: string[] = [];
   const resultAray: IChordTab[] = [];
 
@@ -136,7 +136,15 @@ export function createChordVariations(tabArray: IChordTab[]): IChordTab[] {
     tabStrings.forEach(tabString => {
       const tone = tab[tabString].tone;
       if (tone !== null && !tones.includes(tone)) {
-        tones.push(tone);
+        if (tone !== 7) {
+          if (type === 'diminished') {
+            if (tones.length < 3) {
+              tones.push(tone); 
+            }
+          } else {    
+            tones.push(tone); 
+          }
+        }
       } 
     })
     return tones.length;
@@ -166,14 +174,18 @@ export function createChordVariations(tabArray: IChordTab[]): IChordTab[] {
       [true, true, true, true, false, false],
       // X     X     X           X       
       [true, true, true, false, true, false],
-      // X     X     X                   X
-      [true, true, true, false, false, true],
-      // X     X     X       
-      [true, true, true, false, false, false],
       //       X     X     X     X    
       [false, true, true, true, true, false],
       //       X     X      X            X
       [false, true, true, true, false, true],
+      // X     X     X       
+      [true, true, true, false, false, false],
+      //       X     X     X       
+      [false, true, true, true, false, false],
+      //              X     X     X       
+      [false, false, true, true, true, false],
+      //                      X     X     X       
+      [false, false, false, true, true, true],
     ];
     filterArray.forEach((filter) => {
       const {newTab, resultKey} = createTab(tab, filter);
