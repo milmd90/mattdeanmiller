@@ -81,8 +81,8 @@ function Display(props: {
   }
 
   let tabArray: IChordTab[] = convertChordsToTabs(data.chords, root);
-  tabArray = createChordVariations(tabArray, type);
   tabArray = updateChordsWithPosition(tabArray, position);
+  tabArray = createChordVariations(tabArray, type);
   tabArray = sortChordsByLowest(tabArray);
 
   const index: number = option % tabArray.length;

@@ -1,7 +1,7 @@
 import {
   pitchDifference,
   getTone,
-  pitchUpInSemitones
+  pitchDownInSemitones
 } from './pitchTones';
 
 export type TabValue = number | null;
@@ -58,6 +58,7 @@ export function getMaxFretValue(tab: IChordTab): number {
   })
 }
 
+// 
 export function convertChordsToTabs(chords: IChordData[], root: string): IChordTab[] {
   function getValue(input: TabValue, offset: number | null): TabValue {
     if (input === null || offset === null) return input;
@@ -86,7 +87,7 @@ export function convertChordsToTabs(chords: IChordData[], root: string): IChordT
     expandedChords.push(chord);
     if (chord.type === 'diminished') {
       [3, 6, 9].forEach(offset => {
-        expandedChords.push(pitchUpInSemitones(chord, offset));
+        expandedChords.push(pitchDownInSemitones(chord, offset));
       });
     }
   });
@@ -104,6 +105,29 @@ export function convertChordsToTabs(chords: IChordData[], root: string): IChordT
   });
 
   return tabs;
+}
+
+export function updateChordsWithPosition(tabArray: IChordTab[], position: string): IChordTab[] {
+  let numPos: number = parseInt(position);
+  if (isNaN(numPos)) numPos = 0;
+
+  return tabArray.map((startTab) => {
+    let tab = JSON.parse(JSON.stringify(startTab));
+    let minFret = getMinFretValue(tab);
+    if (typeof minFret !== 'number') return tab;
+
+    while (minFret < numPos) {
+      for (let s of tabStrings) {
+        const f = tab[s].fret;
+        if (typeof f === 'number') {
+          tab[s].fret = f + 12;
+        }
+      }
+      minFret = getMinFretValue(tab);
+      if (typeof minFret !== 'number') return tab;
+    }
+    return tab;
+  })
 }
 
 export function createChordVariations(tabArray: IChordTab[], type: string): IChordTab[] {
@@ -201,29 +225,6 @@ export function createChordVariations(tabArray: IChordTab[], type: string): ICho
     createPermutations(tab);
   })
   return resultAray;
-}
-
-export function updateChordsWithPosition(tabArray: IChordTab[], position: string): IChordTab[] {
-  let numPos: number = parseInt(position);
-  if (isNaN(numPos)) numPos = 0;
-
-  return tabArray.map((startTab) => {
-    let tab = JSON.parse(JSON.stringify(startTab));
-    let minFret = getMinFretValue(tab);
-    if (typeof minFret !== 'number') return tab;
-
-    while (minFret < numPos) {
-      for (let s of tabStrings) {
-        const f = tab[s].fret;
-        if (typeof f === 'number') {
-          tab[s].fret = f + 12;
-        }
-      }
-      minFret = getMinFretValue(tab);
-      if (typeof minFret !== 'number') return tab;
-    }
-    return tab;
-  })
 }
 
 export function sortChordsByLowest(tabArray: IChordTab[]): IChordTab[] {

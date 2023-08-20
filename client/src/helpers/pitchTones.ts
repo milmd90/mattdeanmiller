@@ -69,15 +69,18 @@ export function getTone(root: string, fret: TabValue, string: stringPitch): TabV
   const stringTone = convertPitchToTone(string);
   const rootTone = convertPitchToTone(root);
   if (null === stringTone || null === rootTone) return null;
-  const result = (12 + (stringTone + fret) - rootTone) % 12;
+  const result = (24 + (stringTone + fret) - rootTone) % 12;
+  if (result < 0 || result > 11) {
+    throw Error('invalid tone value')
+  }
 
   return result;
 }
 
-export function pitchUpInSemitones(chord: IChordData, semitones: number): IChordData {
+export function pitchDownInSemitones(chord: IChordData, semitones: number): IChordData {
   const newFrets = chord.frets.map(fret => {
     if (fret === null ) return null;
-    return fret + semitones;
+    return fret - semitones;
   })
   return {
     shape: chord.shape,
