@@ -26,7 +26,11 @@ body {
   background-color: #13133c;
 }
 
-h3, h4, h5, h6, p {
+h3,
+h4,
+h5,
+h6,
+p {
   margin-top: 0px;
 }
 
@@ -162,7 +166,7 @@ a {
   margin: 20px 100px 40px 100px;
 }
 
-.page > div {
+.page>div {
   width: 100%;
 }
 
@@ -267,16 +271,20 @@ a {
 .start-column .input-row {
   align-items: flex-end;
 }
+
 .start-column .input-row-label {
   display: flex;
   align-items: center;
 }
+
 .start-column .input-row-label svg {
   margin-left: 6px;
 }
+
 .start-column .input-row-label svg {
   margin-left: 6px;
 }
+
 .react-tooltip {
   z-index: 3;
   max-width: 300px;
@@ -406,7 +414,7 @@ a {
 
 .config-option {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   margin: 8px;
 }
 
@@ -511,25 +519,31 @@ a {
   .page {
     margin: 20px;
   }
+
   #tabulator {
     align-items: center;
   }
+
   #tab-mobile {
     display: flex;
     width: 250px;
   }
+
   #sidebar {
     margin: 0;
     width: 250px;
   }
+
   #tab,
   #config {
     display: none;
   }
+
   #tabulator {
     flex-direction: column;
     max-height: none;
   }
+
   .edit {
     display: none;
   }
