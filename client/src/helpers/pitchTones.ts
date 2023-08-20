@@ -1,5 +1,31 @@
-import * as pitchTones from '../dictionary/pitchTones.json';
-import { TabValue, stringPitch} from './common';
+import { IChordData, TabValue, stringPitch} from './common';
+
+const pitchTones = {
+  "Ab": 0,
+  "A": 1,
+  "A#": 2,
+  "Bb": 2,
+  "B": 3,
+  "B#": 4,
+  "Cb": 3,
+  "C": 4,
+  "C#": 5,
+  "Db": 5,
+  "D": 6,
+  "D#": 7,
+  "Eb": 7,
+  "E": 8,
+  "E#": 9,
+  "Fb": 8,
+  "F": 9,
+  "F#": 10,
+  "Gb": 10,
+  "G": 11,
+  "G#": 0
+}
+
+const tonePitchMap = ["Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G"];
+
 
 export function convertPitchToTone(pitch: string): TabValue {
   if (
@@ -43,7 +69,23 @@ export function getTone(root: string, fret: TabValue, string: stringPitch): TabV
   const stringTone = convertPitchToTone(string);
   const rootTone = convertPitchToTone(root);
   if (null === stringTone || null === rootTone) return null;
-  const result = (12 + (stringTone + fret) - rootTone) % 12;
+  const result = (24 + (stringTone + fret) - rootTone) % 12;
+  if (result < 0 || result > 11) {
+    throw Error('invalid tone value')
+  }
 
   return result;
+}
+
+export function pitchDownInSemitones(chord: IChordData, semitones: number): IChordData {
+  const newFrets = chord.frets.map(fret => {
+    if (fret === null ) return null;
+    return fret - semitones;
+  })
+  return {
+    shape: chord.shape,
+    type: chord.type,
+    option: chord.option,
+    frets: newFrets,
+  };
 }
