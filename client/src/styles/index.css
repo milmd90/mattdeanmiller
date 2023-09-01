@@ -506,15 +506,37 @@ a {
   padding-bottom: 12px;
 }
 
-#music-theory #circle-of-fifths-diagram {
+.circle-of-fifths-diagram-desktop {
   position: relative;
   top: -15px;
   width: 40%;
   padding-left: 20px;
 }
 
+.circle-of-fifths-diagram-mobile {
+  align-self: center;
+  max-width: 200px;
+  padding-bottom: 20px;
+}
+
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: flex;
+}
+
 /* mobile styles */
-@media all and (max-width: 1024px) {
+@media all and (max-width: 700px) {
+  .mobile {
+    display: flex;
+  }
+
+  .desktop {
+    display: none;
+  }
+
   .page {
     margin: 20px;
   }
