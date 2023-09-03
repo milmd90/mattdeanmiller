@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
@@ -6,8 +6,8 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 function MenuDropdown(props: {
   open: boolean,
-  onClick: () => void, 
-  onExpand: () => void, 
+  onClick: () => void,
+  onExpand: () => void,
 }) {
   const getSubItems = () => {
     if (!props.open) return null;
@@ -42,13 +42,13 @@ function MenuDropdown(props: {
 
 function Menu(props: {
   open: boolean,
-  onClick: () => void, 
+  onClick: () => void,
 }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <div id="menu" className={`${props.open ? 'show' : 'hide'}`}>
-      <Link to='/' id='menu-home'  className='menu-item' onClick={props.onClick}>
+      <Link to='/' id='menu-home' className='menu-item' onClick={props.onClick}>
         Home
       </Link>
       {/* <Link to='/blog' id='menu-blog' className='menu-item' onClick={props.onClick}>
@@ -57,10 +57,13 @@ function Menu(props: {
       <Link to='/tabulator' id='menu-tabulator' className='menu-item' onClick={props.onClick}>
         Tabulator
       </Link>
+      <Link to='/scales' id='menu-scales' className='menu-item' onClick={props.onClick}>
+        Scales
+      </Link>
       <MenuDropdown
         open={dropdownOpen}
         onClick={props.onClick}
-        onExpand={() => {setDropdownOpen(!dropdownOpen)}}
+        onExpand={() => { setDropdownOpen(!dropdownOpen) }}
       />
     </div>
   );

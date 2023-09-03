@@ -519,6 +519,27 @@ a {
   padding-bottom: 20px;
 }
 
+/* fretboard */
+.fretboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.fretboard-string {
+  display: flex;
+  flex-direction: row;
+  border-bottom: solid black 1px;
+}
+
+.fret-box {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 10px;
+  width: 20px;
+}
+
+/* mobile styles */
 .mobile {
   display: none;
 }
@@ -527,7 +548,6 @@ a {
   display: flex;
 }
 
-/* mobile styles */
 @media all and (max-width: 700px) {
   .mobile {
     display: flex;

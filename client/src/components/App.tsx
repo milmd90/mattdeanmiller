@@ -14,6 +14,7 @@ import {
   Home,
   Blog,
   Tabulator,
+  Scales,
   MusicTheory,
   Login,
   Signup,
@@ -52,13 +53,13 @@ function App() {
     <ApolloProvider client={client}>
       <BrowserRouter>
         <div id="app">
-          <Header 
+          <Header
             title='Matthew Miller'
-            onMenuClick={() => {setMenuOpen(!menuOpen)}}
+            onMenuClick={() => { setMenuOpen(!menuOpen) }}
           />
           <div id='main'>
             <OutsideClick
-              onClick={() => {setMenuOpen(false)}}
+              onClick={() => { setMenuOpen(false) }}
               omitElements={['#menu-button']}
             >
               <Menu
@@ -79,6 +80,10 @@ function App() {
                 <Route
                   path="/tabulator"
                   element={<Tabulator />}
+                />
+                <Route
+                  path="/scales"
+                  element={<Scales />}
                 />
                 <Route
                   path="/music-theory"
