@@ -17,7 +17,7 @@ export default function Scales() {
           </p><p>
             For example, let's consider the pattern labelled C Shape (5, 4).
             Notice how playing the a major arpeggio using this pattern resembles an open C?
-            However, we can also refer to the pattern as 5, 4, because we play the bottom root on the A string (5) using out pinky (4) finger.
+            However, we can also refer to the pattern as 5, 4, because we play the bottom root on the A string (5) using our pinky (4) finger.
           </p>
         </div>
         <div className='item'>
