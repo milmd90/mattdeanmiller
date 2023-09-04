@@ -150,7 +150,7 @@ export default function Fretboard(props: {
       <FretboardMarkers
         start={props.start}
         end={props.end}
-        frets={[3, 5, 7, 9, 12]}
+        frets={[3, 5, 7, 9, 12, 15]}
       />
     </div>
   );
