@@ -14,7 +14,7 @@ function FretboardString(props: {
   frets: number[]
 }) {
   const frets = range(props.start, props.end).map((i) => {
-    return <span className='fret-box'>
+    return <span className={`fret-box fret-${i}`}>
       <div className={`fret-value ${props.frets.includes(i) ? `tone-x` : ''}`}>
         {props.frets.includes(i) ? i : ''}
       </div>
@@ -34,11 +34,11 @@ function FretboardMarkers(props: {
   frets: number[]
 }) {
   const frets = range(props.start, props.end).map((i) => {
-    return <span className='fret-box'>
+    return <span className={`fret-box fret-${i}`} >
       <div className='fret-value'>
         {props.frets.includes(i) ? i : ''}
       </div>
-    </span>
+    </span >
   })
 
   return (
@@ -62,7 +62,7 @@ function Frets(props: {
     } else if (props.fretMarkers.includes(i)) {
       fretMarkers.push(<div className='fret-marker'>{'\u2022'}</div>);
     }
-    return <span className='fret'>
+    return <span className={`fret fret-${i}`}>
       {fretMarkers}
     </span>
   })
