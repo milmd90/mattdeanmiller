@@ -19,7 +19,7 @@ export default function Scales() {
           </h4>
           <Fretboard
             start={0}
-            end={12}
+            end={16}
             frets={{
               'e': [2, 3, 5],
               'B': [2, 3, 5],
@@ -40,7 +40,7 @@ export default function Scales() {
           </h4>
           <Fretboard
             start={0}
-            end={12}
+            end={16}
             frets={{
               'e': [5, 7],
               'B': [5, 7, 8],
@@ -61,7 +61,7 @@ export default function Scales() {
           </h4>
           <Fretboard
             start={0}
-            end={12}
+            end={16}
             frets={{
               'e': [7, 9, 10],
               'B': [7, 8, 10],
@@ -82,16 +82,16 @@ export default function Scales() {
           </h4>
           <Fretboard
             start={0}
-            end={12}
+            end={16}
             frets={{
-              'e': [2, 4, 5],
-              'B': [2, 3, 5],
-              'G': [1, 2, 4],
-              'D': [2, 4],
-              'A': [2, 4, 5],
-              'E': [2, 4, 5]
+              'e': [7, 9, 10],
+              'B': [7, 8, 10],
+              'G': [6, 7, 9],
+              'D': [7, 9],
+              'A': [7, 9, 10],
+              'E': [7, 9, 10]
             }}
-            root={'A'}
+            root={'D'}
           />
         </div>
         <div className='item'>
@@ -103,16 +103,16 @@ export default function Scales() {
           </h4>
           <Fretboard
             start={0}
-            end={12}
+            end={16}
             frets={{
-              'e': [4, 5, 7],
-              'B': [5, 7],
-              'G': [4, 6, 7],
-              'D': [4, 6, 7],
-              'A': [4, 5, 7],
-              'E': [4, 5, 7]
+              'e': [9, 10, 12],
+              'B': [10, 12],
+              'G': [9, 11, 12],
+              'D': [9, 11, 12],
+              'A': [9, 10, 12],
+              'E': [9, 10, 12]
             }}
-            root={'A'}
+            root={'D'}
           />
         </div>
         <div className='item'>
@@ -124,16 +124,16 @@ export default function Scales() {
           </h4>
           <Fretboard
             start={0}
-            end={12}
+            end={16}
             frets={{
-              'e': [7, 9, 10],
-              'B': [7, 9, 10],
-              'G': [6, 7, 9],
-              'D': [6, 7, 9],
-              'A': [5, 7, 9],
-              'E': [5, 7, 9]
+              'e': [12, 14, 15],
+              'B': [12, 14, 15],
+              'G': [11, 12, 14],
+              'D': [11, 12, 14],
+              'A': [10, 12, 14],
+              'E': [10, 12, 14]
             }}
-            root={'A'}
+            root={'D'}
           />
         </div>
       </div>

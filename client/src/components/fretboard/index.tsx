@@ -99,7 +99,7 @@ export default function Fretboard(props: {
         <Frets
           start={props.start}
           end={props.end}
-          fretMarkers={[3, 5, 7, 9]}
+          fretMarkers={[3, 5, 7, 9, 15, 17]}
           fretDoubleMarkers={[12]}
         />
         <div className="fretboard-strings">
