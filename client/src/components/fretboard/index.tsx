@@ -51,9 +51,20 @@ function FretboardMarkers(props: {
 function Frets(props: {
   start: number,
   end: number,
+  fretMarkers: number[],
+  fretDoubleMarkers: number[],
 }) {
   const frets = range(props.start, props.end).map((i) => {
-    return <span className='fret' />
+    let fretMarkers = [];
+    if (props.fretDoubleMarkers.includes(i)) {
+      fretMarkers.push(<div className='fret-marker'>{'\u2022'}</div>);
+      fretMarkers.push(<div className='fret-marker'>{'\u2022'}</div>);
+    } else if (props.fretMarkers.includes(i)) {
+      fretMarkers.push(<div className='fret-marker'>{'\u2022'}</div>);
+    }
+    return <span className='fret'>
+      {fretMarkers}
+    </span>
   })
 
   return (
@@ -82,6 +93,8 @@ export default function Fretboard(props: {
         <Frets
           start={props.start}
           end={props.end}
+          fretMarkers={[3, 5, 7, 9]}
+          fretDoubleMarkers={[12]}
         />
         <div className="fretboard-strings">
           <FretboardString

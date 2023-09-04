@@ -532,15 +532,26 @@ a {
 }
 
 .frets {
+  display: flex;
   position: absolute;
   height: 100%;
 }
 
 .fret {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 30px;
   border-right: solid black 1px;
+}
+
+.fret-marker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 8px;
 }
 
 .fretboard-strings {
@@ -566,6 +577,7 @@ a {
   align-items: center;
   height: 24px;
   width: 30px;
+  padding-right: 3px;
 }
 
 .fretboard-string .fret-box {
