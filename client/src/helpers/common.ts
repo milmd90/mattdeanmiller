@@ -39,7 +39,7 @@ export interface IScale{
 export type TabString = keyof IChordTab;
 export const tabStrings: TabString[] = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth'];
 export type stringPitch = 'E' | 'A' | 'D' | 'G' | 'B' | 'e';
-export const strings: stringPitch[] =['e', 'B', 'G', 'D', 'A', 'E']
+export const strings: stringPitch[] = ['e', 'B', 'G', 'D', 'A', 'E']
 
 function getMinOrMaxFretValue(tab: IChordTab, comparator: (a: number, b: number) => boolean): number {
   let minOrMax: number | undefined;
