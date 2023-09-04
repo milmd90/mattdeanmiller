@@ -9,14 +9,21 @@ export default function Scales() {
           <h3 id='sound'>
             Overview
           </h3>
+          <p>
+            Below are 6 common patterns for playing major scales.
+            There are two ways to refer to each of these patterns.
+            The first is by the open chord contained in the pattern.
+            The second is by the lowest root string and the finger used to play it.
+          </p><p>
+            For example, let's consider the pattern labelled C Shape (5, 4).
+            Notice how playing the a major arpeggio using this pattern resembles an open C?
+            However, we can also refer to the pattern as 5, 4, because we play the bottom root on the A string (5) using out pinky (4) finger.
+          </p>
         </div>
         <div className='item'>
           <h3>
-            C Shape Major Scale
+            D Major Scale: C Shape (5, 4)
           </h3>
-          <h4>
-            (5, 4)
-          </h4>
           <Fretboard
             start={0}
             end={16}
@@ -41,11 +48,8 @@ export default function Scales() {
         </div>
         <div className='item'>
           <h3>
-            A Shape Major Scale
+            D Major Scale: A Shape (5, 2)
           </h3>
-          <h4>
-            (5, 2)
-          </h4>
           <Fretboard
             start={0}
             end={16}
@@ -70,11 +74,8 @@ export default function Scales() {
         </div>
         <div className='item'>
           <h3>
-            A Extended Shape Major Scale
+            D Major Scale: A/G Shape (5, 1)
           </h3>
-          <h4>
-            (5, 1)
-          </h4>
           <Fretboard
             start={0}
             end={16}
@@ -99,11 +100,8 @@ export default function Scales() {
         </div>
         <div className='item'>
           <h3>
-            G Shape Major Scale
+            D Major Scale: G Shape (6, 4)
           </h3>
-          <h4>
-            (6, 4)
-          </h4>
           <Fretboard
             start={0}
             end={16}
@@ -128,11 +126,8 @@ export default function Scales() {
         </div>
         <div className='item'>
           <h3>
-            E Shape Major Scale
+            D Major Scale: E Shape (6, 2)
           </h3>
-          <h4>
-            (6, 2)
-          </h4>
           <Fretboard
             start={0}
             end={16}
@@ -157,11 +152,8 @@ export default function Scales() {
         </div>
         <div className='item'>
           <h3>
-            D Shape Major Scale
+            D Major Scale: D Shape (6, 1)
           </h3>
-          <h4>
-            (6, 1)
-          </h4>
           <Fretboard
             start={0}
             end={16}
