@@ -66,7 +66,7 @@ export function pitchDifference(start: string, end: string): TabValue {
 
 export function getTone(root: string, fret: TabValue, string: stringPitch): TabValue {
   if (null === fret) return null;
-  const stringTone = convertPitchToTone(string);
+  const stringTone = convertPitchToTone(string.toUpperCase());
   const rootTone = convertPitchToTone(root);
   if (null === stringTone || null === rootTone) return null;
   const result = (24 + (stringTone + fret) - rootTone) % 12;

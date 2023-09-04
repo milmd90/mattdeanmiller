@@ -1,3 +1,6 @@
+import { getTone } from "../../helpers/pitchTones";
+import { stringPitch } from "../../helpers/common";
+
 function range(min: number, max: number) {
   var len = max - min + 1;
   var arr = [];
@@ -10,12 +13,14 @@ function range(min: number, max: number) {
 function FretboardString(props: {
   start: number,
   end: number,
-  string: string,
+  string: stringPitch,
   frets: number[]
+  root: string
 }) {
   const frets = range(props.start, props.end).map((i) => {
+    const tone = getTone(props.root, i, props.string)
     return <span className={`fret-box fret-${i}`}>
-      <div className={`fret-value ${props.frets.includes(i) ? `tone-x` : ''}`}>
+      <div className={`fret-value ${props.frets.includes(i) ? `tone-${tone}` : ''}`}>
         {props.frets.includes(i) ? i : ''}
       </div>
     </span>
@@ -86,6 +91,7 @@ export default function Fretboard(props: {
     'A': number[],
     'E': number[],
   }
+  root: string
 }) {
   return (
     <div className="fretboard">
@@ -102,36 +108,42 @@ export default function Fretboard(props: {
             end={props.end}
             string={'e'}
             frets={props.frets['e']}
+            root={props.root}
           />
           <FretboardString
             start={props.start}
             end={props.end}
             string={'B'}
             frets={props.frets['B']}
+            root={props.root}
           />
           <FretboardString
             start={props.start}
             end={props.end}
             string={'G'}
             frets={props.frets['G']}
+            root={props.root}
           />
           <FretboardString
             start={props.start}
             end={props.end}
             string={'D'}
             frets={props.frets['D']}
+            root={props.root}
           />
           <FretboardString
             start={props.start}
             end={props.end}
             string={'A'}
             frets={props.frets['A']}
+            root={props.root}
           />
           <FretboardString
             start={props.start}
             end={props.end}
             string={'E'}
             frets={props.frets['E']}
+            root={props.root}
           />
         </div>
       </div>
