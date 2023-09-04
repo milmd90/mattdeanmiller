@@ -1,3 +1,4 @@
+import ColorKey from '../components/calculator/ColorKey';
 import Fretboard from '../components/fretboard';
 
 export default function Scales() {
@@ -25,6 +26,7 @@ export default function Scales() {
             D Major Scale: C Shape (5, 4)
           </h3>
           <Fretboard
+            id='c-shape'
             start={0}
             end={16}
             frets={{
@@ -51,6 +53,7 @@ export default function Scales() {
             D Major Scale: A Shape (5, 2)
           </h3>
           <Fretboard
+            id='a-shape'
             start={0}
             end={16}
             frets={{
@@ -77,6 +80,7 @@ export default function Scales() {
             D Major Scale: A/G Shape (5, 1)
           </h3>
           <Fretboard
+            id='a-g-shape'
             start={0}
             end={16}
             frets={{
@@ -103,6 +107,7 @@ export default function Scales() {
             D Major Scale: G Shape (6, 4)
           </h3>
           <Fretboard
+            id='g-shape'
             start={0}
             end={16}
             frets={{
@@ -129,6 +134,7 @@ export default function Scales() {
             D Major Scale: E Shape (6, 2)
           </h3>
           <Fretboard
+            id='e-shape'
             start={0}
             end={16}
             frets={{
@@ -155,6 +161,7 @@ export default function Scales() {
             D Major Scale: D Shape (6, 1)
           </h3>
           <Fretboard
+            id='d-shape'
             start={0}
             end={16}
             frets={{
@@ -175,6 +182,9 @@ export default function Scales() {
             }}
             root={'D'}
           />
+        </div>
+        <div className='item'>
+          <ColorKey showColors={true} />
         </div>
       </div>
     </div>

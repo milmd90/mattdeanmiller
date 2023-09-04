@@ -84,6 +84,7 @@ function Frets(props: {
 
 
 export default function Fretboard(props: {
+  id: string,
   start: number,
   end: number,
   frets: IScale
@@ -95,32 +96,34 @@ export default function Fretboard(props: {
   } = props;
   const fretMarkers = [3, 5, 7, 9, 12, 15, 17]
   return (
-    <div className="fretboard">
-      <div className="fretboard-content">
-        <Frets
+    <div id={`${props.id}`} className="fretboard">
+      <div>
+        <div className="fretboard-content">
+          <Frets
+            start={props.start}
+            end={props.end}
+            fretMarkers={fretMarkers}
+            fretDoubleMarkers={[12]}
+          />
+          <div className="fretboard-strings">
+            {strings.map(tabString =>
+              <FretboardString
+                start={props.start}
+                end={props.end}
+                string={tabString}
+                frets={props.frets[tabString]}
+                fingers={fingers ? fingers[tabString] : []}
+                root={props.root}
+              />
+            )}
+          </div>
+        </div>
+        <FretboardMarkers
           start={props.start}
           end={props.end}
-          fretMarkers={fretMarkers}
-          fretDoubleMarkers={[12]}
+          frets={fretMarkers}
         />
-        <div className="fretboard-strings">
-          {strings.map(tabString =>
-            <FretboardString
-              start={props.start}
-              end={props.end}
-              string={tabString}
-              frets={props.frets[tabString]}
-              fingers={fingers ? fingers[tabString] : []}
-              root={props.root}
-            />
-          )}
-        </div>
       </div>
-      <FretboardMarkers
-        start={props.start}
-        end={props.end}
-        frets={fretMarkers}
-      />
     </div>
   );
 }
