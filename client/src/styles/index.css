@@ -326,55 +326,55 @@ a {
 }
 
 .tone-x {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgb(255, 255, 255);
 }
 
 .tone-0 {
-  background-color: rgba(255, 0, 0, .5);
+  background-color: rgb(100, 100, 255);
 }
 
 .tone-1 {
-  background-color: rgba(255, 127, 0, .5);
+  background-color: rgb(100, 175, 255);
 }
 
 .tone-2 {
-  background-color: rgba(255, 255, 0, .5);
+  background-color: rgb(100, 255, 255);
 }
 
 .tone-3 {
-  background-color: rgba(127, 255, 0, .5);
+  background-color: rgb(100, 255, 175);
 }
 
 .tone-4 {
-  background-color: rgba(0, 255, 0, .5);
+  background-color: rgb(100, 255, 100);
 }
 
 .tone-5 {
-  background-color: rgba(0, 255, 127, .5);
+  background-color: rgb(255, 255, 100);
 }
 
 .tone-6 {
-  background-color: rgba(0, 255, 255, .5);
+  background-color: rgb(255, 175, 100);
 }
 
 .tone-7 {
-  background-color: rgba(0, 127, 255, .5);
+  background-color: rgb(255, 100, 100);
 }
 
 .tone-8 {
-  background-color: rgba(0, 0, 255, .5);
+  background-color: rgb(255, 100, 125);
 }
 
 .tone-9 {
-  background-color: rgba(127, 0, 255, .5);
+  background-color: rgb(255, 100, 175);
 }
 
 .tone-10 {
-  background-color: rgba(255, 0, 225, .5);
+  background-color: rgb(175, 100, 255);
 }
 
 .tone-11 {
-  background-color: rgba(255, 0, 127, .5);
+  background-color: rgb(125, 100, 255);
 }
 
 .input-row {
