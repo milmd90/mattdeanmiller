@@ -6,7 +6,7 @@ export default function Scales() {
       <h2>Scales</h2>
       <div className='column narrow'>
         <div className='item'>
-          <h3 id='sound'>
+          <h3 id='scale-overview'>
             Overview
           </h3>
           <p>
@@ -16,7 +16,7 @@ export default function Scales() {
             The second is by the lowest root string and the finger used to play it.
           </p><p>
             For example, let's consider the pattern labelled C Shape (5, 4).
-            Notice how playing the a major arpeggio using this pattern resembles an open C?
+            Notice how playing a major arpeggio using this pattern resembles an open C?
             However, we can also refer to the pattern as 5, 4, because we play the bottom root on the A string (5) using our pinky (4) finger.
           </p>
         </div>
