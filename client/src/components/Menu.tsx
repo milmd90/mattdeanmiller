@@ -58,7 +58,7 @@ function Menu(props: {
         Tabulator
       </Link>
       <Link to='/scales' id='menu-scales' className='menu-item' onClick={props.onClick}>
-        Scales
+        Guitar Scale Patterns
       </Link>
       <MenuDropdown
         open={dropdownOpen}

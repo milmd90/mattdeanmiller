@@ -3,7 +3,7 @@ import Fretboard from '../components/fretboard';
 export default function Scales() {
   return (
     <div id='scales-page' className="container center">
-      <h2>Scales</h2>
+      <h2>Guitar Scale Patterns</h2>
       <div className='column narrow'>
         <div className='item'>
           <h3 id='scale-overview'>
