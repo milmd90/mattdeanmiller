@@ -18,7 +18,15 @@ export default function Scales() {
           </p><p>
             For example, let's consider the pattern labelled C Shape (5, 4).
             Notice how playing a major arpeggio using this pattern resembles an open C?
-            However, we can also refer to the pattern as 5, 4, because we play the bottom root on the A string (5) using our pinky (4) finger.
+            Alternatively, we can also refer to the pattern as 5, 4, because we play the bottom root on the A string (5) using our pinky (4) finger.
+          </p><p>
+            Each of these scale patterns are in the key of D major.
+            However, as you practice these patterns, be sure to play them in all 12 keys.
+            Additionally, you can add variation by starting from either the top or bottom and introducing note patterns.
+          </p><p>
+            I plan on improving this page by allowing the user to select the key used to render the patterns.
+            I will also include more detailed instructions for practicing scale patterns.
+            If you found this information useful, please send me a message!
           </p>
         </div>
         <div className='item'>
