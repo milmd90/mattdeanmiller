@@ -94,7 +94,7 @@ export default function Fretboard(props: {
   const {
     fingers
   } = props;
-  const fretMarkers = [3, 5, 7, 9, 12, 15, 17]
+  const fretMarkers = [3, 5, 7, 9, 12, 15, 17];
   return (
     <div id={`${props.id}`} className="fretboard">
       <div>

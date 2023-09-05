@@ -530,7 +530,7 @@ a {
 
 @media all and (max-width: 700px) {
   .fretboard {
-    width: 250px;
+    width: 300px;
     overflow-x: hidden;
   }
 
@@ -539,27 +539,27 @@ a {
   }
 
   #c-shape>div {
-    left: -80px;
+    left: -100px;
   }
 
   #a-shape>div {
-    left: -200px;
+    left: -180px;
   }
 
   #a-g-shape>div {
-    left: -270px;
+    left: -235px;
   }
 
   #g-shape>div {
-    left: -270px;
+    left: -280px;
   }
 
   #e-shape>div {
-    left: -350px;
+    left: -365px;
   }
 
   #d-shape>div {
-    left: -420px;
+    left: -365px;
   }
 }
 
