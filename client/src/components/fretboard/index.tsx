@@ -26,7 +26,7 @@ function FretboardString(props: {
     const index = props.frets.indexOf(i);
     const fretMatch = props.frets.includes(i);
     const fingers = props.fingers[index];
-    return <span className={`fret-box fret-${i}`}>
+    return <span key={i} className={`fret-box fret-${i}`}>
       {fretMatch && <div className={`fret-value tone-${tone}`}>
         {fingers}
       </div>}
@@ -34,7 +34,7 @@ function FretboardString(props: {
   })
 
   return (
-    <div className="fretboard-string">
+    <div key={props.string} className="fretboard-string">
       {frets}
     </div>
   );
@@ -120,7 +120,7 @@ export default function Fretboard(props: {
   }, [props.root])
 
   return (
-    <div id={`${props.id}`} className="fretboard">
+    <div key={`${props.id}`} id={`${props.id}`} className="fretboard">
       <div style={{ left: offset }}>
         <div className="fretboard-content">
           <Frets
@@ -132,7 +132,6 @@ export default function Fretboard(props: {
           <div className="fretboard-strings">
             {tabStrings.map(tabString =>
               <FretboardString
-                key={tabString}
                 start={props.start}
                 end={props.end}
                 string={tabString}
