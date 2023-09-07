@@ -26,18 +26,19 @@ export interface IChordTab {
   "fifth": IStringData,
   "sixth": IStringData,
 }
-
-export interface IScale{
-  'e': number[],
-  'B': number[],
-  'G': number[],
-  'D': number[],
-  'A': number[],
-  'E': number[],
-}
-
 export type TabString = keyof IChordTab;
 export const tabStrings: TabString[] = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth'];
+
+export interface IScale {
+  "first": number[],
+  "second": number[],
+  "third": number[],
+  "fourth": number[],
+  "fifth": number[],
+  "sixth": number[],
+}
+export type ScaleString = keyof IScale;
+
 export type stringPitch = 'E' | 'A' | 'D' | 'G' | 'B' | 'e';
 export const strings: stringPitch[] = ['e', 'B', 'G', 'D', 'A', 'E']
 
@@ -259,7 +260,7 @@ export const getStringName = (tabString: TabString): stringPitch | null => {
   return null;	
 }
 
-const getStringPitch = (tabString: TabString): stringPitch | null => {
+export const getStringPitch = (tabString: TabString): stringPitch | null => {
   const name = getStringName(tabString);
   if (name === null) return null;
   if (name === 'e') return 'E';

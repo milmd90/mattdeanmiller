@@ -537,30 +537,6 @@ a {
   .fretboard>div {
     position: relative;
   }
-
-  #c-shape>div {
-    left: -100px;
-  }
-
-  #a-shape>div {
-    left: -180px;
-  }
-
-  #a-g-shape>div {
-    left: -235px;
-  }
-
-  #g-shape>div {
-    left: -280px;
-  }
-
-  #e-shape>div {
-    left: -365px;
-  }
-
-  #d-shape>div {
-    left: -365px;
-  }
 }
 
 .fretboard-content {

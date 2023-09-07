@@ -26,7 +26,7 @@ function MusicTheory(props) {
             Starting at A and continuing through G, the pitches are perceived as higher.
             After G, higher pitches are labeled starting over with A.
             The pitches labeled A through G are referred to as the natural tones.
-            In addition to these 7 pitches, there are other pitches we can write using flats (b) or sharps (#).
+            In addition to these 7 pitches, there are other pitches we can write using flats (♭) or sharps (#).
             Flats and sharps are referred to as accidentals.
             We will discuss accidentals more shortly.
           </p>
@@ -65,7 +65,7 @@ function MusicTheory(props) {
             The smallest interval in Western music is called a half-step.
             Accidentals (sharps and flats) adjust a note's pitch by a half-step by a half-step.
             Writing a sharp (#) after a pitch specifies a pitch one half-step higher.
-            Writing a flat (b) after a pitch specifies a pitch one half-step lower.
+            Writing a flat (♭) after a pitch specifies a pitch one half-step lower.
           </p>
           <p>
             The next smallest interval is a whole step. 2 half-steps are equal to a whole step.
@@ -97,7 +97,7 @@ function MusicTheory(props) {
           </h3>
           <p>
             You might notice that pitches with accidentals each have two names.
-            For instance, one pitch above is labeled both C# and Db.
+            For instance, one pitch above is labeled both C# and D♭.
             Depending on the key, it makes more sense to refer to this pitch by one name or the other.
             Two notes with different names but the same pitch are said to be "harmonically equivalent".
             The reason why the same pitch might need different names will become more clear once we start discussing keys and scales.
@@ -215,13 +215,13 @@ function MusicTheory(props) {
             So far, I have only mentioned one scale: the major scale.
             There are, however, other scales that follow different patterns of intervals between pitches.
             The minor scale, for instance, follows the pattern W H W W H W W.
-            That means the C minor scale would be C D Eb F G Ab Bb.
+            That means the C minor scale would be C D E♭ F G A♭ B♭.
             The key of C minor includes all the pitches in this scale and is represented by flats on the B, E, and A ledger lines.
-            If you look at the circle of fifths, this group of flats matches those in Eb major.
-            This is because the pitches in C minor are the same as those in Eb major.
+            If you look at the circle of fifths, this group of flats matches those in E♭ major.
+            This is because the pitches in C minor are the same as those in E♭ major.
             This overlap happens because the major and minor scales are similar.
             If you start on the sixth pitch of the major scale and play seven ascending pitches, you will play the intervals for the minor scale.
-            Since C is the sixth pitch in Eb major, C minor will have the same pitches as Eb major.
+            Since C is the sixth pitch in E♭ major, C minor will have the same pitches as E♭ major.
           </p>
           <img className='full' src='/images/music-theory/minor-major.png' alt='minor-major' />
         </div>
@@ -235,7 +235,7 @@ function MusicTheory(props) {
             Let's explore that pattern!
           </p>
           <p>
-            First, choose a key (ex: C major, Bb major, D minor, etc).
+            First, choose a key (ex: C major, B♭ major, D minor, etc).
             Then, choose one pitch that is in that key.
             Starting with that pitch and counting upward, find the first, third, and fifth pitches in the key.
             Playing these three pitches together will result in a chord that is in key!

@@ -1,5 +1,6 @@
 import { getTone } from "../../helpers/pitchTones";
-import { stringPitch, strings, IScale } from "../../helpers/common";
+import { stringPitch, tabStrings, IScale, TabString, getStringPitch } from "../../helpers/common";
+import { useEffect, useState } from "react";
 
 function range(min: number, max: number) {
   var len = max - min + 1;
@@ -13,24 +14,27 @@ function range(min: number, max: number) {
 function FretboardString(props: {
   start: number,
   end: number,
-  string: stringPitch,
+  string: TabString,
   frets: number[],
   fingers: number[]
   root: string
 }) {
   const frets = range(props.start, props.end).map((i) => {
-    const tone = getTone(props.root, i, props.string)
+    const stringPitch = getStringPitch(props.string);
+    if (!stringPitch) return [];
+    const tone = getTone(props.root, i, stringPitch)
     const index = props.frets.indexOf(i);
-    const fingers = props.fingers[index];
-    return <span className={`fret-box fret-${i}`}>
-      <div className={`fret-value ${props.frets.includes(i) ? `tone-${tone}` : ''}`}>
-        {props.frets.includes(i) ? fingers : ''}
-      </div>
+    const fretMatch = props.frets.includes(i);
+    const finger = props.fingers[index];
+    return <span key={i} className={`fret-box fret-${i}`}>
+      {fretMatch && <div className={`fret-value tone-${tone}`}>
+        {i === 0 ? 0 : finger}
+      </div>}
     </span>
   })
 
   return (
-    <div className="fretboard-string">
+    <div key={props.string} className="fretboard-string">
       {frets}
     </div>
   );
@@ -42,10 +46,11 @@ function FretboardMarkers(props: {
   frets: number[]
 }) {
   const frets = range(props.start, props.end).map((i) => {
-    return <span className={`fret-box fret-${i}`} >
-      <div className='fret-value'>
-        {props.frets.includes(i) ? i : ''}
-      </div>
+    const fretMatch = props.frets.includes(i);
+    return <span key={i} className={`fret-box fret-${i}`} >
+      {fretMatch && <div className='fret-value'>
+        {i}
+      </div>}
     </span >
   })
 
@@ -70,7 +75,7 @@ function Frets(props: {
     } else if (props.fretMarkers.includes(i)) {
       fretMarkers.push(<div className='fret-marker'>{'\u2022'}</div>);
     }
-    return <span className={`fret fret-${i}`}>
+    return <span key={i} className={`fret fret-${i}`}>
       {fretMarkers}
     </span>
   })
@@ -81,7 +86,6 @@ function Frets(props: {
     </div>
   );
 }
-
 
 export default function Fretboard(props: {
   id: string,
@@ -95,9 +99,29 @@ export default function Fretboard(props: {
     fingers
   } = props;
   const fretMarkers = [3, 5, 7, 9, 12, 15, 17];
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const frame = document.getElementById(props.id);
+    const tones = document.querySelectorAll(`#${props.id} .fretboard-strings .fret-value`);
+    if (!frame || tones.length === 0) return;
+
+    const frameRect = frame.getBoundingClientRect();
+    const center = (frameRect.left + frameRect.right) / 2;
+    let toneSum: number = 0;
+    tones.forEach((elem) => {
+      const elemRect = elem.getBoundingClientRect();
+      toneSum += (elemRect.left + elemRect.width / 2);
+    })
+    const toneCenter = toneSum / tones.length;
+    if (!center || !toneCenter) return;
+
+    setOffset(offset + center - toneCenter);
+  }, [props.root])
+
   return (
-    <div id={`${props.id}`} className="fretboard">
-      <div>
+    <div key={`${props.id}`} id={`${props.id}`} className="fretboard">
+      <div style={{ left: offset }}>
         <div className="fretboard-content">
           <Frets
             start={props.start}
@@ -106,7 +130,7 @@ export default function Fretboard(props: {
             fretDoubleMarkers={[12]}
           />
           <div className="fretboard-strings">
-            {strings.map(tabString =>
+            {tabStrings.map(tabString =>
               <FretboardString
                 start={props.start}
                 end={props.end}
@@ -123,7 +147,7 @@ export default function Fretboard(props: {
           end={props.end}
           frets={fretMarkers}
         />
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
