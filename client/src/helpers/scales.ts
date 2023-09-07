@@ -6,7 +6,7 @@ export function transposeScale(scale: IScale, offset: number): IScale {
   let newScale: IScale = {
     'first': [],
     'second': [],
-    'third' :[],
+    'third': [],
     'fourth': [],
     'fifth': [],
     'sixth': []
@@ -16,7 +16,6 @@ export function transposeScale(scale: IScale, offset: number): IScale {
       return fret + offset;
     });
   }
-  console.log('transposeScale',{newScale})
   return newScale;
 }
 

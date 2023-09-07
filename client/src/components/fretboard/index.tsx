@@ -1,5 +1,6 @@
 import { getTone } from "../../helpers/pitchTones";
 import { stringPitch, tabStrings, IScale, TabString, getStringPitch } from "../../helpers/common";
+import { useEffect, useState } from "react";
 
 function range(min: number, max: number) {
   var len = max - min + 1;
@@ -23,11 +24,12 @@ function FretboardString(props: {
     if (!stringPitch) return [];
     const tone = getTone(props.root, i, stringPitch)
     const index = props.frets.indexOf(i);
+    const fretMatch = props.frets.includes(i);
     const fingers = props.fingers[index];
     return <span className={`fret-box fret-${i}`}>
-      <div className={`fret-value ${props.frets.includes(i) ? `tone-${tone}` : ''}`}>
-        {props.frets.includes(i) ? fingers : ''}
-      </div>
+      {fretMatch && <div className={`fret-value tone-${tone}`}>
+        {fingers}
+      </div>}
     </span>
   })
 
@@ -44,10 +46,11 @@ function FretboardMarkers(props: {
   frets: number[]
 }) {
   const frets = range(props.start, props.end).map((i) => {
-    return <span className={`fret-box fret-${i}`} >
-      <div className='fret-value'>
-        {props.frets.includes(i) ? i : ''}
-      </div>
+    const fretMatch = props.frets.includes(i);
+    return <span key={i} className={`fret-box fret-${i}`} >
+      {fretMatch && <div className='fret-value'>
+        {i}
+      </div>}
     </span >
   })
 
@@ -72,7 +75,7 @@ function Frets(props: {
     } else if (props.fretMarkers.includes(i)) {
       fretMarkers.push(<div className='fret-marker'>{'\u2022'}</div>);
     }
-    return <span className={`fret fret-${i}`}>
+    return <span key={i} className={`fret fret-${i}`}>
       {fretMarkers}
     </span>
   })
@@ -83,7 +86,6 @@ function Frets(props: {
     </div>
   );
 }
-
 
 export default function Fretboard(props: {
   id: string,
@@ -97,9 +99,29 @@ export default function Fretboard(props: {
     fingers
   } = props;
   const fretMarkers = [3, 5, 7, 9, 12, 15, 17];
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const frame = document.getElementById(props.id);
+    const tones = document.querySelectorAll(`#${props.id} .fretboard-strings .fret-value`);
+    if (!frame || tones.length === 0) return;
+
+    const frameRect = frame.getBoundingClientRect();
+    const center = (frameRect.left + frameRect.right) / 2;
+    let toneSum: number = 0;
+    tones.forEach((elem) => {
+      const elemRect = elem.getBoundingClientRect();
+      toneSum += (elemRect.left + elemRect.width / 2);
+    })
+    const toneCenter = toneSum / tones.length;
+    if (!center || !toneCenter) return;
+
+    setOffset(offset + center - toneCenter);
+  }, [props.root])
+
   return (
     <div id={`${props.id}`} className="fretboard">
-      <div>
+      <div style={{ left: offset }}>
         <div className="fretboard-content">
           <Frets
             start={props.start}
@@ -110,6 +132,7 @@ export default function Fretboard(props: {
           <div className="fretboard-strings">
             {tabStrings.map(tabString =>
               <FretboardString
+                key={tabString}
                 start={props.start}
                 end={props.end}
                 string={tabString}
@@ -125,7 +148,7 @@ export default function Fretboard(props: {
           end={props.end}
           frets={fretMarkers}
         />
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
