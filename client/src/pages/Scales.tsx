@@ -32,16 +32,10 @@ export default function Scales() {
           </h3>
           <p>
             Below are 6 common patterns for playing major scales.
-            There are two ways to refer to each of these patterns.
-            The first is by the open chord contained in the pattern.
-            The second is by the lowest root string and the finger used to play it.
-          </p><p>
-            For example, let's consider the pattern labelled C Shape (5, 4).
-            Notice how playing a major arpeggio using this pattern resembles an open C?
-            Alternatively, we can also refer to the pattern as 5, 4, because we play the bottom root on the A string (5) using our pinky (4) finger.
-          </p><p>
-            Each one of these patterns can be used to play a major scale in any key.
-            Use the dropsdown below to practice these patterns in all 12 keys.
+            Each colored circle shows the string and fret location of a note in the pattern.
+            The color of the circle represents the scale degree of that note (key at the bottom).
+            The number on the circle shows the finger used to play that note in the pattern
+            (1: Index, 2: Middle, 3: Ring, 4: Pinky, 0: Open).
           </p>
           <p>Select the key for your scale patterns:</p>
           <p>
@@ -51,8 +45,6 @@ export default function Scales() {
               <option value='A#'>A#</option>
               <option value='Bb'>B♭</option>
               <option value='B'>B</option>
-              <option value='B#'>B#</option>
-              <option value='Cb'>C♭</option>
               <option value='C'>C</option>
               <option value='C#'>C#</option>
               <option value='Db'>D♭</option>
@@ -60,8 +52,6 @@ export default function Scales() {
               <option value='D#'>D#</option>
               <option value='Eb'>E♭</option>
               <option value='E'>E</option>
-              <option value='E#'>E#</option>
-              <option value='Fb'>F♭</option>
               <option value='F'>F</option>
               <option value='F#'>F#</option>
               <option value='Gb'>G♭</option>
@@ -72,9 +62,6 @@ export default function Scales() {
               <option>Major</option>
               <option>Minor</option>
             </select> */}
-          </p><p>
-            I plan on improving this page by include more detailed instructions for practicing scale patterns.
-            If you found this information useful, please send me a message!
           </p>
         </div>
         <div className='item'>
@@ -241,6 +228,31 @@ export default function Scales() {
         </div>
         <div className='item'>
           <ColorKey showColors={true} />
+        </div>
+        <div className='item'>
+          <h3 id='scale-names'>
+            Pattern Names
+          </h3>
+          <p>
+            There are two ways to refer to each of these patterns.
+            The first is by the open chord contained in the pattern.
+            The second is by the lowest root string and the finger used to play it.
+          </p><p>
+            For example, let's consider the pattern labelled C Shape (5, 4).
+            Notice how playing a major arpeggio using this pattern resembles an open C?
+            Alternatively, we can also refer to the pattern as 5, 4, because we play the bottom root on the A string (5) using our pinky (4) finger.
+          </p>
+        </div>
+        <div className='item'>
+          <h3 id='scale-practice'>
+            Practicing
+          </h3>
+          <p>
+            Each one of these patterns can be used to play a major scale in any key.
+            Use the dropsdown below to practice these patterns in all 12 keys.
+            I plan on improving this page by include more detailed instructions for practicing scale patterns.
+            If you found this information useful, please send me a message!
+          </p>
         </div>
       </div>
     </div>
