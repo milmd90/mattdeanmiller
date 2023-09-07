@@ -1,5 +1,5 @@
 import { getTone } from "../../helpers/pitchTones";
-import { stringPitch, strings, IScale } from "../../helpers/common";
+import { stringPitch, tabStrings, IScale, TabString, getStringPitch } from "../../helpers/common";
 
 function range(min: number, max: number) {
   var len = max - min + 1;
@@ -13,13 +13,15 @@ function range(min: number, max: number) {
 function FretboardString(props: {
   start: number,
   end: number,
-  string: stringPitch,
+  string: TabString,
   frets: number[],
   fingers: number[]
   root: string
 }) {
   const frets = range(props.start, props.end).map((i) => {
-    const tone = getTone(props.root, i, props.string)
+    const stringPitch = getStringPitch(props.string);
+    if (!stringPitch) return [];
+    const tone = getTone(props.root, i, stringPitch)
     const index = props.frets.indexOf(i);
     const fingers = props.fingers[index];
     return <span className={`fret-box fret-${i}`}>
@@ -106,7 +108,7 @@ export default function Fretboard(props: {
             fretDoubleMarkers={[12]}
           />
           <div className="fretboard-strings">
-            {strings.map(tabString =>
+            {tabStrings.map(tabString =>
               <FretboardString
                 start={props.start}
                 end={props.end}

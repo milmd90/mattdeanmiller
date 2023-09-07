@@ -1,7 +1,27 @@
+import React, { useState } from 'react';
 import ColorKey from '../components/calculator/ColorKey';
 import Fretboard from '../components/fretboard';
+import { transposeScale } from '../helpers/scales';
+import { pitchDifference } from '../helpers/pitchTones';
 
 export default function Scales() {
+  const [key, setKey] = useState('D');
+  const [keyType, setKeyType] = useState('Major');
+
+  function onKeyChange(v: any) {
+    setKey(v.target.value);
+  }
+
+  function onKeyTypeChange(v: any) {
+    setKeyType(v.target.value);
+  }
+
+  function getTransposeValue(): number {
+    let value = pitchDifference('D', key);
+    if (!value) return 0;
+    return keyType === 'Minor' ? value + 3 : value;
+  }
+
   return (
     <div id='scales-page' className="container center">
       <h2>Guitar Scale Patterns</h2>
@@ -20,175 +40,203 @@ export default function Scales() {
             Notice how playing a major arpeggio using this pattern resembles an open C?
             Alternatively, we can also refer to the pattern as 5, 4, because we play the bottom root on the A string (5) using our pinky (4) finger.
           </p><p>
-            Each of these scale patterns are in the key of D major.
-            However, as you practice these patterns, be sure to play them in all 12 keys.
-            Additionally, you can add variation by starting from either the top or bottom and introducing note patterns.
+            Each one of these patterns can be used to play a major scale in any key.
+            Use the dropsdown below to practice these patterns in all 12 keys.
+          </p>
+          <p>Select the key for your scale patterns:</p>
+          <p>
+            <select onChange={onKeyChange} value={key}>
+              <option value='Ab'>A♭</option>
+              <option value='A'>A</option>
+              <option value='A#'>A#</option>
+              <option value='Bb'>B♭</option>
+              <option value='B'>B</option>
+              <option value='B#'>B#</option>
+              <option value='Cb'>C♭</option>
+              <option value='C'>C</option>
+              <option value='C#'>C#</option>
+              <option value='Db'>D♭</option>
+              <option value='D'>D</option>
+              <option value='D#'>D#</option>
+              <option value='Eb'>E♭</option>
+              <option value='E'>E</option>
+              <option value='E#'>E#</option>
+              <option value='Fb'>F♭</option>
+              <option value='F'>F</option>
+              <option value='F#'>F#</option>
+              <option value='Gb'>G♭</option>
+              <option value='G'>G</option>
+              <option value='G#'>G#</option>
+            </select> &nbsp; Major
+            {/* <select onChange={onKeyTypeChange} value={keyType}>
+              <option>Major</option>
+              <option>Minor</option>
+            </select> */}
           </p><p>
-            I plan on improving this page by allowing the user to select the key used to render the patterns.
-            I will also include more detailed instructions for practicing scale patterns.
+            I plan on improving this page by include more detailed instructions for practicing scale patterns.
             If you found this information useful, please send me a message!
           </p>
         </div>
         <div className='item'>
           <h3>
-            D Major Scale: C Shape (5, 4)
+            {`${key} ${keyType}`} Scale: C Shape (5, 4)
           </h3>
           <Fretboard
             id='c-shape'
             start={0}
             end={16}
-            frets={{
-              'e': [2, 3, 5],
-              'B': [2, 3, 5],
-              'G': [2, 4],
-              'D': [2, 4, 5],
-              'A': [2, 4, 5],
-              'E': [2, 3, 5]
-            }}
+            frets={transposeScale({
+              'first': [2, 3, 5],
+              'second': [2, 3, 5],
+              'third': [2, 4],
+              'fourth': [2, 4, 5],
+              'fifth': [2, 4, 5],
+              'sixth': [2, 3, 5]
+            }, getTransposeValue())}
             fingers={{
-              'e': [1, 2, 4],
-              'B': [1, 2, 4],
-              'G': [1, 3],
-              'D': [1, 3, 4],
-              'A': [1, 3, 4],
-              'E': [1, 2, 4]
+              'first': [1, 2, 4],
+              'second': [1, 2, 4],
+              'third': [1, 3],
+              'fourth': [1, 3, 4],
+              'fifth': [1, 3, 4],
+              'sixth': [1, 2, 4]
             }}
-            root={'D'}
+            root={key}
           />
         </div>
         <div className='item'>
           <h3>
-            D Major Scale: A Shape (5, 2)
+            {`${key} ${keyType}`} Scale: A Shape (5, 2)
           </h3>
           <Fretboard
             id='a-shape'
             start={0}
             end={16}
-            frets={{
-              'e': [5, 7],
-              'B': [5, 7, 8],
-              'G': [4, 6, 7],
-              'D': [4, 5, 7],
-              'A': [4, 5, 7],
-              'E': [5, 7]
-            }}
+            frets={transposeScale({
+              'first': [5, 7],
+              'second': [5, 7, 8],
+              'third': [4, 6, 7],
+              'fourth': [4, 5, 7],
+              'fifth': [4, 5, 7],
+              'sixth': [5, 7]
+            }, getTransposeValue())}
             fingers={{
-              'e': [1, 3],
-              'B': [1, 3, 4],
-              'G': [1, 3, 4],
-              'D': [1, 2, 4],
-              'A': [1, 2, 4],
-              'E': [2, 4]
+              'first': [1, 3],
+              'second': [1, 3, 4],
+              'third': [1, 3, 4],
+              'fourth': [1, 2, 4],
+              'fifth': [1, 2, 4],
+              'sixth': [2, 4]
             }}
-            root={'D'}
+            root={key}
           />
         </div>
         <div className='item'>
           <h3>
-            D Major Scale: A/G Shape (5, 1)
+            {`${key} ${keyType}`} Scale: A/G Shape (5, 1)
           </h3>
           <Fretboard
             id='a-g-shape'
             start={0}
             end={16}
-            frets={{
-              'e': [7, 9, 10],
-              'B': [7, 8, 10],
-              'G': [6, 7, 9],
-              'D': [5, 7, 9],
-              'A': [5, 7, 9],
-              'E': []
-            }}
+            frets={transposeScale({
+              'first': [7, 9, 10],
+              'second': [7, 8, 10],
+              'third': [6, 7, 9],
+              'fourth': [5, 7, 9],
+              'fifth': [5, 7, 9],
+              'sixth': []
+            }, getTransposeValue())}
             fingers={{
-              'e': [1, 3, 4],
-              'B': [1, 2, 4],
-              'G': [1, 2, 4],
-              'D': [1, 2, 4],
-              'A': [1, 2, 4],
-              'E': []
+              'first': [1, 3, 4],
+              'second': [1, 2, 4],
+              'third': [1, 2, 4],
+              'fourth': [1, 2, 4],
+              'fifth': [1, 2, 4],
+              'sixth': []
             }}
-            root={'D'}
+            root={key}
           />
         </div>
         <div className='item'>
           <h3>
-            D Major Scale: G Shape (6, 4)
+            {`${key} ${keyType}`} Scale: G Shape (6, 4)
           </h3>
           <Fretboard
             id='g-shape'
             start={0}
             end={16}
-            frets={{
-              'e': [7, 9, 10],
-              'B': [7, 8, 10],
-              'G': [6, 7, 9],
-              'D': [7, 9],
-              'A': [7, 9, 10],
-              'E': [7, 9, 10]
-            }}
+            frets={transposeScale({
+              'first': [7, 9, 10],
+              'second': [7, 8, 10],
+              'third': [6, 7, 9],
+              'fourth': [7, 9],
+              'fifth': [7, 9, 10],
+              'sixth': [7, 9, 10]
+            }, getTransposeValue())}
             fingers={{
-              'e': [1, 3, 4],
-              'B': [1, 2, 4],
-              'G': [1, 2, 4],
-              'D': [1, 3],
-              'A': [1, 3, 4],
-              'E': [1, 3, 4]
+              'first': [1, 3, 4],
+              'second': [1, 2, 4],
+              'third': [1, 2, 4],
+              'fourth': [1, 3],
+              'fifth': [1, 3, 4],
+              'sixth': [1, 3, 4]
             }}
-            root={'D'}
+            root={key}
           />
         </div>
         <div className='item'>
           <h3>
-            D Major Scale: E Shape (6, 2)
+            {`${key} ${keyType}`} Scale: E Shape (6, 2)
           </h3>
           <Fretboard
             id='e-shape'
             start={0}
             end={16}
-            frets={{
-              'e': [9, 10, 12],
-              'B': [10, 12],
-              'G': [9, 11, 12],
-              'D': [9, 11, 12],
-              'A': [9, 10, 12],
-              'E': [9, 10, 12]
-            }}
+            frets={transposeScale({
+              'first': [9, 10, 12],
+              'second': [10, 12],
+              'third': [9, 11, 12],
+              'fourth': [9, 11, 12],
+              'fifth': [9, 10, 12],
+              'sixth': [9, 10, 12]
+            }, getTransposeValue())}
             fingers={{
-              'e': [1, 2, 4],
-              'B': [2, 4],
-              'G': [1, 3, 4],
-              'D': [1, 3, 4],
-              'A': [1, 2, 4],
-              'E': [1, 2, 4]
+              'first': [1, 2, 4],
+              'second': [2, 4],
+              'third': [1, 3, 4],
+              'fourth': [1, 3, 4],
+              'fifth': [1, 2, 4],
+              'sixth': [1, 2, 4]
             }}
-            root={'D'}
+            root={key}
           />
         </div>
         <div className='item'>
           <h3>
-            D Major Scale: D Shape (6, 1)
+            {`${key} ${keyType}`} Scale: D Shape (6, 1)
           </h3>
           <Fretboard
             id='d-shape'
             start={0}
             end={16}
-            frets={{
-              'e': [12, 14, 15],
-              'B': [12, 14, 15],
-              'G': [11, 12, 14],
-              'D': [11, 12, 14],
-              'A': [10, 12, 14],
-              'E': [10, 12, 14]
-            }}
+            frets={transposeScale({
+              'first': [12, 14, 15],
+              'second': [12, 14, 15],
+              'third': [11, 12, 14],
+              'fourth': [11, 12, 14],
+              'fifth': [10, 12, 14],
+              'sixth': [10, 12, 14]
+            }, getTransposeValue())}
             fingers={{
-              'e': [1, 3, 4],
-              'B': [1, 3, 4],
-              'G': [1, 2, 4],
-              'D': [1, 2, 4],
-              'A': [1, 2, 4],
-              'E': [1, 2, 4]
+              'first': [1, 3, 4],
+              'second': [1, 3, 4],
+              'third': [1, 2, 4],
+              'fourth': [1, 2, 4],
+              'fifth': [1, 2, 4],
+              'sixth': [1, 2, 4]
             }}
-            root={'D'}
+            root={key}
           />
         </div>
         <div className='item'>

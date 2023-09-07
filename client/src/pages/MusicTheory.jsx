@@ -26,7 +26,7 @@ function MusicTheory(props) {
             Starting at A and continuing through G, the pitches are perceived as higher.
             After G, higher pitches are labeled starting over with A.
             The pitches labeled A through G are referred to as the natural tones.
-            In addition to these 7 pitches, there are other pitches we can write using flats (b) or sharps (#).
+            In addition to these 7 pitches, there are other pitches we can write using flats (♭) or sharps (#).
             Flats and sharps are referred to as accidentals.
             We will discuss accidentals more shortly.
           </p>
