@@ -40,14 +40,14 @@ function FretboardString(props: {
   );
 }
 
-function FretboardMarkers(props: {
+function FretboardNumbers(props: {
   start: number,
   end: number,
   frets: number[]
 }) {
   const frets = range(props.start, props.end).map((i) => {
     const fretMatch = props.frets.includes(i);
-    return <span key={i} className={`fret-box fret-number fret-${i}`} >
+    return <span key={i} className={`fret-box fret-${i}`} >
       {fretMatch && <div className='fret-value'>
         {i}
       </div>}
@@ -142,7 +142,7 @@ export default function Fretboard(props: {
             )}
           </div>
         </div>
-        <FretboardMarkers
+        <FretboardNumbers
           start={props.start}
           end={props.end}
           frets={fretMarkers}
