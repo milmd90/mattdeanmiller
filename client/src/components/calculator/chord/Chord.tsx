@@ -8,7 +8,8 @@ export interface IChordParams {
   type: string,
   shape: string,
   position: string,
-  option: number
+  option: number,
+  voicing: number,
 }
 
 function Chord(props: {
@@ -21,7 +22,8 @@ function Chord(props: {
     type: '',
     shape: '',
     position: '',
-    option: 0
+    option: 0,
+    voicing: 0,
   });
 
   return (

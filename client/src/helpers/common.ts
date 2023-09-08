@@ -104,7 +104,7 @@ export function convertChordsToTabs(chords: IChordData[], root: string): IChordT
   });
 
   const tabs: IChordTab[] = [];
-    expandedChords.map((chord) => {
+    expandedChords.forEach((chord) => {
       tabs.push({
         first: getStringValue(root, chord, "first"),
         second: getStringValue(root, chord, "second"),

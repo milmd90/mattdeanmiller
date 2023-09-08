@@ -46,7 +46,8 @@ function Display(props: {
     type: abbrev,
     shape,
     position,
-    option
+    option,
+    voicing
   } = props.data;
 
   const [showDetail, setShowDetail] = useState(false);
@@ -82,11 +83,13 @@ function Display(props: {
 
   let tabArray: IChordTab[] = convertChordsToTabs(data.chords, root);
   tabArray = updateChordsWithPosition(tabArray, position);
-  tabArray = createChordVariations(tabArray, type);
   tabArray = sortChordsByLowest(tabArray);
+  const optionIndex: number = option % tabArray.length;
+  const baseTab = tabArray[optionIndex];
 
-  const index: number = option % tabArray.length;
-  const renderTab = tabArray[index];
+  const variationArray = createChordVariations([baseTab], type);
+  const voicingIndex: number = voicing % variationArray.length;
+  const renderTab = variationArray[voicingIndex];
   props.onChange(renderTab);
 
   const setDetailPosition = (e: any) => {

@@ -24,9 +24,9 @@ function StartColumn(props: {
         <div className='input-row'>
           <div className='input-row-label'>
             root
-            <FontAwesomeIcon 
+            <FontAwesomeIcon
               data-tooltip-id="root-tooltip"
-              icon={faCircleQuestion} 
+              icon={faCircleQuestion}
               size='xs'
             />
             <Tooltip
@@ -37,9 +37,9 @@ function StartColumn(props: {
           </div>
           <div className='input-row-label'>
             type
-            <FontAwesomeIcon 
+            <FontAwesomeIcon
               data-tooltip-id="type-tooltip"
-              icon={faCircleQuestion} 
+              icon={faCircleQuestion}
               size='xs'
             />
             <Tooltip
@@ -51,9 +51,9 @@ function StartColumn(props: {
           </div>
           <div className='input-row-label'>
             shape
-            <FontAwesomeIcon 
+            <FontAwesomeIcon
               data-tooltip-id="shape-tooltip"
-              icon={faCircleQuestion} 
+              icon={faCircleQuestion}
               size='xs'
             />
             <Tooltip
@@ -64,9 +64,9 @@ function StartColumn(props: {
           </div>
           <div className='input-row-label'>
             position
-            <FontAwesomeIcon 
+            <FontAwesomeIcon
               data-tooltip-id="position-tooltip"
-              icon={faCircleQuestion} 
+              icon={faCircleQuestion}
               size='xs'
             />
             <Tooltip
@@ -77,15 +77,28 @@ function StartColumn(props: {
           </div>
           <div className='input-row-label'>
             option
-            <FontAwesomeIcon 
+            <FontAwesomeIcon
               data-tooltip-id="option-tooltip"
-              icon={faCircleQuestion} 
+              icon={faCircleQuestion}
               size='xs'
             />
             <Tooltip
               id="option-tooltip"
               place="top-start"
               content="Clicking this button cycles through all matching chords."
+            />
+          </div>
+          <div className='input-row-label'>
+            voicing
+            <FontAwesomeIcon
+              data-tooltip-id="voicing-tooltip"
+              icon={faCircleQuestion}
+              size='xs'
+            />
+            <Tooltip
+              id="voicing-tooltip"
+              place="top-start"
+              content="Clicking this button cycles through all valid voicings."
             />
           </div>
         </div>

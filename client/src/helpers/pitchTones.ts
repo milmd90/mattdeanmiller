@@ -24,9 +24,6 @@ const pitchTones = {
   "G#": 0
 }
 
-const tonePitchMap = ["Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G"];
-
-
 export function convertPitchToTone(pitch: string): TabValue {
   if (
     pitch === "Ab" ||
