@@ -30,7 +30,7 @@ function Cell(props: {
   const cellValue = fret === null ? '-' : fret;
 
   return (
-    <div className={`fret-number ${className}`}>
+    <div className={`fret-value ${className}`}>
       {cellValue}
     </div>
   )

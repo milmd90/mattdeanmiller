@@ -317,7 +317,7 @@ a {
   padding-right: 15px;
 }
 
-.fret-number {
+.fret-value {
   display: flex;
   flex: 1 1 auto;
   align-items: center;
@@ -679,9 +679,16 @@ a {
   border-bottom: solid black 1px;
 }
 
-.fret-markers {
+.fret-numbers {
   display: flex;
   flex-direction: row;
+  padding-left: 3px;
+}
+
+.fret-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .fret-box {
@@ -697,7 +704,7 @@ a {
   top: 12px;
 }
 
-.fret-value {
+.finger-value {
   display: flex;
   justify-content: center;
   align-items: center;
