@@ -1,5 +1,5 @@
 import { getTone } from "../../helpers/pitchTones";
-import { stringPitch, tabStrings, IScale, TabString, getStringPitch } from "../../helpers/common";
+import { tabStrings, IScale, TabString, getStringPitch } from "../../helpers/common";
 import { useEffect, useState } from "react";
 
 function range(min: number, max: number) {

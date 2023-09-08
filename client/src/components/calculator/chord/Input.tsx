@@ -14,7 +14,8 @@ function Input(props: {
     type,
     shape,
     position,
-    option
+    option,
+    voicing
   } = data;
 
   const onChangeRoot = (e: any) => {
@@ -25,7 +26,8 @@ function Input(props: {
       type,
       shape,
       position,
-      option
+      option,
+      voicing,
     });
   }
   const onChangeQuality = (e: any) => {
@@ -35,6 +37,7 @@ function Input(props: {
       shape,
       position,
       option,
+      voicing,
     });
   }
   const onChangeShape = (e: any) => {
@@ -45,6 +48,7 @@ function Input(props: {
       shape: shape.toUpperCase(),
       position,
       option,
+      voicing,
     });
   }
   const onChangePosition = (e: any) => {
@@ -54,6 +58,7 @@ function Input(props: {
       shape,
       position: e.target.value,
       option,
+      voicing,
     });
   }
   const onChangeOption = (e: any) => {
@@ -63,6 +68,17 @@ function Input(props: {
       shape,
       position,
       option: option + 1,
+      voicing: 0,
+    });
+  }
+  const onChangeVoicing = (e: any) => {
+    onChange({
+      root,
+      type,
+      shape,
+      position,
+      option,
+      voicing: voicing + 1,
     });
   }
 
@@ -88,6 +104,11 @@ function Input(props: {
       />
       <button
         onClick={onChangeOption}
+      >
+        <FontAwesomeIcon className='icon' icon={faArrowsSpin} size='lg' />
+      </button>
+      <button
+        onClick={onChangeVoicing}
       >
         <FontAwesomeIcon className='icon' icon={faArrowsSpin} size='lg' />
       </button>
