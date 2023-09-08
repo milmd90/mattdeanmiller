@@ -7,6 +7,8 @@ import { pitchDifference } from '../helpers/pitchTones';
 export default function Scales() {
   const [key, setKey] = useState('D');
   const [keyType, setKeyType] = useState('Major');
+  const startFret = 1;
+  const endFret = 18;
 
   function onKeyChange(v: any) {
     setKey(v.target.value);
@@ -70,8 +72,8 @@ export default function Scales() {
           </h3>
           <Fretboard
             id='c-shape'
-            start={1}
-            end={16}
+            start={startFret}
+            end={endFret}
             frets={transposeScale({
               'first': [2, 3, 5],
               'second': [2, 3, 5],
@@ -97,8 +99,8 @@ export default function Scales() {
           </h3>
           <Fretboard
             id='a-shape'
-            start={1}
-            end={16}
+            start={startFret}
+            end={endFret}
             frets={transposeScale({
               'first': [5, 7],
               'second': [5, 7, 8],
@@ -124,8 +126,8 @@ export default function Scales() {
           </h3>
           <Fretboard
             id='a-g-shape'
-            start={1}
-            end={16}
+            start={startFret}
+            end={endFret}
             frets={transposeScale({
               'first': [7, 9, 10],
               'second': [7, 8, 10],
@@ -151,8 +153,8 @@ export default function Scales() {
           </h3>
           <Fretboard
             id='g-shape'
-            start={1}
-            end={16}
+            start={startFret}
+            end={endFret}
             frets={transposeScale({
               'first': [7, 9, 10],
               'second': [7, 8, 10],
@@ -178,8 +180,8 @@ export default function Scales() {
           </h3>
           <Fretboard
             id='e-shape'
-            start={1}
-            end={16}
+            start={startFret}
+            end={endFret}
             frets={transposeScale({
               'first': [9, 10, 12],
               'second': [10, 12],
@@ -205,8 +207,8 @@ export default function Scales() {
           </h3>
           <Fretboard
             id='d-shape'
-            start={1}
-            end={16}
+            start={startFret}
+            end={endFret}
             frets={transposeScale({
               'first': [12, 14, 15],
               'second': [12, 14, 15],

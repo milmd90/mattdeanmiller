@@ -103,7 +103,7 @@ export default function Fretboard(props: {
 
   useEffect(() => {
     const frame = document.getElementById(props.id);
-    const tones = document.querySelectorAll(`#${props.id} .fretboard-strings .fret-value`);
+    const tones = document.querySelectorAll(`#${props.id} .fretboard-strings .finger-value`);
     if (!frame || tones.length === 0) return;
 
     const frameRect = frame.getBoundingClientRect();
