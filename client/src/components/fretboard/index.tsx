@@ -47,7 +47,7 @@ function FretboardMarkers(props: {
 }) {
   const frets = range(props.start, props.end).map((i) => {
     const fretMatch = props.frets.includes(i);
-    return <span key={i} className={`fret-box fret-${i}`} >
+    return <span key={i} className={`fret-box fret-number fret-${i}`} >
       {fretMatch && <div className='fret-value'>
         {i}
       </div>}
@@ -55,7 +55,7 @@ function FretboardMarkers(props: {
   })
 
   return (
-    <div className="fret-markers">
+    <div className="fret-numbers">
       {frets}
     </div>
   );
