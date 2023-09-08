@@ -27,7 +27,7 @@ function FretboardString(props: {
     const fretMatch = props.frets.includes(i);
     const finger = props.fingers[index];
     return <span key={i} className={`fret-box fret-${i}`}>
-      {fretMatch && <div className={`fret-value tone-${tone}`}>
+      {fretMatch && <div className={`finger-value tone-${tone}`}>
         {i === 0 ? 0 : finger}
       </div>}
     </span>

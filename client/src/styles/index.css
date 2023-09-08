@@ -704,21 +704,13 @@ a {
   top: 12px;
 }
 
-.fret-value {
+.finger-value {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 24px;
   width: 24px;
   border-radius: 50%;
-}
-
-.finger-value {
-  display: flex;
-  flex: 1 1 auto;
-  align-items: center;
-  justify-content: center;
-  height: 0;
 }
 
 /* mobile styles */
