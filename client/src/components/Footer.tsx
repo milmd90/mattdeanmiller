@@ -8,14 +8,14 @@ class Footer extends Component {
     return (
       <div id="footer">
         <a href="https://www.instagram.com/mattdeanmiller" target="_blank">
-          <FontAwesomeIcon className='icon' icon={faInstagram}/>
+          <FontAwesomeIcon className='icon' icon={faInstagram} />
         </a>
-        <a  href="https://www.soundcloud.com/mattdeanmiller" target="_blank">
-          <FontAwesomeIcon className='icon' icon={faSoundcloud}/>
+        <a href="https://www.soundcloud.com/mattdeanmiller" target="_blank">
+          <FontAwesomeIcon className='icon' icon={faSoundcloud} />
         </a>
-        {/* <a  href="https://www.youtube.com/@mattdeanmiller" target="_blank">
-          <FontAwesomeIcon className='icon' icon={faYoutube}/>
-        </a> */}
+        <a href="https://www.youtube.com/@mattdeanmiller" target="_blank">
+          <FontAwesomeIcon className='icon' icon={faYoutube} />
+        </a>
         <a href="https://open.spotify.com/user/126637610" target="_blank">
           <FontAwesomeIcon className='icon' icon={faSpotify} />
         </a>
