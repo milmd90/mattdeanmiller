@@ -70,7 +70,7 @@ export default function Scales() {
           </h3>
           <Fretboard
             id='c-shape'
-            start={0}
+            start={1}
             end={16}
             frets={transposeScale({
               'first': [2, 3, 5],
@@ -97,7 +97,7 @@ export default function Scales() {
           </h3>
           <Fretboard
             id='a-shape'
-            start={0}
+            start={1}
             end={16}
             frets={transposeScale({
               'first': [5, 7],
@@ -124,7 +124,7 @@ export default function Scales() {
           </h3>
           <Fretboard
             id='a-g-shape'
-            start={0}
+            start={1}
             end={16}
             frets={transposeScale({
               'first': [7, 9, 10],
@@ -151,7 +151,7 @@ export default function Scales() {
           </h3>
           <Fretboard
             id='g-shape'
-            start={0}
+            start={1}
             end={16}
             frets={transposeScale({
               'first': [7, 9, 10],
@@ -178,7 +178,7 @@ export default function Scales() {
           </h3>
           <Fretboard
             id='e-shape'
-            start={0}
+            start={1}
             end={16}
             frets={transposeScale({
               'first': [9, 10, 12],
@@ -205,7 +205,7 @@ export default function Scales() {
           </h3>
           <Fretboard
             id='d-shape'
-            start={0}
+            start={1}
             end={16}
             frets={transposeScale({
               'first': [12, 14, 15],

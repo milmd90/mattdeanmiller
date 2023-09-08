@@ -2,7 +2,7 @@ import { IScale, tabStrings } from "./common";
 
 export function transposeScale(scale: IScale, offset: number): IScale {
   let minFret = getMinScaleFretValue(scale);
-  if (minFret + offset >= 12) offset -= 12;
+  if (minFret + offset > 12) offset -= 12;
   let newScale: IScale = {
     'first': [],
     'second': [],

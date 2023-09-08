@@ -543,7 +543,9 @@ a {
   display: flex;
   flex-direction: column;
   position: relative;
-  border: solid black 3px;
+  border-style: solid;
+  border-color: black;
+  border-width: 3px 0px 3px 3px;
 }
 
 .frets {
@@ -567,7 +569,7 @@ a {
 }
 
 .fret-0 {
-  width: calc(0.944px * var(--fret-scale));
+  width: calc(0.6px * var(--fret-scale));
 }
 
 .fret-1 {
