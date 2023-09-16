@@ -680,6 +680,16 @@
     "sixth": -2
   },
   {
+    "shape": "D",
+    "type": "minor 7th",
+    "first": 1,
+    "second": 1,
+    "third": 2,
+    "fourth": 0,
+    "fifth": 0,
+    "sixth": -2
+  },
+  {
     "shape": "F",
     "type": "6",
     "first": 1,
