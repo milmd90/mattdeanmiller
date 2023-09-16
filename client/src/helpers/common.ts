@@ -69,6 +69,18 @@ export function getMaxFretValue(tab: IChordTab): number {
   })
 }
 
+export function getFretSort(tab: IChordTab): number {
+  const frets: number[] = [];
+  tabStrings.forEach((tabString) => {
+    const fretValue = tab[tabString].fret;
+    if (fretValue) {
+      frets.push(fretValue);
+    }
+  });
+
+  return parseInt(frets.sort().join(''));
+}
+
 // 
 export function convertChordsToTabs(chords: IChordData[], root: string): IChordTab[] {
   function getValue(input: TabValue, offset: number | null): TabValue {
@@ -240,12 +252,8 @@ export function createChordVariations(tabArray: IChordTab[], type: string): ICho
 
 export function sortChordsByLowest(tabArray: IChordTab[]): IChordTab[] {
   return tabArray.sort((a: IChordTab, b: IChordTab) => {
-    const minA = getMinFretValue(a);
-    const minB = getMinFretValue(b);
-    if (
-      minA === undefined ||
-      minB === undefined
-    ) return 0;
+    const minA = getFretSort(a);
+    const minB = getFretSort(b);
     return minA - minB;
   });
 }
