@@ -111,6 +111,16 @@
   },
   {
     "shape": "C",
+    "type": "minor",
+    "first": 3,
+    "second": 1,
+    "third": 0,
+    "fourth": 1,
+    "fifth": 3,
+    "sixth": 3
+  },
+  {
+    "shape": "C",
     "type": "minor 7th",
     "first": -1,
     "second": 1,
@@ -118,6 +128,36 @@
     "fourth": 1,
     "fifth": 3,
     "sixth": -1
+  },
+  {
+    "shape": "D#",
+    "type": "6",
+    "first": -1,
+    "second": 1,
+    "third": 3,
+    "fourth": 1,
+    "fifth": 3,
+    "sixth": -1
+  },
+  {
+    "shape": "C",
+    "type": "minor 7th",
+    "first": 3,
+    "second": 1,
+    "third": 3,
+    "fourth": 1,
+    "fifth": 3,
+    "sixth": 3
+  },
+  {
+    "shape": "D#",
+    "type": "6",
+    "first": 3,
+    "second": 1,
+    "third": 3,
+    "fourth": 1,
+    "fifth": 3,
+    "sixth": 3
   },
   {
     "shape": "C",
@@ -400,6 +440,16 @@
     "sixth": 3
   },
   {
+    "shape": "A#",
+    "type": "6",
+    "first": 1,
+    "second": -1,
+    "third": 0,
+    "fourth": 0,
+    "fifth": 1,
+    "sixth": 3
+  },
+  {
     "shape": "E",
     "type": "6",
     "first": 0,
@@ -540,6 +590,16 @@
     "sixth": 2
   },
   {
+    "shape": "B",
+    "type": "minor 7th",
+    "first": 2,
+    "second": 0,
+    "third": 2,
+    "fourth": 0,
+    "fifth": 2,
+    "sixth": 2
+  },
+  {
     "shape": "D",
     "type": "dominate 7th",
     "first": 2,
@@ -620,8 +680,8 @@
     "sixth": -2
   },
   {
-    "shape": "D",
-    "type": "minor 7th",
+    "shape": "F",
+    "type": "6",
     "first": 1,
     "second": 1,
     "third": 2,
