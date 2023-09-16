@@ -586,8 +586,8 @@
     "second": 0,
     "third": 2,
     "fourth": 0,
-    "fifth": 2,
-    "sixth": 2
+    "fifth": 0,
+    "sixth": -2
   },
   {
     "shape": "B",
@@ -596,8 +596,8 @@
     "second": 0,
     "third": 2,
     "fourth": 0,
-    "fifth": 2,
-    "sixth": 2
+    "fifth": 0,
+    "sixth": -2
   },
   {
     "shape": "D",
