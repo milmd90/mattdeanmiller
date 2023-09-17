@@ -34,7 +34,7 @@ function FretboardString(props: {
   })
 
   return (
-    <div key={props.string} className="fretboard-string">
+    <div className="fretboard-string">
       {frets}
     </div>
   );
@@ -70,10 +70,10 @@ function Frets(props: {
   const frets = range(props.start, props.end).map((i) => {
     let fretMarkers = [];
     if (props.fretDoubleMarkers.includes(i)) {
-      fretMarkers.push(<div className='fret-marker'>{'\u2022'}</div>);
-      fretMarkers.push(<div className='fret-marker'>{'\u2022'}</div>);
+      fretMarkers.push(<div key={1} className='fret-marker'>{'\u2022'}</div>);
+      fretMarkers.push(<div key={2} className='fret-marker'>{'\u2022'}</div>);
     } else if (props.fretMarkers.includes(i)) {
-      fretMarkers.push(<div className='fret-marker'>{'\u2022'}</div>);
+      fretMarkers.push(<div key={1} className='fret-marker'>{'\u2022'}</div>);
     }
     return <span key={i} className={`fret fret-${i}`}>
       {fretMarkers}
@@ -120,7 +120,7 @@ export default function Fretboard(props: {
   }, [props.root])
 
   return (
-    <div key={`${props.id}`} id={`${props.id}`} className="fretboard">
+    <div id={`${props.id}`} className="fretboard">
       <div style={{ left: offset }}>
         <div className="fretboard-content">
           <Frets
@@ -130,8 +130,9 @@ export default function Fretboard(props: {
             fretDoubleMarkers={[12]}
           />
           <div className="fretboard-strings">
-            {tabStrings.map(tabString =>
+            {tabStrings.map((tabString, i) =>
               <FretboardString
+                key={tabString}
                 start={props.start}
                 end={props.end}
                 string={tabString}

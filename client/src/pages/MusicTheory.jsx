@@ -184,14 +184,14 @@ function MusicTheory(props) {
                 Likewise, there are 12 different major keys.
                 Each one of these keys is a unique combination of 7 of the 12 chromatic pitches.
               </p>
-              <img class='circle-of-fifths-diagram mobile' src='/images/music-theory/circle-of-fifths.png' alt='circle-of-fifths' />
+              <img className='circle-of-fifths-diagram mobile' src='/images/music-theory/circle-of-fifths.png' alt='circle-of-fifths' />
               <p>
                 Unlike the key of C, every other key has at least one sharp or flat.
                 Another way to say that, is at starting on a pitch other than C and playing the major scale will include pitches with accidentals.
                 When reading sheet music, musicians look at the staff for accidentals to determine what key the music is in.
               </p>
             </div>
-            <img class='circle-of-fifths-diagram desktop' src='/images/music-theory/circle-of-fifths.png' alt='circle-of-fifths' />
+            <img className='circle-of-fifths-diagram desktop' src='/images/music-theory/circle-of-fifths.png' alt='circle-of-fifths' />
           </div>
           <p>
             If we wanted to play in the key of D major, we could find these pitches by starting on a D and playing a major scale.
