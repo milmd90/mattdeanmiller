@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 
 
 function MenuDropdown(props: {
@@ -12,18 +13,45 @@ function MenuDropdown(props: {
   const getSubItems = () => {
     if (!props.open) return null;
     return <>
-      <Link to='/music-theory#sound' className='menu-item category-item' onClick={props.onClick}>
+      <HashLink to='/music-theory#sound' className='menu-item category-item' onClick={props.onClick}>
         Sound
-      </Link>
-      <Link to='/music-theory#pitch' className='menu-item category-item' onClick={props.onClick}>
+      </HashLink>
+      <HashLink to='/music-theory#pitch' className='menu-item category-item' onClick={props.onClick}>
         Pitch
-      </Link>
-      <Link to='/music-theory#notes' className='menu-item category-item' onClick={props.onClick}>
+      </HashLink>
+      <HashLink to='/music-theory#notes' className='menu-item category-item' onClick={props.onClick}>
         Notes
-      </Link>
-      <Link to='/music-theory#octaves' className='menu-item category-item' onClick={props.onClick}>
+      </HashLink>
+      <HashLink to='/music-theory#octaves' className='menu-item category-item' onClick={props.onClick}>
         Octaves
-      </Link>
+      </HashLink>
+      <HashLink to='/music-theory#intervals' className='menu-item category-item' onClick={props.onClick}>
+        Intervals
+      </HashLink>
+      <HashLink to='/music-theory#harmonic-equivalence' className='menu-item category-item' onClick={props.onClick}>
+        Harmonic Equivalence
+      </HashLink>
+      <HashLink to='/music-theory#chromatic-scale' className='menu-item category-item' onClick={props.onClick}>
+        Chromatic Sale
+      </HashLink>
+      <HashLink to='/music-theory#major-scale' className='menu-item category-item' onClick={props.onClick}>
+        Major Scale
+      </HashLink>
+      <HashLink to='/music-theory#key' className='menu-item category-item' onClick={props.onClick}>
+        Key
+      </HashLink>
+      <HashLink to='/music-theory#sheet-music' className='menu-item category-item' onClick={props.onClick}>
+        Sheet Music
+      </HashLink>
+      <HashLink to='/music-theory#circle-of-fifths' className='menu-item category-item' onClick={props.onClick}>
+        Circle of Fifths
+      </HashLink>
+      <HashLink to='/music-theory#notes' className='menu-item category-item' onClick={props.onClick}>
+        Minor Scale
+      </HashLink>
+      <HashLink to='/music-theory#chords' className='menu-item category-item' onClick={props.onClick}>
+        Chords
+      </HashLink>
     </>
   }
 
@@ -33,9 +61,11 @@ function MenuDropdown(props: {
         <Link to='/music-theory' onClick={props.onClick}>
           Music Theory
         </Link>
-        {/* <FontAwesomeIcon id='menu-dropdown' className='icon' icon={faCaretDown} onClick={props.onExpand} /> */}
+        {props.open ?
+          <FontAwesomeIcon id='menu-dropdown' className='icon' icon={faCaretUp} onClick={props.onExpand} /> :
+          <FontAwesomeIcon id='menu-dropdown' className='icon' icon={faCaretDown} onClick={props.onExpand} />}
       </div>
-      {/* {getSubItems()} */}
+      {getSubItems()}
     </div>
   );
 }
