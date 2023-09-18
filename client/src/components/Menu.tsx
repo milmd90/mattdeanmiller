@@ -46,7 +46,7 @@ function MenuDropdown(props: {
       <HashLink to='/music-theory#circle-of-fifths' className='menu-item category-item' onClick={props.onClick}>
         Circle of Fifths
       </HashLink>
-      <HashLink to='/music-theory#notes' className='menu-item category-item' onClick={props.onClick}>
+      <HashLink to='/music-theory#minor-scale' className='menu-item category-item' onClick={props.onClick}>
         Minor Scale
       </HashLink>
       <HashLink to='/music-theory#chords' className='menu-item category-item' onClick={props.onClick}>
