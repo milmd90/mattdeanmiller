@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 
 
 function MenuDropdown(props: {
@@ -62,8 +62,8 @@ function MenuDropdown(props: {
           Music Theory
         </Link>
         {props.open ?
-          <FontAwesomeIcon id='menu-dropdown' className='icon' icon={faCaretUp} onClick={props.onExpand} /> :
-          <FontAwesomeIcon id='menu-dropdown' className='icon' icon={faCaretDown} onClick={props.onExpand} />}
+          <FontAwesomeIcon id='menu-dropdown' className='icon' icon={faCaretDown} onClick={props.onExpand} /> :
+          <FontAwesomeIcon id='menu-dropdown' className='icon' icon={faCaretRight} onClick={props.onExpand} />}
       </div>
       {getSubItems()}
     </div>
