@@ -1,7 +1,7 @@
 {
   "name": "mattdeanmiller",
   "version": "1.0.0",
-  "description": "Personal app for music",
+  "description": "",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
