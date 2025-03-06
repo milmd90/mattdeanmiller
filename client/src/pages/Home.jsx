@@ -18,7 +18,7 @@ function Home(props) {
           This site is currently under development, so please visit again to see what features and content have been added! 
         </p>
         <p>
-          All business inqueries can be sent to me at mattdeanmiller@gmail.com
+          All business inqueries can be sent to me at productionbymiller@gmail.com
         </p>
       </div>
       <div className='item center'>
